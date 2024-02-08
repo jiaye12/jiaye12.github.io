@@ -94,3 +94,9 @@
         padding-right: 4%;
     }
 }
+
+#content {
+    padding: 20px;
+    background-color: lightgrey;
+    margin: 20px 0;
+}
