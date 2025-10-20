@@ -11,7 +11,7 @@
     <link rel="apple-touch-icon" href="assets/images/x-agi.png?v=20250901">
     <link rel="mask-icon" href="assets/images/index/logo.svg" color="#1B2B86">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css?v=20251009">
+    <link rel="stylesheet" href="assets/css/style.css?v=20251012">
 </head>
 <body>
     <!-- Navbar -->
@@ -34,9 +34,9 @@
                     <li class="nav-item"><a class="nav-link active" href="schedule.html">日程安排</a></li>
                     <li class="nav-item"><a class="nav-link" href="courses.html">短期课程</a></li>
                     <li class="nav-item"><a class="nav-link" href="guide.html">参会指南</a></li>
-                    <li class="nav-item d-lg-none mt-3"><a href="register.html" class="btn btn-register w-100">报名参会</a></li>
+                    <li class="nav-item d-lg-none mt-3"><a href="register.html" class="btn btn-register w-100 is-closed">报名已结束</a></li>
                 </ul>
-                <a href="register.html" class="btn btn-register d-none d-lg-flex">报名参会</a>
+                <a href="register.html" class="btn btn-register d-none d-lg-flex is-closed">报名已结束</a>
             </div>
         </div>
     </nav>
@@ -60,24 +60,100 @@
         <div class="container custom-container">
             <!-- Schedule Tabs -->
 
-            <!-- Schedule Card: 13 AM -->
-            <div class="info-card schedule-card" id="session-13-am">
-                <div class="card-header">12月13日上午：Data</div>
+
+            <div class="info-card schedule-card" id="session-18-pm">
+                <div class="card-header">12月13日上午 | Session 01</div>
                 <div class="card-body">
                     <div class="session-list">
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">09:00 - 10:00</span><span>  TBD  </span></div>
-                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker6" aria-expanded="false" aria-controls="speaker6">
-                                <span>李建 | 清华大学 </span><i class="fas fa-chevron-down expand-icon"></i>
+                            <div class="session-title"><span class="session-time">09:00 - 10:00</span><span> TBD
+                            </span></div>
+                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker1" aria-expanded="false" aria-controls="speaker1">
+                                <span>李建 | 清华大学</span><i class="fas fa-chevron-down expand-icon"></i>
                             </div>
-                            <div class="collapse" id="speaker6">
+                            <div class="collapse" id="speaker1">
                                 <div class="speaker-details">
                                     <div class="row">
-                                        <div class="col-md-3 text-center"><img src="X" style="object-position: center 40%;" class="speaker-photo"></div>
+                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/李建.png" alt="李建" style="object-position: center 40%;" class="speaker-photo"></div>
                                         <div class="col-md-9">
                                             <div class="speaker-info">
                                                 <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
-                                                </div><h5>演讲嘉宾简介</h5><div class="speaker-bio"> TBD                           
+                                                </div><h5>演讲嘉宾简介</h5><div class="speaker-bio">
+                                                    <p>TBD</p>                                      
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="session-item">
+                            <div class="session-title"><span class="session-time">10:00 - 10:40</span><span>TBD
+                                </span></div>
+                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker2" aria-expanded="false" aria-controls="speaker2">
+                                <span>刘勇 | 中国人民大学</span><i class="fas fa-chevron-down expand-icon"></i>
+                            </div>
+                            <div class="collapse" id="speaker2">
+                                <div class="speaker-details">
+                                    <div class="row">
+                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/刘勇.png" alt="刘勇" class="speaker-photo"></div>
+                                        <div class="col-md-9">
+                                            <div class="speaker-info">
+                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
+                                                </div>
+                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">TBD
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="session-item">
+                            <div class="session-title"><span class="session-time">10:40 - 11:00</span><span> Coffee Break </span></div>
+                                </div>
+
+
+                        <div class="session-item">
+                            <div class="session-title"><span class="session-time">11:00 - 11:40</span><span> TBD
+                            </span></div>
+                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker3" aria-expanded="false" aria-controls="speaker3">
+                                <span>李帅 | 上海交通大学 </span><i class="fas fa-chevron-down expand-icon"></i>
+                            </div>
+                            <div class="collapse" id="speaker3">
+                                <div class="speaker-details">
+                                    <div class="row">
+                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/李帅.png" alt="李帅" style="object-position: center 20%;" class="speaker-photo"></div>
+                                        <div class="col-md-9">
+                                            <div class="speaker-info">
+                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
+                                                </div>
+                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">TBD
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <div class="session-item">
+                            <div class="session-title"><span class="session-time">11:40 - 12:00</span><span> TBD
+                            </span></div>
+                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker4" aria-expanded="false" aria-controls="speaker4">
+                                <span>陈乐偲 | 清华大学</span><i class="fas fa-chevron-down expand-icon"></i>
+                            </div>
+                            <div class="collapse" id="speaker4">
+                                <div class="speaker-details">
+                                    <div class="row">
+                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/陈乐偲.jpg" alt="陈乐偲" style="object-position: center 20%;" class="speaker-photo"></div>
+                                        <div class="col-md-9">
+                                            <div class="speaker-info">
+                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
+                                                </div>
+                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">TBD
                                                 </div>
                                             </div>
                                         </div>
@@ -86,19 +162,159 @@
                             </div>
                         </div>
                         
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card schedule-card" id="session-18-pm">
+                <div class="card-header">12月13日下午 | Session 02</div>
+                <div class="card-body">
+                    <div class="session-list">
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">10:00 - 10:40</span><span>  TBD  </span></div>
+                            <div class="session-title"><span class="session-time">14:00 - 15:00</span><span> TBD
+                            </span></div>
+                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker5" aria-expanded="false" aria-controls="speaker5">
+                                <span>孙若愚 | 香港中文大学（深圳）</span><i class="fas fa-chevron-down expand-icon"></i>
+                            </div>
+                            <div class="collapse" id="speaker5">
+                                <div class="speaker-details">
+                                    <div class="row">
+                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/孙若愚.png" alt="孙若愚" style="object-position: center 40%;" class="speaker-photo"></div>
+                                        <div class="col-md-9">
+                                            <div class="speaker-info">
+                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
+                                                </div><h5>演讲嘉宾简介</h5><div class="speaker-bio">
+                                                    <p>TBD</p>                                      
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="session-item">
+                            <div class="session-title"><span class="session-time">15:00 - 15:40</span><span>TBD
+                                </span></div>
                             <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker6" aria-expanded="false" aria-controls="speaker6">
+                                <span>袁洋 | 清华大学</span><i class="fas fa-chevron-down expand-icon"></i>
+                            </div>
+                            <div class="collapse" id="speaker6">
+                                <div class="speaker-details">
+                                    <div class="row">
+                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/袁洋.png" alt="袁洋" class="speaker-photo"></div>
+                                        <div class="col-md-9">
+                                            <div class="speaker-info">
+                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
+                                                </div>
+                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">TBD
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="session-item">
+                            <div class="session-title"><span class="session-time">15:40 - 16:00</span><span> Coffee Break </span></div>
+                                </div>
+
+
+                        <div class="session-item">
+                            <div class="session-title"><span class="session-time">16:00 - 16:40</span><span> TBD
+                            </span></div>
+                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker7" aria-expanded="false" aria-controls="speaker7">
+                                <span>邹荻凡 | 香港大学 </span><i class="fas fa-chevron-down expand-icon"></i>
+                            </div>
+                            <div class="collapse" id="speaker7">
+                                <div class="speaker-details">
+                                    <div class="row">
+                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/邹荻凡.png" alt="邹荻凡" style="object-position: center 20%;" class="speaker-photo"></div>
+                                        <div class="col-md-9">
+                                            <div class="speaker-info">
+                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
+                                                </div>
+                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">TBD
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <div class="session-item">
+                            <div class="session-title"><span class="session-time">16:40 - 17:00</span><span> TBD
+                            </span></div>
+                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker8" aria-expanded="false" aria-controls="speaker8">
+                                <span>钟涵 | 北京大学 </span><i class="fas fa-chevron-down expand-icon"></i>
+                            </div>
+                            <div class="collapse" id="speaker8">
+                                <div class="speaker-details">
+                                    <div class="row">
+                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/钟涵.jpg" alt="钟涵" style="object-position: center 20%;" class="speaker-photo"></div>
+                                        <div class="col-md-9">
+                                            <div class="speaker-info">
+                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
+                                                </div>
+                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">TBD
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="info-card schedule-card" id="session-18-pm">
+                <div class="card-header">12月14日上午 | Session 03</div>
+                <div class="card-body">
+                    <div class="session-list">
+                        <div class="session-item">
+                            <div class="session-title"><span class="session-time">09:00 - 10:00</span><span> TBD
+                            </span></div>
+                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker9" aria-expanded="false" aria-controls="speaker9">
+                                <span>常象宇 | 西安交通大学</span><i class="fas fa-chevron-down expand-icon"></i>
+                            </div>
+                            <div class="collapse" id="speaker9">
+                                <div class="speaker-details">
+                                    <div class="row">
+                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/常象宇.png" alt="常象宇" style="object-position: center 40%;" class="speaker-photo"></div>
+                                        <div class="col-md-9">
+                                            <div class="speaker-info">
+                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
+                                                </div><h5>演讲嘉宾简介</h5><div class="speaker-bio">
+                                                    <p>TBD</p>                                      
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="session-item">
+                            <div class="session-title"><span class="session-time">10:00 - 10:40</span><span>TBD
+                                </span></div>
+                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker10" aria-expanded="false" aria-controls="speaker10">
                                 <span>张辉帅 | 北京大学</span><i class="fas fa-chevron-down expand-icon"></i>
                             </div>
-                            <div class="collapse" id="speaker6">
+                            <div class="collapse" id="speaker10">
                                 <div class="speaker-details">
                                     <div class="row">
-                                        <div class="col-md-3 text-center"><img src="X" style="object-position: center 40%;" class="speaker-photo"></div>
+                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/张辉帅.png" alt="张辉帅" class="speaker-photo"></div>
                                         <div class="col-md-9">
                                             <div class="speaker-info">
                                                 <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
-                                                </div><h5>演讲嘉宾简介</h5><div class="speaker-bio"> TBD                           
+                                                </div>
+                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">TBD
                                                 </div>
                                             </div>
                                         </div>
@@ -106,40 +322,50 @@
                                 </div>
                             </div>
                         </div>
-                                        <div class="session-item">
-                            <div class="session-title"><span class="session-time">11:00 - 11:40</span><span>  TBD  </span></div>
-                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker6" aria-expanded="false" aria-controls="speaker6">
-                                <span>张林峰 | 上海交通大学</span><i class="fas fa-chevron-down expand-icon"></i>
+
+                        <div class="session-item">
+                            <div class="session-title"><span class="session-time">10:40 - 11:00</span><span> Coffee Break </span></div>
+                                </div>
+
+
+                        <div class="session-item">
+                            <div class="session-title"><span class="session-time">11:00 - 11:40</span><span> TBD
+                            </span></div>
+                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker11" aria-expanded="false" aria-controls="speaker11">
+                                <span>张林峰 | 上海交通大学 </span><i class="fas fa-chevron-down expand-icon"></i>
                             </div>
-                            <div class="collapse" id="speaker6">
+                            <div class="collapse" id="speaker11">
                                 <div class="speaker-details">
                                     <div class="row">
-                                        <div class="col-md-3 text-center"><img src="X" style="object-position: center 40%;" class="speaker-photo"></div>
+                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/张林峰.png" alt="张林峰" style="object-position: center 20%;" class="speaker-photo"></div>
                                         <div class="col-md-9">
                                             <div class="speaker-info">
                                                 <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
-                                                </div><h5>演讲嘉宾简介</h5><div class="speaker-bio"> TBD                           
+                                                </div>
+                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">TBD
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                                                
-                                        <div class="session-item">
-                            <div class="session-title"><span class="session-time">11:40 - 12:00</span><span>  TBD  </span></div>
-                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker6" aria-expanded="false" aria-controls="speaker6">
-                                <span>陈乐偲 | 清华大学</span><i class="fas fa-chevron-down expand-icon"></i>
+                        </div> 
+
+                        <div class="session-item">
+                            <div class="session-title"><span class="session-time">11:40 - 12:00</span><span> TBD
+                            </span></div>
+                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker12" aria-expanded="false" aria-controls="speaker12">
+                                <span>陈焕然 | 清华大学</span><i class="fas fa-chevron-down expand-icon"></i>
                             </div>
-                            <div class="collapse" id="speaker6">
+                            <div class="collapse" id="speaker12">
                                 <div class="speaker-details">
                                     <div class="row">
-                                        <div class="col-md-3 text-center"><img src="X" style="object-position: center 40%;" class="speaker-photo"></div>
+                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/陈焕然.jpg" alt="陈焕然" style="object-position: center 20%;" class="speaker-photo"></div>
                                         <div class="col-md-9">
                                             <div class="speaker-info">
                                                 <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
-                                                </div><h5>演讲嘉宾简介</h5><div class="speaker-bio"> TBD                           
+                                                </div>
+                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">TBD
                                                 </div>
                                             </div>
                                         </div>
@@ -151,194 +377,12 @@
                 </div>
             </div>
 
-            <!-- Schedule Card: 13 PM -->
-            <div class="info-card schedule-card" id="session-13-pm">
-                <div class="card-header">12月13日下午：Algorithm</div>
-                <div class="card-body">
-                    <div class="session-list">
-                        <div class="session-item">
-                            <div class="session-title"><span class="session-time">14:00 - 15:00</span><span>  TBD  </span></div>
-                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker6" aria-expanded="false" aria-controls="speaker6">
-                                <span>孙若愚 | 香港中文大学（深圳）  </span><i class="fas fa-chevron-down expand-icon"></i>
-                            </div>
-                            <div class="collapse" id="speaker6">
-                                <div class="speaker-details">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center"><img src="X" style="object-position: center 40%;" class="speaker-photo"></div>
-                                        <div class="col-md-9">
-                                            <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
-                                                </div><h5>演讲嘉宾简介</h5><div class="speaker-bio"> TBD                           
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="session-item">
-                            <div class="session-title"><span class="session-time">15:00 - 15:40</span><span>  TBD  </span></div>
-                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker6" aria-expanded="false" aria-controls="speaker6">
-                                <span>刘勇 | 中国人民大学</span><i class="fas fa-chevron-down expand-icon"></i>
-                            </div>
-                            <div class="collapse" id="speaker6">
-                                <div class="speaker-details">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center"><img src="X" style="object-position: center 40%;" class="speaker-photo"></div>
-                                        <div class="col-md-9">
-                                            <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
-                                                </div><h5>演讲嘉宾简介</h5><div class="speaker-bio"> TBD                           
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                                        <div class="session-item">
-                            <div class="session-title"><span class="session-time">16:00 - 16:40</span><span>  TBD  </span></div>
-                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker6" aria-expanded="false" aria-controls="speaker6">
-                                <span>邹荻凡 | 香港大学</span><i class="fas fa-chevron-down expand-icon"></i>
-                            </div>
-                            <div class="collapse" id="speaker6">
-                                <div class="speaker-details">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center"><img src="X" style="object-position: center 40%;" class="speaker-photo"></div>
-                                        <div class="col-md-9">
-                                            <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
-                                                </div><h5>演讲嘉宾简介</h5><div class="speaker-bio"> TBD                           
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                                                
-                                        <div class="session-item">
-                            <div class="session-title"><span class="session-time">16:40 - 17:00</span><span>  TBD </span></div>
-                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker6" aria-expanded="false" aria-controls="speaker6">
-                                <span> 钟涵 | 北京大学 </span><i class="fas fa-chevron-down expand-icon"></i>
-                            </div>
-                            <div class="collapse" id="speaker6">
-                                <div class="speaker-details">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center"><img src="X" style="object-position: center 40%;" class="speaker-photo"></div>
-                                        <div class="col-md-9">
-                                            <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
-                                                </div><h5>演讲嘉宾简介</h5><div class="speaker-bio"> TBD                           
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                                                
-                    </div>
-                </div>
-            </div>
-            <div class="info-card schedule-card" id="session-13-am">
-                <div class="card-header">12月14日上午：Architecture</div>
-                <div class="card-body">
-                    <div class="session-list">
-                        <div class="session-item">
-                            <div class="session-title"><span class="session-time">09:00 - 10:00</span><span>  TBD  </span></div>
-                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker6" aria-expanded="false" aria-controls="speaker6">
-                                <span>常象宇 | 西安交通大学 </span><i class="fas fa-chevron-down expand-icon"></i>
-                            </div>
-                            <div class="collapse" id="speaker6">
-                                <div class="speaker-details">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center"><img src="X" style="object-position: center 40%;" class="speaker-photo"></div>
-                                        <div class="col-md-9">
-                                            <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
-                                                </div><h5>演讲嘉宾简介</h5><div class="speaker-bio"> TBD                           
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="session-item">
-                            <div class="session-title"><span class="session-time">10:00 - 10:40</span><span>  TBD  </span></div>
-                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker6" aria-expanded="false" aria-controls="speaker6">
-                                <span>袁洋 | 清华大学</span><i class="fas fa-chevron-down expand-icon"></i>
-                            </div>
-                            <div class="collapse" id="speaker6">
-                                <div class="speaker-details">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center"><img src="X" style="object-position: center 40%;" class="speaker-photo"></div>
-                                        <div class="col-md-9">
-                                            <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
-                                                </div><h5>演讲嘉宾简介</h5><div class="speaker-bio"> TBD                           
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                                        <div class="session-item">
-                            <div class="session-title"><span class="session-time">11:00 - 11:40</span><span>  TBD  </span></div>
-                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker6" aria-expanded="false" aria-controls="speaker6">
-                                <span>李帅 | 上海交通大学</span><i class="fas fa-chevron-down expand-icon"></i>
-                            </div>
-                            <div class="collapse" id="speaker6">
-                                <div class="speaker-details">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center"><img src="X" style="object-position: center 40%;" class="speaker-photo"></div>
-                                        <div class="col-md-9">
-                                            <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
-                                                </div><h5>演讲嘉宾简介</h5><div class="speaker-bio"> TBD                           
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                                                
-                                        <div class="session-item">
-                            <div class="session-title"><span class="session-time">11:40 - 12:00</span><span>  TBD  </span></div>
-                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker6" aria-expanded="false" aria-controls="speaker6">
-                                <span>陈焕然 | 清华大学</span><i class="fas fa-chevron-down expand-icon"></i>
-                            </div>
-                            <div class="collapse" id="speaker6">
-                                <div class="speaker-details">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center"><img src="X" style="object-position: center 40%;" class="speaker-photo"></div>
-                                        <div class="col-md-9">
-                                            <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
-                                                </div><h5>演讲嘉宾简介</h5><div class="speaker-bio"> TBD                           
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                                                
-            <div class="info-card schedule-card" id="session-13-am">
-                <div class="card-header">12月14日下午：Posters</div>
-                    </div>
-                </div>
-            </div>
+        </div>
         </div>
     </main>
+
+
+
     
     <!-- Footer -->
     <footer class="site-footer">
