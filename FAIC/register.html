@@ -1,53 +1,81 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>报名参会 - 2025 X-AGI & The 18th China-R Conference</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/x-agi.png?v=20250901">
-    <link rel="shortcut icon" type="image/png" href="assets/images/x-agi.png?v=20250901">
-    <link rel="apple-touch-icon" href="assets/images/x-agi.png?v=20250901">
-    <link rel="mask-icon" href="assets/images/index/logo.svg" color="#1B2B86">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css?v=20251009">
-</head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container custom-container">
-            <a class="navbar-brand" href="index.html">
-                <img src="assets/images/logo.svg" alt="X-AGI Logo" class="logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="hamburger" aria-hidden="true">
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
-                </span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">会议简介</a></li>
-                    <li class="nav-item"><a class="nav-link" href="schedule.html">日程安排</a></li>
-                    <li class="nav-item"><a class="nav-link" href="courses.html">短期课程</a></li>
-                    <li class="nav-item"><a class="nav-link" href="guide.html">参会指南</a></li>
-                    <!-- Mobile Button -->
-                    <li class="nav-item d-lg-none mt-3">
-                        <a href="register.html" class="btn btn-register w-100">报名参会</a>
-                    </li>
-                </ul>
-                <!-- Desktop Button -->
-                <a href="register.html" class="btn btn-register d-none d-lg-flex">报名参会</a>
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>2025 FAIC</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="assets/images/x-agi.png?v=20250901">
+        <link rel="shortcut icon" type="image/png" href="assets/images/x-agi.png?v=20250901">
+        <link rel="apple-touch-icon" href="assets/images/x-agi.png?v=20250901">
+        <!-- Safari pinned tab -->
+        <link rel="mask-icon" href="assets/images/index/logo.svg" color="#1B2B86">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="assets/css/style.css?v=20251009">
+        <style>
+            /* 首页浅色方案覆盖，仅对 body.home-light 生效 */
+            body.home-light .hero-section { background: none !important; background-color: #ffffff !important; }
+            body.home-light .navbar { background-color: #ffffff; }
+            body.home-light .navbar.scrolled { background-color: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+            body.home-light .navbar .nav-link { color: #111; }
+            body.home-light .navbar .nav-link.active::after { background-color: #1B2B86; }
+            body.home-light .navbar-toggler .hamburger .line { background-color: #333; }
+    
+            /* 首页 Hero 信息改为深色 */
+            body.home-light .info-text { color: #222; }
+            body.home-light .info-icon { filter: brightness(0) saturate(100%); opacity: 0.75; } /* 将白色图标压成黑色 */
+            body.home-light .hero-vertical .hero-date { color: #222; }
+    
+            /* ICP 信息变深色以适配白底 */
+            body.home-light .icp-info { color: rgba(0,0,0,0.45); }
+            body.home-light .icp-info a { color: rgba(0,0,0,0.7); }
+            body.home-light .icp-info a:hover { color: #1B2B86; }
+    
+            /* 添加以下样式，给 main 元素设置上内边距，避免内容与导航栏重合 */
+            main.main-content {
+                padding-top: 100px; /* 可根据导航栏实际高度调整此值 */
+            }
+        </style>
+    </head>
+    <body class="home-light">
+    
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container custom-container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/logo_FAIC.jpg" alt="FAIC Logo" class="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="hamburger" aria-hidden="true">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">首页</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">会议简介</a></li>
+                        <li class="nav-item"><a class="nav-link" href="schedule.html">日程安排</a></li>
+                        <li class="nav-item"><a class="nav-link" href="guide.html">参会指南</a></li>
+                        <!-- Mobile Button -->
+                        <li class="nav-item d-lg-none mt-3">
+                            <a href="register.html" class="btn btn-register w-100">报名参会</a>
+                        </li>
+                    </ul>
+                    <!-- Desktop Button -->
+                    <a href="register.html" class="btn btn-register d-none d-lg-flex">报名参会</a>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <!-- Page Header -->
-    <header class="page-header">
+
+    <!-- 移除原有的 Page Header 部分 -->
+    <!-- <header class="page-header">
         <div class="container custom-container header-content">
             <div>
                 <h1>2025 X-AGI & The 18th China-R Conference</h1>
@@ -58,7 +86,7 @@
                 <a href="assets/files/handbook.pdf" class="btn btn-download" download>下载大会手册</a>
             </div>
         </div>
-    </header>
+    </header> -->
 
     <main class="main-content">
         <div class="container custom-container">
@@ -71,7 +99,7 @@
                         <ul>
                             <li>会议时间：2025年12月13日-14日</li>
                             <li>会议地点：上海财经大学</li>
-                            <li>报名截止：2025年10月15日</li>
+                            <li>报名截止：2025年12月14日</li>
                             <li>费用说明：请查看下方报名表单中的详细费用信息</li>
                             <li>注意事项：请确保填写信息准确，报名成功后将有确认邮件发送</li>
                         </ul>
@@ -85,46 +113,38 @@
                                 <thead>
                                     <tr>
                                         <th>价格类型</th>
-                                        <th>A: 短课程</th>
-                                        <th>B: 主题演讲</th>
-                                        <th>C: 短课程+主题演讲</th>
+                                        <th>A: 游客门票</th>
+                                        <th>B: 学生门票</th>
+                                        <th>C: 普通门票</th>
+                                        <th>D: 专业门票</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>普通票 (9.30 前)</td>
-                                        <td>1200</td>
-                                        <td>1400</td>
-                                        <td>2300</td>
+                                        <td>早鸟票 (11.30 前)</td>
+                                        <td>20</td>
+                                        <td>640</td>
+                                        <td>980</td>
+                                        <td>1880</td>
                                     </tr>
                                     <tr>
-                                        <td>学生票 (9.30 前)</td>
-                                        <td>720</td>
-                                        <td>840</td>
-                                        <td>1380</td>
-                                    </tr>
-                                    <tr>
-                                        <td>普通票 (9.30 后)</td>
-                                        <td>1400</td>
-                                        <td>1600</td>
-                                        <td>2500</td>
-                                    </tr>
-                                    <tr>
-                                        <td>学生票 (9.30 后)</td>
-                                        <td>840</td>
+                                        <td>非早鸟票 (11.30 后)</td>
+                                        <td>50</td>
                                         <td>960</td>
-                                        <td>1500</td>
+                                        <td>1380</td>
+                                        <td>2580</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                         <div class="pricing-details">
                             <p><strong>注:</strong></p>
-                            <p><strong>A: 短课程</strong>包含17日日程和当天午餐</p>
-                            <p><strong>B: 主题演讲</strong>包含18-19日日程和两日午餐</p>
-                            <p><strong>C: 短课程+主题演讲</strong>包含以上所有日程和三日午餐</p>
+                            <p><strong>A: 游客门票</strong>仅包含注册牌</p>
+                            <p><strong>B: 学生门票</strong>仅允许学生注册，包含午餐券和注册牌</p>
+                            <p><strong>C: 普通门票</strong>包含午餐券和注册牌</p>
+                            <p><strong>D: 专业门票</strong>包含午餐券、晚宴券和注册牌，享受酒店协议价</p>
                             <p>会议报告人和志愿者<strong>无需购票</strong></p>
-                            <p><strong>* 购买学生票须在现场报到时出示学生证</strong></p>
+                            <p><strong>* 购买学生门票须在现场报到时出示学生证</strong></p>
                         </div>
                     </div>
 
@@ -140,8 +160,8 @@
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container custom-container">
-            <p>版权所有 2025 X智能大会 & 第 18 届中国 R 会议</p>
-            <p>联系方式: xagi-2025@cosx.org</p>
+            <p>版权所有 2025 FAIC 人工智能大会</p>
+            <p>联系方式: tengjiaye@sufe.edu.cn</p>
         </div>
     </footer>
 

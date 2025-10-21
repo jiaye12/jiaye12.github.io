@@ -1,3 +1,13 @@
+.btn-black {
+    background-color: #000; /* 黑色背景 */
+    color: white; /* 白色文字 */
+    /* 可按需添加其他样式 */
+}
+
+.btn-black:hover {
+    opacity: 0.9; /* 悬停时稍变透明 */
+}
+
 /* --- Global & Fonts --- */
 :root {
     --bs-primary-rgb: 33, 93, 255; /* For button colors */
