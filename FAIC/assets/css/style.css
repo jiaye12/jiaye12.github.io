@@ -74,8 +74,12 @@ body.nav-open .navbar {
     background-color: #1B2B86;
 }
 .navbar .logo { 
-    width: 87px; 
-    height: 36px; 
+    /* 调大高度，宽度自适应保持比例 */
+    height: 120px; 
+    width: auto; 
+    max-width: 260px;      /* 防止过宽撑破布局，可按需调整 */
+    object-fit: contain;   /* 保证完整显示 */
+    display: block;        /* 避免内联元素不对齐 */
 }
 .navbar .navbar-brand {
     display: flex;
@@ -240,6 +244,10 @@ body.nav-open .navbar {
 /* Main Content Wrapper (for horizontal layout) */
 .hero-main-content {
     transform: translateY(-75px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 /* Logo */
@@ -248,7 +256,7 @@ body.nav-open .navbar {
 }
 
 .hero-logo img {
-    max-width: 248px;
+    max-width: 420px;
     height: auto;
 }
 
@@ -269,6 +277,7 @@ body.nav-open .navbar {
     gap: 16px;
     margin-bottom: 32px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .info-item {
@@ -295,6 +304,7 @@ body.nav-open .navbar {
     gap: 16px;
     margin-bottom: 60px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .btn-new-register {
@@ -361,6 +371,31 @@ body.nav-open .navbar {
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.28);
 }
 
+/* Home Light 主题：下载按钮改为黑色，适配白底 */
+body.home-light .btn-hero-download {
+    color: #111 !important;
+    border-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.06);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+body.home-light .btn-hero-download:hover {
+    color: #111 !important;
+    background-color: rgba(0,0,0,0.12);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+body.home-light .btn-hero-download:active {
+    color: #111 !important;
+    transform: translateY(0) scale(0.985);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.16);
+}
+body.home-light .btn-hero-download:focus {
+    color: #111 !important;
+}
+body.home-light .btn-hero-download:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.22);
+}
+
 /* Organizers Footer (horizontal layout only) */
 .hero-horizontal .organizers-footer {
     margin-top: auto;
@@ -393,6 +428,10 @@ body.nav-open .navbar {
     color: #fff;
     flex-shrink: 0;
     margin-right: 8px;
+}
+
+body.home-light .hero-horizontal .organizer-label {
+    color: rgba(0, 0, 0, 0.85);
 }
 
 .organizer-logos {
@@ -463,6 +502,30 @@ body.nav-open .navbar {
 .hero-actions-vertical .btn-hero-download:hover {
     background-color: rgba(255, 255, 255, 0.2);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* 竖版布局下的下载按钮也统一黑色风格 */
+body.home-light .hero-actions-vertical .btn-hero-download {
+    min-width: 160px;
+    width: auto;
+    padding: 0 24px;
+    height: 50px;
+    border-radius: 32px;
+    border: 1px solid rgba(0,0,0,0.7);
+    background-color: transparent;
+    color: #111 !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+body.home-light .hero-actions-vertical .btn-hero-download:hover {
+    color: #111 !important;
+    background-color: rgba(0,0,0,0.08);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.10);
+}
+body.home-light .hero-actions-vertical .btn-hero-download:active {
+    color: #111 !important;
+}
+body.home-light .hero-actions-vertical .btn-hero-download:focus {
+    color: #111 !important;
 }
 
 .hero-vertical .hero-title-img {

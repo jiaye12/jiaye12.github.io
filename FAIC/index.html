@@ -14,14 +14,33 @@
     <link rel="mask-icon" href="assets/images/index/logo.svg" color="#1B2B86">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css?v=20251009">
+    <style>
+        /* 首页浅色方案覆盖，仅对 body.home-light 生效 */
+        body.home-light .hero-section { background: none !important; background-color: #ffffff !important; }
+        body.home-light .navbar { background-color: #ffffff; }
+        body.home-light .navbar.scrolled { background-color: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+        body.home-light .navbar .nav-link { color: #111; }
+        body.home-light .navbar .nav-link.active::after { background-color: #1B2B86; }
+        body.home-light .navbar-toggler .hamburger .line { background-color: #333; }
+
+        /* 首页 Hero 信息改为深色 */
+        body.home-light .info-text { color: #222; }
+        body.home-light .info-icon { filter: brightness(0) saturate(100%); opacity: 0.75; } /* 将白色图标压成黑色 */
+        body.home-light .hero-vertical .hero-date { color: #222; }
+
+        /* ICP 信息变深色以适配白底 */
+        body.home-light .icp-info { color: rgba(0,0,0,0.45); }
+        body.home-light .icp-info a { color: rgba(0,0,0,0.7); }
+        body.home-light .icp-info a:hover { color: #1B2B86; }
+    </style>
 </head>
-<body>
+<body class="home-light">
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container custom-container">
             <a class="navbar-brand" href="index.html">
-                <img src="assets/images/logo.svg" alt="X-AGI Logo" class="logo">
+                <img src="assets/images/logo_FAIC.jpg" alt="FAIC Logo" class="logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="hamburger" aria-hidden="true">
@@ -48,78 +67,70 @@
         </div>
     </nav>
 
+
     <!-- Hero Section -->
-    <header class="hero-section">
+    <header class="hero-section" style="background: none; background-color: #ffffff;">
         <!-- Horizontal layout (for wide screens) -->
         <div class="hero-horizontal">
-        <div class="container custom-container">
-            <!-- Main Content Wrapper -->
-            <div class="hero-main-content">
-                <!-- Logo -->
-                <div class="hero-logo">
-                    <img src="assets/images/index/logo.svg" alt="X-AGI Logo" width="248" height="48">
+            <div class="container custom-container">
+                <!-- Main Content Wrapper -->
+                <!-- Hero Section 内 -->
+                <div class="hero-main-content">
+                    <!-- Logo -->
+                    <div class="hero-logo">
+                        <img src="assets/images/logo_FAIC.jpg" alt="FAIC Logo" width="2000">
+                    </div>
+                    
+                    <!-- Time and Location -->
+                    <div class="hero-info">
+                        <div class="info-item">
+                            <img src="assets/images/index/time.svg" alt="时间" width="16" height="16" class="info-icon">
+                            <span class="info-text">2025.12.13-12.14</span>
+                        </div>
+                        <div class="info-item">
+                            <img src="assets/images/index/place.svg" alt="地点" width="16" height="16" class="info-icon">
+                            <span class="info-text">上海财经大学（上海市杨浦区武东路100号）</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Primary CTAs -->
+                    <div class="hero-actions">
+                        <a href="register.html" class="btn btn-new-register">报名参会</a>
+                        <a href="assets/files/invitation.pdf" class="btn btn-hero-download" download>下载邀请函</a>
+                        <a href="assets/files/handbook.pdf" class="btn btn-hero-download" download>下载大会手册</a>
+                    </div>
                 </div>
                 
-                <!-- Main Title -->
-                <div class="hero-main-title">
-                    <img src="assets/images/index/主图.svg" alt="2025 X智能大会 第18届中国R会议" width="678" height="72">
-                </div>
-                
-                <!-- Time and Location -->
-                <div class="hero-info">
-                    <div class="info-item">
-                        <img src="assets/images/index/time.svg" alt="时间" width="16" height="16" class="info-icon">
-                        <span class="info-text">2025.10.17-10.19</span>
+                <!-- Organizers Footer -->
+                <div class="organizers-footer">
+                    <div class="organizer-row">
+                        <span class="organizer-label">主办单位：</span>
+                        <div class="organizer-logos">
+                            <img src="assets/images/logos_t/logo_sufe.png" alt="上海财经大学统计与数据科学学院" height="30">
+                            <img src="assets/images/logos_t/logo_cos.png" alt="统计之都" height="30">
+                        </div>
                     </div>
-                    <div class="info-item">
-                        <img src="assets/images/index/place.svg" alt="地点" width="16" height="16" class="info-icon">
-                        <span class="info-text">北京会议中心（北京市朝阳区来广营西路88号）</span>
-                    </div>
-                </div>
-                
-                <!-- Primary CTAs -->
-                <div class="hero-actions">
-                    <a href="register.html" class="btn btn-new-register">报名参会</a>
-                    <a href="assets/files/invitation.pdf" class="btn btn-hero-download" download>下载邀请函</a>
-                    <a href="assets/files/handbook.pdf" class="btn btn-hero-download" download>下载大会手册</a>
-                </div>
-            </div>
-            
-            <!-- Organizers Footer -->
-            <div class="organizers-footer">
-                <div class="organizer-row">
-                    <span class="organizer-label">主办单位：</span>
-                    <div class="organizer-logos">
-                        <img src="assets/images/logos_t/logo_ruc_cas.png" alt="中国人民大学应用统计科学研究中心" height="30">
-                        <img src="assets/images/logos_t/logo_ruc_stat.png" alt="中国人民大学统计学院" height="30">
-                        <img src="assets/images/logos_t/logo_cos.png" alt="统计之都" height="30">
-                        <img src="assets/images/logos_t/cssc_ai.png" alt="中国商业统计学会人工智能分会" height="30">
-                    </div>
-                </div>
-                <div class="organizer-row">
-                    <span class="organizer-label">协办单位：</span>
-                    <div class="organizer-logos">
-                        <img src="assets/images/logos_t/logo_health.png" alt="中国人民大学健康大数据研究院" height="30">
-                    </div>
-                </div>
-                <div class="organizer-row">
-                    <span class="organizer-label">赞助单位：</span>
-                    <div class="organizer-logos">
-                        <img src="assets/images/logos_t/logo_minghong.png" alt="明汯投资" height="30">
-                        <img src="assets/images/logos_t/logo_kuande.png" alt="宽德投资" height="30">
-                        <img src="assets/images/logos_t/logo_will.png" alt="Will" height="30">
-                        <img src="assets/images/logos_t/logo_QuantVerse.png" alt="QuantVerse" height="25">
+                    <!-- <div class="organizer-row">
+                        <span class="organizer-label">协办单位：</span>
+                        <div class="organizer-logos">
+                            <img src="assets/images/logos_t/logo_health.png" alt="中国人民大学健康大数据研究院" height="30">
+                        </div>
+                    </div> -->
+                    <div class="organizer-row">
+                        <span class="organizer-label">赞助单位：</span>
+                        <div class="organizer-logos">
+                            <img src="TODO" alt="TODO" height="30">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
+            </div>
 
         <!-- Vertical layout (for narrow screens) -->
         <div class="hero-vertical">
             <div class="content-wrapper">
                 <img src="assets/images/home_title.png" alt="2025 X智能大会" class="hero-title-img">
-                <p class="hero-date">2025.10.17–10.19&nbsp;&nbsp;北京会议中心<span class="hero-date-place">（北京市朝阳区来广营西路88号）</span></p>
+                <p class="hero-date">2025.12.13–12.14&nbsp;&nbsp;上海财经大学<span class="hero-date-place">（上海市杨浦区武东路100号）</span></p>
                 <div class="hero-actions hero-actions-vertical">
                     <a href="register.html" class="btn btn-hero-register">报名参会</a>
                     <a href="assets/files/invitation.pdf" class="btn btn-hero-download" download>下载邀请函</a>
