@@ -137,7 +137,7 @@
 
 
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">11:00 - 11:40</span><span> TBD
+                            <div class="session-title"><span class="session-time">11:00 - 11:40</span><span> 扩散模型采样过程及训练动态分析
                             </span></div>
                             <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker3" aria-expanded="false" aria-controls="speaker3">
                                 <span>李帅 | 上海交通大学 </span><i class="fas fa-chevron-down expand-icon"></i>
@@ -145,12 +145,12 @@
                             <div class="collapse" id="speaker3">
                                 <div class="speaker-details">
                                     <div class="row">
-                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/李帅.png" alt="李帅" style="object-position: center 20%;" class="speaker-photo"></div>
+                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/李帅.jpeg" alt="李帅" style="object-position: center 20%;" class="speaker-photo"></div>
                                         <div class="col-md-9">
                                             <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
+                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">近年来，扩散模型的采样速度与生成质量显著提升，在多个领域均表现出优异性能。然而，针对扩散模型的理论分析与设计空间仍有待深入探索。本报告从扩散模型的两大核心部分采样过程与训练动态入手，重点分析如何提升模型的采样与训练效率。在采样复杂度方面，本报告系统梳理了不同模型的特性，明确阐释了基于流的模型为何相较以往方法具有更优表现；在训练动态方面，本报告结合实际数据特征进行建模，以降低估计误差并改善优化景观。
                                                 </div>
-                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">TBD
+                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">李帅是上海交通大学人工智能学院长聘副教授、约翰·霍普克罗夫特计算机科学中心副主任、上海创智学院全时导师，研究强化学习理论与方法、扩散模型与大模型分析，迄今发表论文90+篇，包含上海交通大学首篇机器学习理论顶会COLT等，其中第一/通讯作者发表CCF-A类论文40+篇。担任ICML、NeurIPS、ACL等会议领域主席与高级程序委员会委员，多次受邀于AAMAS和IJCAI给出关于在线学习的教程。主持国自然重大培育项目、面上基金、青年基金。曾获得AAAI-IAAI Deployed Application Award（2025）、上海市扬帆人才计划、上海徐汇光启人才、华为火花奖、香港政府外展合作奖、谷歌博士奖学金、国际SAT竞赛并行求解赛道铜牌、腾讯优秀导师奖等。
                                                 </div>
                                             </div>
                                         </div>
@@ -160,7 +160,7 @@
                         </div> 
 
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">11:40 - 12:00</span><span> TBD
+                            <div class="session-title"><span class="session-time">11:40 - 12:00</span><span>极小极大优化问题的高阶加速
                             </span></div>
                             <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker4" aria-expanded="false" aria-controls="speaker4">
                                 <span>陈乐偲 | 清华大学</span><i class="fas fa-chevron-down expand-icon"></i>
@@ -171,9 +171,13 @@
                                         <div class="col-md-3 text-center"><img src="assets/speaker_photo/陈乐偲.jpg" alt="陈乐偲" style="object-position: center 20%;" class="speaker-photo"></div>
                                         <div class="col-md-9">
                                             <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
+                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">极小极大优化问题（又称鞍点计算或Nash均衡点计算）是数值优化、博弈论等领域的基础问题之一。该问题的最优一阶复杂度早已被研究透彻：1976年Korpelevich提出了外梯度算法并证明其具有 O(1/T) 的收敛率，20004年Nemirovski进一步推广了外梯度法并且证明匹配的下界。然而，高阶算法（牛顿法以及张量法）求解该问题的复杂度仍然是未知的。
+
+此前，最好已知的二阶算法是由Monteiro和Svaiter在2012年提出的牛顿外梯度法，具有 O(1/T^{3/2}) 的收敛率。近五年内，大量工作使用不同的算法得到了相同的结果，并且将算法推广到p阶张量形式，具有 O(1/T^{(p-1)/2}) 收敛率。 很多研究者认为这已经是该问题的最优复杂度，并且给出了看似匹配的下界。
+
+在本次报告，我会讨论已知的下界为什么可以被打破。并且介绍我们近期的工作，提出一个p阶算法打破普遍推测的下界，首次达到O(1/T^{(3p+1)/4}) 的收敛率。我们结果取p=2，可以得到一个快速牛顿法，具有O(1/T^{7/4})的收敛率，该结果已经发表于COLT'25，并且获得最佳学生论文奖。
                                                 </div>
-                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">TBD
+                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">陈乐偲是清华大学交叉信息研究院在读三年级博士生，研究方向为优化理论以及在机器学习中的实际应用，导师为张景昭助理教授。本科就读于复旦大学。多篇文章发表在机器学习国际期刊JMLR以及会议COLT、ICLR、ICML、NeurIPS、AISTATS上。
                                                 </div>
                                             </div>
                                         </div>
@@ -266,7 +270,7 @@
                         </div> 
 
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">16:40 - 17:00</span><span> TBD
+                            <div class="session-title"><span class="session-time">16:40 - 17:00</span><span> Principled Reinforcement Learning and its Role in Large Language Models
                             </span></div>
                             <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker8" aria-expanded="false" aria-controls="speaker8">
                                 <span>钟涵 | 北京大学 </span><i class="fas fa-chevron-down expand-icon"></i>
@@ -274,12 +278,12 @@
                             <div class="collapse" id="speaker8">
                                 <div class="speaker-details">
                                     <div class="row">
-                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/钟涵.jpg" alt="钟涵" style="object-position: center 20%;" class="speaker-photo"></div>
+                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/钟涵.png" alt="钟涵" style="object-position: center 20%;" class="speaker-photo"></div>
                                         <div class="col-md-9">
                                             <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
+                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">In this talk, I will present our theoretical and practical advances in reinforcement learning (RL) and Reinforcement Learning from Human Feedback (RLHF). We introduce the Generalized Eluder Coefficient (GEC), a novel complexity measure that characterizes the fundamental statistical complexity in general decision-making problems. Our research demonstrates that GEC effectively captures the essential learning difficulty in various RL settings and enables the development of sample-efficient algorithmic frameworks. We extend our analysis to RLHF by introducing a preference-based variant of GEC, which addresses the sample complexity challenges in learning from human feedback. This theoretical advancement provides insights into the fundamental limits of RLHF algorithms. Building on these findings, we propose iterative Direct Preference Optimization (DPO) and its optimistic variant, which have demonstrated practical success in real-world applications. Our works establish a unified theoretical framework encompassing both RL and RLHF, offering a comprehensive understanding of their fundamental principles. This unified perspective not only advances theoretical understanding but also provides practical insights for developing more efficient learning algorithms.
                                                 </div>
-                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">TBD
+                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">Han Zhong is a Ph.D. student at Peking University. His research focuses on reinforcement learning and its connections to operations research, statistics, and optimization. He has published papers in leading journals and conferences, including Mathematics of Operations Research, Journal of the American Statistical Association, Journal of Machine Learning Research, ICML, NeurIPS, and ICLR.
                                                 </div>
                                             </div>
                                         </div>
@@ -298,7 +302,7 @@
                 <div class="card-body">
                     <div class="session-list">
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">09:00 - 10:00</span><span> TBD
+                            <div class="session-title"><span class="session-time">09:00 - 10:00</span><span> 基于大规模合作博弈的数据要素估值方法
                             </span></div>
                             <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker9" aria-expanded="false" aria-controls="speaker9">
                                 <span>常象宇 | 西安交通大学</span><i class="fas fa-chevron-down expand-icon"></i>
@@ -309,9 +313,9 @@
                                         <div class="col-md-3 text-center"><img src="assets/speaker_photo/常象宇.png" alt="常象宇" style="object-position: center 40%;" class="speaker-photo"></div>
                                         <div class="col-md-9">
                                             <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
+                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">模型即服务（MaaS）是模型决策时代重要的商业模式之一。MaaS分为三步：（1）模型消费者向模型供应商业提出需求；（2）模型供应商从相关的数据供应商中获取相关数据；（3）模型供应商使用数据供应商的数据构建人工智能模型，并用于数据消费者提供的商业场景中进行商业决策。在MaaS的场景下解决如何数据要素估值并公平的分配给数据供应商是重要的科学问题。基于合作博弈理论，把数据供应商作为合作博弈的玩家，把合作中获取的商业价值使用经典的Shapley值进行分配是公平合理的数据要素估值与分配的解决途径之一。但是，面对复杂的数据要素交易场景，基于经典的合作博弈进行数据要素估值与分配仍然无法应用于实际的数据要素交易市场。具体挑战为：（i）应用场景的不确定性；（ii）交易场景的高复杂性；（iii）计算成本的高耗费性。本研究将试图针对上述挑战寻找一定的解决途径。
                                                 </div><h5>演讲嘉宾简介</h5><div class="speaker-bio">
-                                                    <p>TBD</p>                                      
+                                                    <p>常象宇，现为西安交通大学管理学院，信息系统与智能商务系教授;研究方向为统计机器学习。现致力于研究人工智能模型与算法应用于数据驱动决策场景中的社会化问题:特别关注机器学习中的数据要素定价，公平性机器学习与隐私保护机器学习等方向。 担任中国商业统计协会人工智能分会副理事长;中国现场统计研究会机器学习分会秘书长;数据科学与统计公益社区“统计之都”主席。 </p>                                      
                                                 </div>
                                             </div>
                                         </div>
