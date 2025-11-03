@@ -117,7 +117,7 @@
                             <div class="collapse" id="speaker2">
                                 <div class="speaker-details">
                                     <div class="row">
-                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/刘勇.jpeg" alt="刘勇" class="speaker-photo"></div>
+                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/刘勇.jpg" alt="刘勇" class="speaker-photo"></div>
                                         <div class="col-md-9">
                                             <div class="speaker-info">
                                                 <h5>演讲内容摘要</h5><div class="speaker-abstract">Transformer 是当前大模型的核心架构，在自然语言处理、计算机视觉等领域展现出卓越性能，但其内在机理的理解仍较为有限。本报告从统计物理能量视角构建新框架，发现自注意力机制本质是最小化 Helmholtz 自由能的过程，由此为其提供了物理层面的原理解释。在此基础上，进一步从能量视角设计了新型 Transformer 架构，且实验验证了该架构的有效性。本研究为 Transformer 机理解读提供新视角，亦为其新架构设计提供新思路。
@@ -247,7 +247,7 @@
 
 
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">16:00 - 16:40</span><span> TBD
+                            <div class="session-title"><span class="session-time">16:00 - 16:40</span><span> On the Mechanism Interpretability of LLM for Fine-tuning and Reasoning
                             </span></div>
                             <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker7" aria-expanded="false" aria-controls="speaker7">
                                 <span>邹荻凡 | 香港大学 </span><i class="fas fa-chevron-down expand-icon"></i>
@@ -258,9 +258,9 @@
                                         <div class="col-md-3 text-center"><img src="assets/speaker_photo/邹荻凡.png" alt="邹荻凡" style="object-position: center 20%;" class="speaker-photo"></div>
                                         <div class="col-md-9">
                                             <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
+                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">While Reinforcement Learning (RL) and Fine-Tuning demonstrably enhance Large Language Model (LLM) capabilities, particularly in reasoning and task adaptation, the underlying mechanisms remain poorly understood. This talk integrates insights from two complementary studies to advance mechanistic interpretability. First, we dissect Reinforcement Learning with Verifiable Rewards (RLVR), revealing its core benefit lies in optimizing the selection of existing high-success-rate reasoning patterns, with theoretical convergence analyses showing distinct dynamics for strong versus weak initial models (mitigated by prior supervised fine-tuning). Second, we employ circuit analysis to interpret fine-tuning mechanisms, uncovering that circuits undergo significant edge changes rather than merely adding components, contrasting prior findings. Leveraging this, we develop a circuit-aware LoRA method, improving performance over standard LoRA by 2.46%. Furthermore, we explore combining circuits for compositional tasks. Together, these studies provide novel theoretical and empirical insights: RL enhances reasoning primarily through pattern selection, while fine-tuning fundamentally rewires circuit connections. This deeper understanding informs the design of more effective and interpretable adaptation strategies for LLMs.
                                                 </div>
-                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">TBD
+                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">Dr.Difan Zou is an assistant professor in computer science department and institute of data science at HKU. He has received his PhD degree in Department of Computer Science, University of California, Los Angeles (UCLA).  His research interests are broadly in machine learning, deep learning theory, graph learning, mechanism interpretation, and interdisciplinary research between AI and other subjects. His research is published in top-tier machine learning conferences (ICML, NeurIPS, COLT, ICLR) and journal papers (IEEE Trans., JMLR, Nature Comm., PNAS, etc.). He serves as an area chair/senior PC member for NeurIPS, ICML and AAAI, and PC members for ICLR, COLT, etc.
                                                 </div>
                                             </div>
                                         </div>
@@ -325,7 +325,7 @@
                         </div>
 
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">10:00 - 10:40</span><span>TBD
+                            <div class="session-title"><span class="session-time">10:00 - 10:40</span><span>AdamS: Momentum Itself Can Be A Normalizer for LLM Pretraining and Post-training
                                 </span></div>
                             <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker10" aria-expanded="false" aria-controls="speaker10">
                                 <span>张辉帅 | 北京大学</span><i class="fas fa-chevron-down expand-icon"></i>
@@ -333,12 +333,14 @@
                             <div class="collapse" id="speaker10">
                                 <div class="speaker-details">
                                     <div class="row">
-                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/张辉帅.png" alt="张辉帅" class="speaker-photo"></div>
+                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/张辉帅.jpeg" alt="张辉帅" class="speaker-photo"></div>
                                         <div class="col-md-9">
                                             <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
+                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">We introduce AdamS, a simple yet effective alternative to Adam for large language model (LLM) pretraining and post-training. By leveraging a novel denominator, i.e., the root of weighted sum of squares of the momentum and the current gradient, AdamS eliminates the need for second-moment estimates. Hence, AdamS is efficient, matching the memory and compute footprint of SGD with momentum while delivering superior optimization performance. 
+                                                    Moreover, AdamS is easy to adopt: it can directly inherit hyperparameters of AdamW, and is entirely model-agnostic, integrating seamlessly into existing pipelines without modifications to optimizer APIs or architectures. The motivation behind AdamS stems from the observed $(L_0, L_1)$ smoothness properties in transformer objectives, where local smoothness is governed by gradient magnitudes that can  be further approximated by momentum magnitudes. We establish rigorous theoretical convergence guarantees and provide practical guidelines for hyperparameter selection. 
+                                                    Empirically, AdamS demonstrates strong performance in various tasks, including pre-training runs on GPT-2 and Llama2 (up to 13B parameters) and  reinforcement learning in post-training regimes. With its efficiency, simplicity, and theoretical grounding, AdamS stands as a compelling alternative to existing optimizers.                                                    
                                                 </div>
-                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">TBD
+                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">张辉帅，北京大学王选计算机研究所助理教授，此前曾在微软亚洲研究院担任首席研究员。他的研究领域包括自然语言处理、大型模型的隐私保护，及大模型优化算法。已在机器学习和人工智能的顶级会议与期刊上发表了50余篇论文。他与合作者的一系列创新性工作首次成功将差分隐私技术应用于大型语言模型的训练中，推动了相关技术在商业产品中的应用。
                                                 </div>
                                             </div>
                                         </div>
