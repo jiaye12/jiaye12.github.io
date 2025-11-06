@@ -84,10 +84,10 @@ body.nav-open .navbar {
     background-color: #1B2B86;
 }
 .navbar .logo { 
-    /* 调大高度，宽度自适应保持比例 */
-    height: 120px; 
+    /* 调整logo高度，宽度自适应保持比例 */
+    height: 90px; 
     width: auto; 
-    max-width: 260px;      /* 防止过宽撑破布局，可按需调整 */
+    max-width: 200px;      /* 防止过宽撑破布局 */
     object-fit: contain;   /* 保证完整显示 */
     display: block;        /* 避免内联元素不对齐 */
 }
@@ -266,7 +266,7 @@ body.nav-open .navbar {
 }
 
 .hero-logo img {
-    max-width: 420px;
+    max-width: 360px;
     height: auto;
 }
 
