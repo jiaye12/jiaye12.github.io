@@ -84,10 +84,10 @@ body.nav-open .navbar {
     background-color: #1B2B86;
 }
 .navbar .logo { 
-    /* 调大高度，宽度自适应保持比例 */
-    height: 120px; 
+    /* 调整logo高度，宽度自适应保持比例 */
+    height: 90px; 
     width: auto; 
-    max-width: 260px;      /* 防止过宽撑破布局，可按需调整 */
+    max-width: 200px;      /* 防止过宽撑破布局 */
     object-fit: contain;   /* 保证完整显示 */
     display: block;        /* 避免内联元素不对齐 */
 }
@@ -266,7 +266,7 @@ body.nav-open .navbar {
 }
 
 .hero-logo img {
-    max-width: 420px;
+    max-width: 360px;
     height: auto;
 }
 
@@ -665,6 +665,7 @@ body.home-light .hero-actions-vertical .btn-hero-download:focus {
     padding: 0 30px; 
     display: flex; 
     align-items: center;
+    position: relative; /* 添加相对定位以支持按钮的绝对定位 */
 }
 
 .info-card .card-body { 
@@ -908,6 +909,55 @@ body.home-light .hero-actions-vertical .btn-hero-download:focus {
 .session-speaker:hover {
     color: #215DFF;
 }
+/* 新增：让标题也可以点击 */
+.session-title.speaker-clickable {
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.session-title.speaker-clickable:hover {
+    color: #215DFF;
+}
+/* 展开全部按钮样式 */
+.btn-expand-all {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(33, 93, 255, 0.75);
+    color: white;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 3px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+    opacity: 0.85;
+}
+.btn-expand-all:hover {
+    background-color: rgba(33, 93, 255, 0.9);
+    opacity: 1;
+}
+.btn-expand-all:active {
+    opacity: 0.8;
+}
+
+/* 移动端优化展开全部按钮 */
+@media (max-width: 575.98px) {
+    .btn-expand-all {
+        position: static;
+        transform: none;
+        display: block;
+        margin: 8px 0 0 0;
+        font-size: 11px;
+        padding: 3px 10px;
+        width: auto;
+        align-self: flex-start;
+    }
+    .info-card .card-header {
+        flex-wrap: wrap;
+    }
+}
+
 .expand-icon {
     font-size: 18px;
     transition: transform 0.16s ease;

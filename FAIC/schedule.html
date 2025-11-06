@@ -47,7 +47,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container custom-container">
                 <a class="navbar-brand" href="index.html">
-                    <img src="assets/images/logo_FAIC.jpg" alt="FAIC Logo" class="logo">
+                    <img src="assets/images/logo_FAIC(w).png" alt="FAIC Logo" class="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="hamburger" aria-hidden="true">
@@ -82,13 +82,17 @@
 
 
             <div class="info-card schedule-card" id="session-18-pm">
-                <div class="card-header">12月13日上午 | Session 01</div>
+                <div class="card-header">
+                    12月13日上午 | Session 01
+                    <button class="btn btn-expand-all" onclick="toggleAllSpeakers('session-18-pm')">展开全部</button>
+                </div>
                 <div class="card-body">
                     <div class="session-list">
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">09:00 - 10:00</span><span> Understanding LLM Behaviors via Compression: Data Generation, Knowledge Acquisition and Scaling Laws
+                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker1" aria-expanded="false" aria-controls="speaker1">
+                                <span class="session-time">09:00 - 10:00</span><span> Understanding LLM Behaviors via Compression: Data Generation, Knowledge Acquisition and Scaling Laws
                             </span></div>
-                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker1" aria-expanded="false" aria-controls="speaker1">
+                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker1" aria-expanded="false" aria-controls="speaker1">
                                 <span>李建 | 清华大学</span><i class="fas fa-chevron-down expand-icon"></i>
                             </div>
                             <div class="collapse" id="speaker1">
@@ -109,15 +113,16 @@
                         </div>
 
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">10:00 - 10:40</span><span>Transformer以及架构设计：从能量的视角观察
+                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker2" aria-expanded="false" aria-controls="speaker2">
+                                <span class="session-time">10:00 - 10:40</span><span>Transformer以及架构设计：从能量的视角观察
                                 </span></div>
-                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker2" aria-expanded="false" aria-controls="speaker2">
+                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker2" aria-expanded="false" aria-controls="speaker2">
                                 <span>刘勇 | 中国人民大学</span><i class="fas fa-chevron-down expand-icon"></i>
                             </div>
                             <div class="collapse" id="speaker2">
                                 <div class="speaker-details">
                                     <div class="row">
-                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/刘勇.jpg" alt="刘勇" class="speaker-photo"></div>
+                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/刘勇.jpg" alt="刘勇" style="object-position: center 0%;" class="speaker-photo"></div>
                                         <div class="col-md-9">
                                             <div class="speaker-info">
                                                 <h5>演讲内容摘要</h5><div class="speaker-abstract">Transformer 是当前大模型的核心架构，在自然语言处理、计算机视觉等领域展现出卓越性能，但其内在机理的理解仍较为有限。本报告从统计物理能量视角构建新框架，发现自注意力机制本质是最小化 Helmholtz 自由能的过程，由此为其提供了物理层面的原理解释。在此基础上，进一步从能量视角设计了新型 Transformer 架构，且实验验证了该架构的有效性。本研究为 Transformer 机理解读提供新视角，亦为其新架构设计提供新思路。
@@ -137,9 +142,10 @@
 
 
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">11:00 - 11:40</span><span> 扩散模型采样过程及训练动态分析
+                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker3" aria-expanded="false" aria-controls="speaker3">
+                                <span class="session-time">11:00 - 11:40</span><span> 扩散模型采样过程及训练动态分析
                             </span></div>
-                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker3" aria-expanded="false" aria-controls="speaker3">
+                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker3" aria-expanded="false" aria-controls="speaker3">
                                 <span>李帅 | 上海交通大学 </span><i class="fas fa-chevron-down expand-icon"></i>
                             </div>
                             <div class="collapse" id="speaker3">
@@ -160,15 +166,16 @@
                         </div> 
 
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">11:40 - 12:00</span><span>极小极大优化问题的高阶加速
+                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker4" aria-expanded="false" aria-controls="speaker4">
+                                <span class="session-time">11:40 - 12:00</span><span>极小极大优化问题的高阶加速
                             </span></div>
-                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker4" aria-expanded="false" aria-controls="speaker4">
+                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker4" aria-expanded="false" aria-controls="speaker4">
                                 <span>陈乐偲 | 清华大学</span><i class="fas fa-chevron-down expand-icon"></i>
                             </div>
                             <div class="collapse" id="speaker4">
                                 <div class="speaker-details">
                                     <div class="row">
-                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/陈乐偲.jpg" alt="陈乐偲" style="object-position: center 20%;" class="speaker-photo"></div>
+                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/陈乐偲.jpg" alt="陈乐偲" style="object-position: center 90%;" class="speaker-photo"></div>
                                         <div class="col-md-9">
                                             <div class="speaker-info">
                                                 <h5>演讲内容摘要</h5><div class="speaker-abstract">极小极大优化问题（又称鞍点计算或Nash均衡点计算）是数值优化、博弈论等领域的基础问题之一。该问题的最优一阶复杂度早已被研究透彻：1976年Korpelevich提出了外梯度算法并证明其具有 O(1/T) 的收敛率，20004年Nemirovski进一步推广了外梯度法并且证明匹配的下界。然而，高阶算法（牛顿法以及张量法）求解该问题的复杂度仍然是未知的。
@@ -191,20 +198,24 @@
                 </div>
             </div>
 
-            <div class="info-card schedule-card" id="session-18-pm">
-                <div class="card-header">12月13日下午 | Session 02</div>
+            <div class="info-card schedule-card" id="session-02-pm">
+                <div class="card-header">
+                    12月13日下午 | Session 02
+                    <button class="btn btn-expand-all" onclick="toggleAllSpeakers('session-02-pm')">展开全部</button>
+                </div>
                 <div class="card-body">
                     <div class="session-list">
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">14:00 - 15:00</span><span> TBD
+                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker5" aria-expanded="false" aria-controls="speaker5">
+                                <span class="session-time">14:00 - 15:00</span><span> TBD
                             </span></div>
-                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker5" aria-expanded="false" aria-controls="speaker5">
+                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker5" aria-expanded="false" aria-controls="speaker5">
                                 <span>孙若愚 | 香港中文大学（深圳）</span><i class="fas fa-chevron-down expand-icon"></i>
                             </div>
                             <div class="collapse" id="speaker5">
                                 <div class="speaker-details">
                                     <div class="row">
-                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/孙若愚.png" alt="孙若愚" style="object-position: center 40%;" class="speaker-photo"></div>
+                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/孙若愚.png" alt="孙若愚" style="object-position: center 35%;" class="speaker-photo"></div>
                                         <div class="col-md-9">
                                             <div class="speaker-info">
                                                 <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
@@ -219,9 +230,10 @@
                         </div>
 
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">15:00 - 15:40</span><span>基于拓扑斯理论的大规模软件辅助生成框架
+                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker6" aria-expanded="false" aria-controls="speaker6">
+                                <span class="session-time">15:00 - 15:40</span><span>基于拓扑斯理论的大规模软件辅助生成框架
                                 </span></div>
-                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker6" aria-expanded="false" aria-controls="speaker6">
+                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker6" aria-expanded="false" aria-controls="speaker6">
                                 <span>袁洋 | 清华大学</span><i class="fas fa-chevron-down expand-icon"></i>
                             </div>
                             <div class="collapse" id="speaker6">
@@ -247,9 +259,10 @@
 
 
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">16:00 - 16:40</span><span> On the Mechanism Interpretability of LLM for Fine-tuning and Reasoning
+                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker7" aria-expanded="false" aria-controls="speaker7">
+                                <span class="session-time">16:00 - 16:40</span><span> On the Mechanism Interpretability of LLM for Fine-tuning and Reasoning
                             </span></div>
-                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker7" aria-expanded="false" aria-controls="speaker7">
+                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker7" aria-expanded="false" aria-controls="speaker7">
                                 <span>邹荻凡 | 香港大学 </span><i class="fas fa-chevron-down expand-icon"></i>
                             </div>
                             <div class="collapse" id="speaker7">
@@ -270,9 +283,10 @@
                         </div> 
 
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">16:40 - 17:00</span><span> Principled Reinforcement Learning and its Role in Large Language Models
+                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker8" aria-expanded="false" aria-controls="speaker8">
+                                <span class="session-time">16:40 - 17:00</span><span> Principled Reinforcement Learning and its Role in Large Language Models
                             </span></div>
-                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker8" aria-expanded="false" aria-controls="speaker8">
+                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker8" aria-expanded="false" aria-controls="speaker8">
                                 <span>钟涵 | 北京大学 </span><i class="fas fa-chevron-down expand-icon"></i>
                             </div>
                             <div class="collapse" id="speaker8">
@@ -297,20 +311,24 @@
             </div>
 
 
-            <div class="info-card schedule-card" id="session-18-pm">
-                <div class="card-header">12月14日上午 | Session 03</div>
+            <div class="info-card schedule-card" id="session-03-am">
+                <div class="card-header">
+                    12月14日上午 | Session 03
+                    <button class="btn btn-expand-all" onclick="toggleAllSpeakers('session-03-am')">展开全部</button>
+                </div>
                 <div class="card-body">
                     <div class="session-list">
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">09:00 - 10:00</span><span> 基于大规模合作博弈的数据要素估值方法
+                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker9" aria-expanded="false" aria-controls="speaker9">
+                                <span class="session-time">09:00 - 10:00</span><span> 基于大规模合作博弈的数据要素估值方法
                             </span></div>
-                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker9" aria-expanded="false" aria-controls="speaker9">
+                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker9" aria-expanded="false" aria-controls="speaker9">
                                 <span>常象宇 | 西安交通大学</span><i class="fas fa-chevron-down expand-icon"></i>
                             </div>
                             <div class="collapse" id="speaker9">
                                 <div class="speaker-details">
                                     <div class="row">
-                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/常象宇.png" alt="常象宇" style="object-position: center 40%;" class="speaker-photo"></div>
+                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/常象宇.png" alt="常象宇" style="object-position: center -10%;" class="speaker-photo"></div>
                                         <div class="col-md-9">
                                             <div class="speaker-info">
                                                 <h5>演讲内容摘要</h5><div class="speaker-abstract">模型即服务（MaaS）是模型决策时代重要的商业模式之一。MaaS分为三步：（1）模型消费者向模型供应商业提出需求；（2）模型供应商从相关的数据供应商中获取相关数据；（3）模型供应商使用数据供应商的数据构建人工智能模型，并用于数据消费者提供的商业场景中进行商业决策。在MaaS的场景下解决如何数据要素估值并公平的分配给数据供应商是重要的科学问题。基于合作博弈理论，把数据供应商作为合作博弈的玩家，把合作中获取的商业价值使用经典的Shapley值进行分配是公平合理的数据要素估值与分配的解决途径之一。但是，面对复杂的数据要素交易场景，基于经典的合作博弈进行数据要素估值与分配仍然无法应用于实际的数据要素交易市场。具体挑战为：（i）应用场景的不确定性；（ii）交易场景的高复杂性；（iii）计算成本的高耗费性。本研究将试图针对上述挑战寻找一定的解决途径。
@@ -325,15 +343,16 @@
                         </div>
 
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">10:00 - 10:40</span><span>AdamS: Momentum Itself Can Be A Normalizer for LLM Pretraining and Post-training
+                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker10" aria-expanded="false" aria-controls="speaker10">
+                                <span class="session-time">10:00 - 10:40</span><span>AdamS: Momentum Itself Can Be A Normalizer for LLM Pretraining and Post-training
                                 </span></div>
-                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker10" aria-expanded="false" aria-controls="speaker10">
-                                <span>张辉帅 | 北京大学</span><i class="fas fa-chevron-down expand-icon"></i>
+                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker10" aria-expanded="false" aria-controls="speaker10">
+                                <span>周进航 | 上海财经大学</span><i class="fas fa-chevron-down expand-icon"></i>
                             </div>
                             <div class="collapse" id="speaker10">
                                 <div class="speaker-details">
                                     <div class="row">
-                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/张辉帅.jpg" alt="张辉帅" class="speaker-photo"></div>
+                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/张辉帅.jpg" alt="张辉帅" style="object-position: center 20%;" class="speaker-photo"></div>
                                         <div class="col-md-9">
                                             <div class="speaker-info">
                                                 <h5>演讲内容摘要</h5><div class="speaker-abstract">We introduce AdamS, a simple yet effective alternative to Adam for large language model (LLM) pretraining and post-training. By leveraging a novel denominator, i.e., the root of weighted sum of squares of the momentum and the current gradient, AdamS eliminates the need for second-moment estimates. Hence, AdamS is efficient, matching the memory and compute footprint of SGD with momentum while delivering superior optimization performance. 
@@ -355,9 +374,10 @@
 
 
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">11:00 - 11:40</span><span> 基于扩散大语言模型的推理加速
+                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker11" aria-expanded="false" aria-controls="speaker11">
+                                <span class="session-time">11:00 - 11:40</span><span> 基于扩散大语言模型的推理加速
                             </span></div>
-                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker11" aria-expanded="false" aria-controls="speaker11">
+                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker11" aria-expanded="false" aria-controls="speaker11">
                                 <span>张林峰 | 上海交通大学 </span><i class="fas fa-chevron-down expand-icon"></i>
                             </div>
                             <div class="collapse" id="speaker11">
@@ -378,9 +398,10 @@
                         </div> 
 
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">11:40 - 12:00</span><span> TBD
+                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker12" aria-expanded="false" aria-controls="speaker12">
+                                <span class="session-time">11:40 - 12:00</span><span> TBD
                             </span></div>
-                            <div class="session-speaker" data-bs-toggle="collapse" data-bs-target="#speaker12" aria-expanded="false" aria-controls="speaker12">
+                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker12" aria-expanded="false" aria-controls="speaker12">
                                 <span>陈焕然 | 清华大学</span><i class="fas fa-chevron-down expand-icon"></i>
                             </div>
                             <div class="collapse" id="speaker12">
