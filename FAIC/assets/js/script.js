@@ -99,32 +99,89 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// 展开/收起某个Session的所有演讲
+function toggleAllSpeakers(sessionId) {
+    const sessionCard = document.getElementById(sessionId);
+    if (!sessionCard) return;
+    
+    const button = sessionCard.querySelector('.btn-expand-all');
+    const collapses = sessionCard.querySelectorAll('.collapse');
+    const togglers = sessionCard.querySelectorAll('.session-speaker[data-bs-target], .session-title.speaker-clickable[data-bs-target]');
+    
+    // 检查当前状态：如果所有都展开了，就收起；否则展开
+    let allExpanded = true;
+    collapses.forEach(el => {
+        if (!el.classList.contains('show')) {
+            allExpanded = false;
+        }
+    });
+    
+    // 切换状态
+    collapses.forEach(el => {
+        const bsCollapse = bootstrap.Collapse.getOrCreateInstance(el, { toggle: false });
+        if (allExpanded) {
+            bsCollapse.hide();
+        } else {
+            bsCollapse.show();
+        }
+    });
+    
+    // 同步箭头状态
+    setTimeout(() => {
+        togglers.forEach(toggler => {
+            const target = document.querySelector(toggler.getAttribute('data-bs-target'));
+            if (target) {
+                if (target.classList.contains('show')) {
+                    toggler.classList.add('expanded');
+                } else {
+                    toggler.classList.remove('expanded');
+                }
+            }
+        });
+    }, 50);
+    
+    // 更新按钮文本
+    if (button) {
+        button.textContent = allExpanded ? '展开全部' : '收起全部';
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     // 让展开箭头状态与 Bootstrap 折叠组件真实状态保持同步
-    const togglers = document.querySelectorAll('.session-speaker[data-bs-target]');
+    // 包括标题和演讲者名称的点击
+    const togglers = document.querySelectorAll('.session-speaker[data-bs-target], .session-title.speaker-clickable[data-bs-target]');
 
     togglers.forEach(toggler => {
         const targetSelector = toggler.getAttribute('data-bs-target');
         const target = document.querySelector(targetSelector);
         if (!target) return;
+        
+        // 找到对应的speaker元素（包含箭头图标）
+        const speakerElement = toggler.classList.contains('session-speaker') 
+            ? toggler 
+            : toggler.parentElement.querySelector('.session-speaker[data-bs-target="' + targetSelector + '"]');
 
         const syncArrow = () => {
             if (target.classList.contains('show')) {
-                toggler.classList.add('expanded');
+                if (speakerElement) speakerElement.classList.add('expanded');
             } else {
-                toggler.classList.remove('expanded');
+                if (speakerElement) speakerElement.classList.remove('expanded');
             }
         };
 
         // 初始化箭头方向
         syncArrow();
 
-    // 在折叠/展开开始时立即同步箭头，提升响应速度
-    target.addEventListener('show.bs.collapse', () => toggler.classList.add('expanded'));
-    target.addEventListener('hide.bs.collapse', () => toggler.classList.remove('expanded'));
-    // 结束时再兜底同步一次，防止异常导致状态不同步
-    target.addEventListener('shown.bs.collapse', syncArrow);
-    target.addEventListener('hidden.bs.collapse', syncArrow);
+        // 在折叠/展开开始时立即同步箭头，提升响应速度
+        target.addEventListener('show.bs.collapse', () => {
+            if (speakerElement) speakerElement.classList.add('expanded');
+        });
+        target.addEventListener('hide.bs.collapse', () => {
+            if (speakerElement) speakerElement.classList.remove('expanded');
+        });
+        // 结束时再兜底同步一次，防止异常导致状态不同步
+        target.addEventListener('shown.bs.collapse', syncArrow);
+        target.addEventListener('hidden.bs.collapse', syncArrow);
     });
 });
 
