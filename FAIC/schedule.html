@@ -207,7 +207,7 @@
                     <div class="session-list">
                         <div class="session-item">
                             <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker5" aria-expanded="false" aria-controls="speaker5">
-                                <span class="session-time">14:00 - 15:00</span><span> TBD
+                                <span class="session-time">14:00 - 15:00</span><span> 神经网络Hessian阵的特性及其对大模型算法设计的启示
                             </span></div>
                             <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker5" aria-expanded="false" aria-controls="speaker5">
                                 <span>孙若愚 | 香港中文大学（深圳）</span><i class="fas fa-chevron-down expand-icon"></i>
@@ -218,9 +218,10 @@
                                         <div class="col-md-3 text-center"><img src="assets/speaker_photo/孙若愚.png" alt="孙若愚" style="object-position: center 35%;" class="speaker-photo"></div>
                                         <div class="col-md-9">
                                             <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
+                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">本次报告将介绍对大型语言模型(LLMs) Hessian阵的分析及其对算法设计的影响。
+  首先，我们基于神经网络的Hessian的近似分块对角阵的观察，解释了 SGD 在 Transformer 上不如Adam的原因: (i) Transformer 是“异质性的”:不同参数块之间的 Hessian 谱差异显著; (ii) 异质性阻碍了 SGD: SGD 在存在块异质性的问题上表现不佳。受此发现启发，我们引入了 Adam-mini，它为每个块中的所有权重分配一个单一的二次动量项，相比 Adam 节省了 35-50%的优化器内存，在 8B 规模的语言模型表现出色。其次，我们初步分析了神经网络Hessian 阵为何具有分块对角的特性。由于分块对角是K-FAC,Shampoo,muon等优化器设计的出发点之一，对该性质的分析可帮助更好的理解这些优化器和设计更好的优化器。我们研究了两层神经网络MSE和cross-entropy两种损失函数下的Hessian阵，利用随机矩阵理论证明随机初始神经网络的 Hessian为近似块对角阵。一个意外的发现是，这个结论成立的一个条件是输出类别数需趋于无穷大。
                                                 </div><h5>演讲嘉宾简介</h5><div class="speaker-bio">
-                                                    <p>TBD</p>                                      
+                                                    <p>孙若愚现为香港中文大学（深圳）数据科学学院长聘副教授、博士生导师。此前他曾任伊利诺伊大学香槟分校（UIUC）助理教授、脸书人工智能研究所访问科学家、斯坦福大学博士后研究员。他在美国明尼苏达大学获得博士学位，北京大学数学科学学院获得本科学位。研究方向包括神经网络理论和算法、大规模优化算法、学习优化等。他曾获得INFORMS(国际运筹与管理协会) George Nicolson学生论文竞赛第二名，以及INFORMS优化协会学生论文竞争荣誉奖。</p>                                      
                                                 </div>
                                             </div>
                                         </div>
@@ -399,7 +400,7 @@
 
                         <div class="session-item">
                             <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker12" aria-expanded="false" aria-controls="speaker12">
-                                <span class="session-time">11:40 - 12:00</span><span> TBD
+                                <span class="session-time">11:40 - 12:00</span><span> Unveiling the Basin-Like Loss Landscape in Large Language Models
                             </span></div>
                             <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker12" aria-expanded="false" aria-controls="speaker12">
                                 <span>陈焕然 | 清华大学</span><i class="fas fa-chevron-down expand-icon"></i>
@@ -410,9 +411,9 @@
                                         <div class="col-md-3 text-center"><img src="assets/speaker_photo/陈焕然.jpg" alt="陈焕然" style="object-position: center 20%;" class="speaker-photo"></div>
                                         <div class="col-md-9">
                                             <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD
+                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">We discover the emergence of basins in the loss landscape of large language models. As model scale increases, LLMs become progressively more resilient to random perturbations in the parameter space, giving rise to expansive stability regions where models exhibit nearly identical performance, but outside of which their capabilities collapse. We observe that pre-training creates a basic capability basin, and subsequent alignment fine-tuning forms specific capability basins (e.g., safety, math, coding) within this basin. Thus, we argue that benign fine-tuning confined to the basin should preserve prior capabilities. Besides, we also analyze the loss landscape for worst-case directions, which is consistently sharp and detrimental. We find that adversarial fine-tuning moves along the nearly worst-case directions, thus rapidly degrading model capabilities. Finally, we provide a theoretical analysis demonstrating that the basin size bounds the performance degradation of any fine-tuning, including the adversarial ones, while also guaranteeing the model robustness w.r.t. input perturbations, suggesting the benefit of enlarging basins.
                                                 </div>
-                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">TBD
+                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">陈焕然，清华大学2025级直博生，导师为朱军教授。他热爱深度学习理论研究，特别关注优化理论、深度学习的优化动态、神经网络可验证性。主页：huanranchen.github.io。
                                                 </div>
                                             </div>
                                         </div>
@@ -433,7 +434,7 @@
     
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="container custom-container"><p>版权所有 2025 FAIC 人工智能大会</p><p>联系方式: tengjiaye@sufe.edu.cn</p></div>
+        <div class="container custom-container"><p>版权所有 2025 FAIC 人工智能大会</p><p>联系方式: 2025@faic.cc</p></div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
