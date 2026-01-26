@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>2026 FAIC</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="assets/images/x-agi.png?v=20250901">
+        <link rel="shortcut icon" type="image/png" href="assets/images/x-agi.png?v=20250901">
+        <link rel="apple-touch-icon" href="assets/images/x-agi.png?v=20250901">
+        <!-- Safari pinned tab -->
+        <link rel="mask-icon" href="assets/images/index/logo.svg" color="#1B2B86">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="assets/css/style.css?v=20251009">
+        <style>
+            /* 首页浅色方案覆盖，仅对 body.home-light 生效 */
+            body.home-light .hero-section { background: none !important; background-color: #ffffff !important; }
+            body.home-light .navbar { background-color: #ffffff; }
+            body.home-light .navbar.scrolled { background-color: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+            body.home-light .navbar .nav-link { color: #111; }
+            body.home-light .navbar .nav-link.active::after { background-color: #1B2B86; }
+            body.home-light .navbar-toggler .hamburger .line { background-color: #333; }
+    
+            /* 首页 Hero 信息改为深色 */
+            body.home-light .info-text { color: #222; }
+            body.home-light .info-icon { filter: brightness(0) saturate(100%); opacity: 0.75; } /* 将白色图标压成黑色 */
+            body.home-light .hero-vertical .hero-date { color: #222; }
+    
+            /* ICP 信息变深色以适配白底 */
+            body.home-light .icp-info { color: rgba(0,0,0,0.45); }
+            body.home-light .icp-info a { color: rgba(0,0,0,0.7); }
+            body.home-light .icp-info a:hover { color: #1B2B86; }
+    
+            /* 添加以下样式，给 main 元素设置上内边距，避免内容与导航栏重合 */
+            main.main-content {
+                padding-top: 100px; /* 可根据导航栏实际高度调整此值 */
+            }
+        </style>
+    </head>
+    <body class="home-light">
+    
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container custom-container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/logo_FAIC(w).png" alt="FAIC Logo" class="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="hamburger" aria-hidden="true">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">首页</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">会议简介</a></li>
+                        <li class="nav-item"><a class="nav-link" href="schedule.html">日程安排</a></li>
+                        <li class="nav-item"><a class="nav-link" href="guide.html">参会指南</a></li>
+                        <!-- Mobile Button -->
+                        <li class="nav-item d-lg-none mt-3">
+                            <a href="register.html" class="btn btn-register w-100">报名参会</a>
+                        </li>
+                    </ul>
+                    <!-- Desktop Button -->
+                    <a href="register.html" class="btn btn-register d-none d-lg-flex">报名参会</a>
+                </div>
+            </div>
+        </nav>
+
+
+
+
+    <!-- 移除原有的 Page Header 部分 -->
+    <!-- <header class="page-header">
+        <div class="container custom-container header-content">
+            <div>
+                <h1>2025 X-AGI & The 18th China-R Conference</h1>
+                <p>会议简介</p>
+            </div>
+            <div class="header-downloads">
+                <a href="assets/files/invitation.pdf" class="btn btn-download" download>下载大会邀请函</a>
+                <a href="assets/files/handbook.pdf" class="btn btn-download" download>下载大会手册</a>
+            </div>
+        </div> 
+    </header> -->
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container custom-container">
+            <!-- About Card -->
+            <div class="info-card">
+                <div class="card-header">关于会议</div>
+                <div class="card-body">
+                    <!-- 移除短期课程相关描述 -->
+                    <p>2026 FAIC 人工智能前沿大会将于2026年4月18日至19日在上海财经大学举行。本届大会是FAIC第二届大会，将聚焦人工智能前沿研究的前沿进展，深入探讨大模型、人工智能理论、强化学习等关键领域。我们旨在搭建一个高水平的学术与应用交流平台，汇聚海内外顶尖青年学者、共同探索技术的边界与未来。</p>
+                    <p>FAIC 人工智能前沿大会脱身于人工智能基础线上研讨班 FAI-Seminar (<a href="https://www.fai-seminar.ac.cn">www.fai-seminar.ac.cn</a>)。此前，FAI-Seminar 已经成功举办三年。三年间，我们举办了70场线上学术讲座，累计获得了超过33万人次观看，微信群已经超过3000人，吸引了一批国内外关注人工智能前沿研究的专家学者。</p>
+                    <p>作为FAIC第二届大会，我们有一个很大的变化：增加了海报展环节。欢迎大家投稿，投稿链接：XXX</p>
+                    <p>投稿条件：一年以内的机器学习三大会中稿（ICML, NeurIPS, ICLR），或者统计四大中稿（JASA, JRSSB, AOS, Biometrica），人工智能期刊 (JMLR, T-PAMI)，可以投稿。</p>
+                    <p>我们期待本次会议能够
+                    <li>不止关注眼前的实际应用，还要关心学科的未来发展</li>
+                    <li>不止谈论具体的工程实现，还要追问背后的理论基础</li>
+                    </p>
+                    <p>本次大会由上海财经大学统计与数据科学学院、上海财经大学大数据研究院与统计之都主办。期待在初春的上海与您相会！</p>
+                </div>
+            </div>
+            
+            <!-- Committee & Secretariat -->
+            <div class="info-card">
+                <div class="card-body">
+                    <h5 class="mb-3">组织筹备</h5>
+                    <p>滕佳烨（上海财经大学）、吕凯风（清华大学）、马梓业（香港城市大学）、魏太云（统计之都）</p>
+
+                </div>
+            </div>
+
+            <!-- Organizers Card -->
+            <div class="info-card">
+                <div class="card-header">主办单位</div>
+                <div class="card-body org-list">
+                    <div class="org-item">
+                        <img src="assets/images/logo_sufe.png" alt="上海财经大学统计与数据科学学院">
+                        <p>上海财经大学统计学系成立于1946年，是上海财经大学设立最早的系科之一。学科建立之初云集了邹依仁、薛仲三、褚凤仪、金国宝、朱君毅、赵章甫、陈善林等一批著名教授，他们为本学科建设奠定了坚实的基础。1978年复校后，统计学科在陈善林、郑德如、贾宏宇、胡国华、马家善、田竞和、黄树颜、郑菊生等众多教授的悉心培育和努力开拓下得到了迅速发展，为国家和社会发展培养大量的统计人才，且涌现出一批有名望的统计专家和高层次的经济管理人员。</p>
+                        <p>近几年，统计与数据科学学院在学科建设取得重大进展。2011年入选上海市高校一流学科（B类）建设计划；2012年在教育部一级学科评估中位居全国第4名，同年获准设置统计学一级学科博士后科研流动站；2013年，入选上海市高校一流学科（A类）建设计划；2015年，全国应用统计专硕评估位居第一；2017年，统计学科入选世界一流学科建设名单，并在第四轮教育部一级学科评估中位于A系列；2017软科世界一流学科排名中，上海财经大学统计学排名位列全国第二，并进入全球前百名。</p>
+                        <p>统计与数据科学学院现有专任教师58人，具有博士学位教师58人，其中从海外获得博士学位教师29人。其中正高职称19人，副高20人，中级19人。教师平均年龄39.62岁。此外，有兼职教授4人。</p>
+                        <p>统计与数据科学学院着力为学生提供更优质的锻炼平台。目前，学院已与国家统计局、上海市统计局、东方证券股份有限公司、中国科学院数学与系统科学研究院、北京诺华制药有限公司、赛仕软件有限公司、高沃信息技术有限公司、北京聚源锐思数据科技有限公司、尼尔森公司等建立了紧密的合作关系。其中，与东方证券股份有限公司共建的实践基地被上海市教委批准为示范性实践基地。各合作平台的建立为学院人才培养提供了优秀的业界兼职导师资源和丰富的实习岗位。</p>
+                    </div>
+                    <hr>
+                    <div class="org-item">
+                        <img src="assets/images/ssm.jpg" alt="上海财经大学大数据研究院">
+                        <p><strong>上海财经大学大数据研究院</strong>是为服务国家“数字中国”与教育强国战略，落实学校“数智财经”发展蓝图而成立的高水平科研平台。作为学校数字学科建设的四大核心平台之一，研究院致力于成为国内一流、国际有影响力的数据科学创新策源地和人才培养高地。研究院以推动学科深度交叉融合为特色，聚焦贝叶斯非参数统计、深度学习可解释性、数据建模与智能计算等前沿领域，积极探索与金融、经济、公共卫生等财经优势学科的交叉研究。我们旨在通过前沿理论攻关与重大应用研究，产出具有国际影响力的顶尖成果，并为国家数字经济发展提供坚实的学术与智力支撑。在运行机制上，研究院采用创新的“首席科学家（PI）制”、“柔性引进+双聘制”等模式，汇聚国内外顶尖学者，组建高水平科研团队。我们构建了“本-硕-博”贯通的多层次人才培养体系，并设立“未来之星”培育基金，支持青年学者成长，致力于培养兼具扎实理论功底与卓越实践能力的高层次复合型人才。</p>
+                    </div>                    
+                    <hr>
+                    <div class="org-item">
+                        <img src="assets/images/logo_cos.jpg" alt="统计之都">
+                        <p><strong>统计之都</strong>（Capital of Statistics，简称COS，官网：https://cosx.org）成立于2006年，是一个开放的统计学与人工智能社区。创立19年来，统计之都始终致力于推动数据科学与人工智能知识传播、技术创新与跨领域应用。通过持续贡献开源软件，组织撰写技术文章与专业书籍，举办技术论坛、学术会议、主题沙龙与竞赛活动，累计惠及全球超过百万从业者，成为中国最具影响力的中文数据科学社区之一。</p>
+                        <p>自2008年起，统计之都发起并主办<strong>中国R会议</strong>（China R Conference），旨在促进数据科学在各学科与行业中的探索、实践与交流。迄今，统计之都已联合全国20余所高校与科研机构，在北京、上海、广州、杭州、西安等14座城市成功举办近50届会议，呈现近2000场演讲，累计吸引线上线下参会者逾50万人次。</p>
+                        <p>2023年，统计之都启动全新研究倡议——<strong>X-AGI项目</strong>。“X”代表未知、交叉与探索，X-AGI以<strong>“交叉智能，计算未来”</strong>为使命，旨在促进跨学科、开放协作的人工智能前沿研究和交流。未来，统计之都将继续秉持人本、专业、正直的社区精神，深耕技术社区建设，促进科研与产业交融。</p>
+                    </div>
+                    <hr>
+                    <div class="org-item">
+                        <img src="assets/images/fai.png" alt="人工智能基础研究">
+                        <p><strong>人工智能基础研究</strong>（FAI-Seminar <a href="https://www.fai-seminar.ac.cn">官网</a>）是一个聚焦人工智能基础领域的线上中文研讨班，致力于搭建人工智能基础研究的高质量学术交流平台，帮助相关学习者和研究者降低学术探索成本、促进思想碰撞。
+                            FAI-Seminar 至今已经成功举办三年。三年间，FAI举办了70余场线上学术讲座，累计获得了超过35万人次观看，微信群已经超过3000人，吸引了一批国内外关注人工智能基础研究的专家学者。</p>
+                    </div>
+                </div>
+            </div>
+
+            
+
+             <!-- Sponsors Card -->
+            <div class="info-card">
+                <div class="card-header">赞助伙伴</div>
+                <div class="card-body org-list">
+                    <div class="org-item">
+                        <img src="assets/images/字节.jpg" alt="字节跳动">
+                        <p><strong>字节跳动 Seed</strong> 团队成立于 2023 年，致力于寻找通用智能的新方法，追求智能上限。团队研究方向涵盖 LLM、GenMedia、AI for Science、机器人等，在中国、新加坡、美国等地设有实验室和岗位。
+                        Seed 团队在 AI 领域拥有长期愿景与决心，坚持深耕基础，期望成为世界一流的 AI 研究团队，为科技和社会发展作出贡献。目前团队已推出业界领先的通用大模型以及前沿的多模态能力，支持豆包、扣子、即梦等超过 50 个应用场景。</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="card-body org-list">
+                    <div class="org-item">
+                        <img src="assets/images/明汯.png" alt="明汯投资">
+                        <p><strong>明汯投资</strong> 于2014年在上海虹口对冲基金产业园成立，借助强大的数据挖掘、统计分析和技术开发能力，构建了覆盖全周期、多品种、多策略的资产管理平台。自成立以来，明汯一直致力于成为国际一流量化投资机构，作为国内最早一批将人工智能技术成功应用到金融市场的私募机构，公司管理规模位居行业前列。</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="card-body org-list">
+                    <div class="org-item">
+                        <img src="assets/images/logo_QuantVerse.png" alt="数启寰宇">
+                        <p><strong>上海数启寰宇人工智能科技有限公司</strong> （简称“数启寰宇”）是一家深耕“AI+金融场景”的前沿科技企业，专注于算法研发及语料智能处理领域。依托于母公司在金融投资垂类模型应用的深厚积累、算力基础设施的持续高投入，借助大数据、自然语言处理、机器学习、深度学习、强化学习等关键技术，将量化交易算法模型、自动化交易执行模块等研发成果运用到量化组合管理中。未来数启寰宇还将从资产管理延展到财富管理领域、孵化出更多金融科技应用成果服务更多类型金融机构，同时筹备拓展至生物科技、实验室数据分析等更多行业垂类模型应用。</p>
+                        <p>在算力提升受限的大背景下，数启寰宇还着力深化与金融数据供应商战略合作，精准输出语料应用场景需求，通过股权投资完善产业链布局，由此构建高效率的采集、更智能的清洗、更精准的标注、更科学的测试，更个性的应用，极大提升数据处理工作效率与质量，优化模型参数设置并大幅提升模型训练、推理效果。</p></p>
+                    </div>
+                </div>
+                <p></p>
+                <p>诚邀赞助，请联系 2026@faic.cc</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container custom-container">
+            <p>版权所有 2026 FAIC 人工智能前沿大会</p>
+            <p>联系方式: 2026@faic.cc</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

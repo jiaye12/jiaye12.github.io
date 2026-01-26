@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>2026 FAIC</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="assets/images/x-agi.png?v=20250901">
+        <link rel="shortcut icon" type="image/png" href="assets/images/x-agi.png?v=20250901">
+        <link rel="apple-touch-icon" href="assets/images/x-agi.png?v=20250901">
+        <!-- Safari pinned tab -->
+        <link rel="mask-icon" href="assets/images/index/logo.svg" color="#1B2B86">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="assets/css/style.css?v=20251009">
+        <style>
+            /* 首页浅色方案覆盖，仅对 body.home-light 生效 */
+            body.home-light .hero-section { background: none !important; background-color: #ffffff !important; }
+            body.home-light .navbar { background-color: #ffffff; }
+            body.home-light .navbar.scrolled { background-color: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+            body.home-light .navbar .nav-link { color: #111; }
+            body.home-light .navbar .nav-link.active::after { background-color: #1B2B86; }
+            body.home-light .navbar-toggler .hamburger .line { background-color: #333; }
+    
+            /* 首页 Hero 信息改为深色 */
+            body.home-light .info-text { color: #222; }
+            body.home-light .info-icon { filter: brightness(0) saturate(100%); opacity: 0.75; } /* 将白色图标压成黑色 */
+            body.home-light .hero-vertical .hero-date { color: #222; }
+    
+            /* ICP 信息变深色以适配白底 */
+            body.home-light .icp-info { color: rgba(0,0,0,0.45); }
+            body.home-light .icp-info a { color: rgba(0,0,0,0.7); }
+            body.home-light .icp-info a:hover { color: #1B2B86; }
+    
+            /* 添加以下样式，给 main 元素设置上内边距，避免内容与导航栏重合 */
+            main.main-content {
+                padding-top: 100px; /* 可根据导航栏实际高度调整此值 */
+            }
+        </style>
+    </head>
+    <body class="home-light">
+    
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container custom-container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/logo_FAIC(w).png" alt="FAIC Logo" class="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="hamburger" aria-hidden="true">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">首页</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">会议简介</a></li>
+                        <li class="nav-item"><a class="nav-link" href="schedule.html">日程安排</a></li>
+                        <li class="nav-item"><a class="nav-link" href="guide.html">参会指南</a></li>
+                        <!-- Mobile Button -->
+                        <li class="nav-item d-lg-none mt-3">
+                            <a href="register.html" class="btn btn-register w-100">报名参会</a>
+                        </li>
+                    </ul>
+                    <!-- Desktop Button -->
+                    <a href="register.html" class="btn btn-register d-none d-lg-flex">报名参会</a>
+                </div>
+            </div>
+        </nav>
+
+
+    <!-- 移除原有的 Page Header 部分 -->
+    <!-- <header class="page-header">
+        <div class="container custom-container header-content">
+            <div>
+                <h1>2025 X-AGI & The 18th China-R Conference</h1>
+                <p>参会指南</p>
+            </div>
+            <div class="header-downloads">
+                <a href="assets/files/invitation.pdf" class="btn btn-download" download>下载大会邀请函</a>
+                <a href="assets/files/handbook.pdf" class="btn btn-download" download>下载大会手册</a>
+            </div>
+        </div>
+    </header> -->
+
+    <main class="main-content">
+        <div class="container custom-container">
+            <!-- Venue Card (更新地址) -->
+            <div class="info-card">
+                <div class="card-header">会议场地</div>
+                <div class="card-body">
+                    <div class="venue-details">
+                        <p class="venue-address">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <!-- 更新了具体地点 -->
+                            <span>上海财经大学 信息管理与工程学院报告厅｜上海市杨浦区武东路100号</span>
+                        </p>
+                        <!-- 地图图片保持不变 -->
+                        <img src="assets/images/map.jpg" alt="上海财经大学地图" class="venue-map">
+                        
+                        <div class="transport-info">
+                            <div class="transport-item">
+                                <div class="transport-label">公共交通</div>
+                                <div class="transport-text">地铁18号线至<span>上海财经大学站</span>下车，从1号口直接进入上海财经大学（注：1号口有两个出口，其中一个可以直接进入上海财经大学）</div>
+                            </div>
+                            <div class="transport-item">
+                                <div class="transport-label">驾车</div>
+                                <div class="transport-text">导航至上海财经大学即可</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="card-header">签到须知</div>
+                <div class="card-body">
+                    <div class="service-section">
+                        <p class="mb-2"><strong><i class="fas fa-map-pin me-2"></i>签到地点：</strong>上海财经大学信息管理与工程学院报告厅会场</p>
+                        <h4 class="mt-3"><i class="far fa-clock"></i> 签到时间</h4>
+                        <ul>
+                            <li><strong>周五：</strong>14:00 - 18:00</li>
+                            <li><strong>周六/周日：</strong>会议期间白天均可签到</li>
+                        </ul>
+                        <div class="alert alert-primary mt-3 mb-0" role="alert" style="background-color: #f8f9fa; border-color: #dee2e6; color: #333;">
+                            <i class="fas fa-gift me-2" style="color: #1B2B86;"></i><strong>温馨提示：</strong>建议大家利用周五下午错峰签到，届时我们将为您送上精美的会议伴手礼。
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Accomodation & Dining Card (更新内容) -->
+            <div class="info-card">
+                <div class="card-header">住宿/餐饮</div>
+                <div class="card-body">
+                    <div class="service-section">
+                        <h4><i class="fas fa-home"></i>住宿</h4>
+                        <ul>
+                            <li><strong>已填写问卷的参会者：</strong>组委会已协助预留<strong>上海檀程大酒店</strong>的房间。</li>
+                            <li>我们已额外发送了一封酒店指引邮件，请您查收。如果您填写了问卷却未收到指引，请及时联系我们。</li>
+                            <li>未填写问卷的参会者请自行安排住宿。</li>
+                        </ul>
+                    </div>
+                    <div class="service-section">
+                        <h4><i class="fas fa-utensils"></i>餐饮</h4>
+                        <ul>
+                            <li><strong>午餐地点：</strong>上海财经大学绿叶餐厅（自助餐）。</li>
+                            <li><strong>晚餐地点：</strong>申梦·上荷（吉浦路店）。
+                                <br><span class="text-muted" style="font-size: 0.9em;">形式为桌餐。周五、周六晚 18:00 开餐。</span>
+                            </li>
+                            <li>届时将有工作人员指引。</li>
+                            <li>会议期间会场提供茶歇。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Card -->
+            <div class="info-card">
+                <div class="card-header">常见问题解答</div>
+                <div class="card-body" style="padding: 0;">
+                    <div class="accordion accordion-flush faq-accordion" id="faqAccordion">
+                        
+                         <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-2">退改政策</button>
+                            </h2>
+                            <div id="faq-2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">不支持退票</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                           <h2 class="accordion-header">
+                               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-4">发票开具</button>
+                           </h2>
+                           <div id="faq-4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                               <div class="accordion-body">请在报名时认真填写发票信息，我们将会在会后为您开具发票。您支付的时候，钱款由南京弟齐信息技术有限公司代收；会后发票由统计之都开具。我们会提供一份说明解释这一情况，方便您报销。</div>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container custom-container">
+            <p>版权所有 2026 FAIC 人工智能前沿大会</p>
+            <p>联系方式: 2026@faic.cc</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

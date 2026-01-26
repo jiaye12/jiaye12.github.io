@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>2026 FAIC</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="assets/images/x-agi.png?v=20250901">
+        <link rel="shortcut icon" type="image/png" href="assets/images/x-agi.png?v=20250901">
+        <link rel="apple-touch-icon" href="assets/images/x-agi.png?v=20250901">
+        <!-- Safari pinned tab -->
+        <link rel="mask-icon" href="assets/images/index/logo.svg" color="#1B2B86">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="assets/css/style.css?v=20251009">
+        <style>
+            /* 首页浅色方案覆盖，仅对 body.home-light 生效 */
+            body.home-light .hero-section { background: none !important; background-color: #ffffff !important; }
+            body.home-light .navbar { background-color: #ffffff; }
+            body.home-light .navbar.scrolled { background-color: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+            body.home-light .navbar .nav-link { color: #111; }
+            body.home-light .navbar .nav-link.active::after { background-color: #1B2B86; }
+            body.home-light .navbar-toggler .hamburger .line { background-color: #333; }
+    
+            /* 首页 Hero 信息改为深色 */
+            body.home-light .info-text { color: #222; }
+            body.home-light .info-icon { filter: brightness(0) saturate(100%); opacity: 0.75; } /* 将白色图标压成黑色 */
+            body.home-light .hero-vertical .hero-date { color: #222; }
+    
+            /* ICP 信息变深色以适配白底 */
+            body.home-light .icp-info { color: rgba(0,0,0,0.45); }
+            body.home-light .icp-info a { color: rgba(0,0,0,0.7); }
+            body.home-light .icp-info a:hover { color: #1B2B86; }
+    
+            /* 添加以下样式，给 main 元素设置上内边距，避免内容与导航栏重合 */
+            main.main-content {
+                padding-top: 100px; /* 可根据导航栏实际高度调整此值 */
+            }
+        </style>
+    </head>
+    <body class="home-light">
+    
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container custom-container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/logo_FAIC(w).png" alt="FAIC Logo" class="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="hamburger" aria-hidden="true">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">首页</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">会议简介</a></li>
+                        <li class="nav-item"><a class="nav-link" href="schedule.html">日程安排</a></li>
+                        <li class="nav-item"><a class="nav-link" href="guide.html">参会指南</a></li>
+                        <!-- Mobile Button -->
+                        <li class="nav-item d-lg-none mt-3">
+                            <a href="register.html" class="btn btn-register w-100">报名参会</a>
+                        </li>
+                    </ul>
+                    <!-- Desktop Button -->
+                    <a href="register.html" class="btn btn-register d-none d-lg-flex">报名参会</a>
+                </div>
+            </div>
+        </nav>
+
+
+    <!-- 移除原有的 Page Header 部分 -->
+    <!-- <header class="page-header">
+        <div class="container custom-container header-content">
+            <div>
+                <h1>2025 X-AGI & The 18th China-R Conference</h1>
+                <p>报名参会</p>
+            </div>
+            <div class="header-downloads">
+                <a href="assets/files/invitation.pdf" class="btn btn-download" download>下载大会邀请函</a>
+                <a href="assets/files/handbook.pdf" class="btn btn-download" download>下载大会手册</a>
+            </div>
+        </div>
+    </header> -->
+
+    <main class="main-content">
+        <div class="container custom-container">
+            <!-- Registration Card -->
+            <div class="info-card">
+                <div class="card-header">报名须知</div>
+                <div class="card-body">
+                    <!-- Registration Notes -->
+                    <div class="registration-notes">
+                        <ul>
+                            <li>会议时间：2026年4月18日-19日</li>
+                            <li>会议地点：上海财经大学</li>
+                            <li>报名截止：2026年4月19日</li>
+                            <li>费用说明：请查看下方报名表单中的详细费用信息</li>
+                            <li>注意事项：请确保填写信息准确，报名成功后将有确认邮件发送</li>
+                            <li>请先填写<a href="https://wj.qq.com/s2/24833681/d1uv/" download>报名问卷</a>。审核通过后将会给您发送邮件，而后进行缴费。</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Pricing Section -->
+                    <div class="pricing-section">
+                        <h4 class="pricing-title">会议费用:</h4>
+                        <div class="table-responsive">
+                            <table class="table table-bordered pricing-table">
+                                <thead>
+                                    <tr>
+                                        <th>价格类型</th>
+                                        <th>学生票</th>
+                                        <th>非学生票</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>早鸟游客票（3月3日之前）</td>
+                                        <td>25元</td>
+                                        <td>50元</td>
+                                    </tr>
+                                    <tr>
+                                        <td>早鸟专业票（3月3日之前）</td>
+                                        <td>800元</td>
+                                        <td>1500元</td>
+                                    </tr>
+                                    <tr>
+                                        <td>普通专业票（3月3日之后）</td>
+                                        <td>1500元</td>
+                                        <td>2600元</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="pricing-details">
+                            <p><strong>注:</strong> 早鸟票报名截止至3月3日、普通票报名截止至4月19日。学生票签到时需要验证学生证。</p>
+                            <p><strong>特别说明:</strong> 如果成功提交了海报，则可以免费获得早鸟游客票（无时间限制）。</p>
+                            <p><strong>票种权益:</strong> 游客票仅包含入场胸牌及茶歇权益</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    <!-- <iframe id="promote_ticket_iframe" width="100%" src="https://www.bagevent.com/widget/ticket/9105588?widget=2&iframe=1" frameborder="0" scrolling="no"></iframe>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['BagEventIFrameResize'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        };
+        a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.bagevent.com/resources/js/iframeResizer/iframeResizer.min.js', 'bfr');
+    bfr('iFrameResize', {checkOrigin: false, heightCalculationMethod: 'taggedElement'}, "#promote_ticket_iframe");
+</script> -->
+        </div>
+    </main>
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container custom-container">
+            <p>版权所有 2026 FAIC 人工智能前沿大会</p>
+            <p>联系方式: 2026@faic.cc</p>
+        </div>
+    </footer>
+
+
+</body>
+</html>
