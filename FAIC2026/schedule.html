@@ -24,20 +24,82 @@
             body.home-light .navbar .nav-link { color: #111; }
             body.home-light .navbar .nav-link.active::after { background-color: #1B2B86; }
             body.home-light .navbar-toggler .hamburger .line { background-color: #333; }
-    
+
             /* 首页 Hero 信息改为深色 */
             body.home-light .info-text { color: #222; }
             body.home-light .info-icon { filter: brightness(0) saturate(100%); opacity: 0.75; } /* 将白色图标压成黑色 */
             body.home-light .hero-vertical .hero-date { color: #222; }
-    
+
             /* ICP 信息变深色以适配白底 */
             body.home-light .icp-info { color: rgba(0,0,0,0.45); }
             body.home-light .icp-info a { color: rgba(0,0,0,0.7); }
             body.home-light .icp-info a:hover { color: #1B2B86; }
-    
+
             /* 添加以下样式，给 main 元素设置上内边距，避免内容与导航栏重合 */
             main.main-content {
                 padding-top: 100px; /* 可根据导航栏实际高度调整此值 */
+            }
+
+            /* 会场卡片样式 */
+            .venue-card {
+                border: 1px solid #e0e0e0;
+                border-radius: 8px;
+                padding: 15px;
+                margin-bottom: 15px;
+                background-color: #f9f9f9;
+            }
+
+            .venue-card h6 {
+                margin-bottom: 10px;
+                color: #1B2B86;
+                font-weight: bold;
+            }
+
+            .venue-card .session-speaker {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .venue-card .session-speaker span:first-child {
+                font-weight: 500;
+                color: #333;
+            }
+
+            .venue-card .session-speaker span:last-child {
+                font-size: 0.9rem;
+                color: #666;
+            }
+
+            /* 演讲详情样式 */
+            .session-details {
+                margin-top: 15px;
+            }
+
+            .session-details p {
+                margin-bottom: 0;
+                color: #666;
+            }
+
+            /* Talk项目样式 */
+            .talk-item {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .talk-item .session-speaker {
+                padding: 8px;
+                border-bottom: 1px solid #e0e0e0;
+                transition: background-color 0.2s;
+            }
+
+            .talk-item .session-speaker:last-child {
+                border-bottom: none;
+            }
+
+            .talk-item .session-speaker:hover {
+                background-color: #f0f0f0;
             }
         </style>
     </head>
@@ -81,344 +143,333 @@
             <!-- Schedule Tabs -->
 
 
-            <div class="info-card schedule-card" id="session-18-pm">
+            <!-- 4月18日上午 -->
+            <div class="info-card schedule-card" id="day1-morning">
                 <div class="card-header">
-                    12月13日上午 | Session 01
-                    <button class="btn btn-expand-all" onclick="toggleAllSpeakers('session-18-pm')">展开全部</button>
+                    4月18日上午
+                    <button class="btn btn-expand-all" onclick="toggleAllSpeakers('day1-morning')">展开全部</button>
                 </div>
                 <div class="card-body">
                     <div class="session-list">
+                        <!-- 9:30-10:30 三个并行Talk会场，每个会场3个talk -->
                         <div class="session-item">
-                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker1" aria-expanded="false" aria-controls="speaker1">
-                                <span class="session-time">09:00 - 10:00</span><span> Understanding LLM Behaviors via Compression: Data Generation, Knowledge Acquisition and Scaling Laws
-                            </span></div>
-                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker1" aria-expanded="false" aria-controls="speaker1">
-                                <span>李建 | 清华大学</span><i class="fas fa-chevron-down expand-icon"></i>
-                            </div>
-                            <div class="collapse" id="speaker1">
-                                <div class="speaker-details">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/李建.jpg" alt="李建" style="object-position: center 40%;" class="speaker-photo"></div>
-                                        <div class="col-md-9">
-                                            <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">Large Language Models (LLMs) have demonstrated remarkable capabilities across numerous tasks, yet principled explanations for their underlying mechanisms and several phenomena, such as scaling laws, hallucinations, and related behaviors, remain elusive. In this work, we revisit the classical relationship between compression and prediction, grounded in Kolmogorov complexity and Shannon information theory, to provide deeper insights into LLM behaviors. By leveraging the Kolmogorov Structure Function and interpreting LLM compression as a two-part coding process, we offer a detailed view of how LLMs acquire and store information across increasing model and data scales—from pervasive syntactic patterns to progressively rarer knowledge elements. Motivated by this theoretical perspective and natural assumptions inspired by Heap’s and Zipf’s laws, we introduce a simplified yet representative hierarchical data-generation framework called the Syntax-Knowledge model. Under the Bayesian setting, we show that prediction and compression within this model naturally lead to diverse learning and scaling behaviors of LLMs. In particular, our theoretical analysis offers intuitive and principled explanations for both data and model scaling laws, the dynamics of knowledge acquisition during training and fine-tuning, factual knowledge hallucinations in LLMs. The experimental results validate our theoretical predictions.
-                                                </div><h5>演讲嘉宾简介</h5><div class="speaker-bio">
-                                                    <p>李建，清华大学交叉信息研究院长聘教授，博士生导师。研究方向为理论计算机科学、人工智能基础理论、金融科技。在主流国际会议和杂志上发表了100余篇论文，并获得了数据库顶级会议VLDB和欧洲算法年会ESA的最佳论文奖、数据库理论会议ICDT最佳新人奖、多篇论文入选口头报告或亮点论文。曾主持或参与了多项自然科学基金项目及企业合作项目。</p>                                      
+                            <div class="session-title"><span class="session-time">09:30 - 10:30</span><span> Talk Session </span></div>
+                            <div class="session-details mt-3">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="venue-card">
+                                            <div class="talk-item">
+                                                <div class="session-speaker speaker-clickable">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                                <div class="session-speaker speaker-clickable">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                                <div class="session-speaker speaker-clickable">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="venue-card">
+                                            <div class="talk-item">
+                                                <div class="session-speaker speaker-clickable">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                                <div class="session-speaker speaker-clickable">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                                <div class="session-speaker speaker-clickable">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="venue-card">
+                                            <div class="talk-item">
+                                                <div class="session-speaker speaker-clickable">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                                <div class="session-speaker speaker-clickable">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                                <div class="session-speaker">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
 
+                        <!-- 10:30-12:00 海报展 -->
                         <div class="session-item">
-                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker2" aria-expanded="false" aria-controls="speaker2">
-                                <span class="session-time">10:00 - 10:40</span><span>Transformer以及架构设计：从能量的视角观察
-                                </span></div>
-                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker2" aria-expanded="false" aria-controls="speaker2">
-                                <span>刘勇 | 中国人民大学</span><i class="fas fa-chevron-down expand-icon"></i>
-                            </div>
-                            <div class="collapse" id="speaker2">
-                                <div class="speaker-details">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/刘勇.jpg" alt="刘勇" style="object-position: center 0%;" class="speaker-photo"></div>
-                                        <div class="col-md-9">
-                                            <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">Transformer 是当前大模型的核心架构，在自然语言处理、计算机视觉等领域展现出卓越性能，但其内在机理的理解仍较为有限。本报告从统计物理能量视角构建新框架，发现自注意力机制本质是最小化 Helmholtz 自由能的过程，由此为其提供了物理层面的原理解释。在此基础上，进一步从能量视角设计了新型 Transformer 架构，且实验验证了该架构的有效性。本研究为 Transformer 机理解读提供新视角，亦为其新架构设计提供新思路。
-                                                </div>
-                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">刘勇，中国人民大学，长聘副教授，博士生导师，国家级高层次青年人才。长期从事机器学习基础理论研究，共发表论文100余篇，其中以第一作者/通讯作者发表顶级期刊和会议论文近60篇，涵盖机器学习领域顶级期刊Nature Communications、JMLR、IEEE TPAMI、Artificial Intelligence和顶级会议ICML、NeurIPS等。主持国家自然科学面上/基金青年、北京市交叉融通重点项目、科技部重点研发课题、北京市面上项目等项目。
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="session-title"><span class="session-time">10:30 - 12:00</span><span> 海报展 </span></div>
+                            <div class="session-details mt-3">
+                                <p>所有参会者展示研究成果，进行学术交流</p>
                             </div>
                         </div>
-
-                        <div class="session-item">
-                            <div class="session-title"><span class="session-time">10:40 - 11:00</span><span> Coffee Break </span></div>
-                                </div>
-
-
-                        <div class="session-item">
-                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker3" aria-expanded="false" aria-controls="speaker3">
-                                <span class="session-time">11:00 - 11:40</span><span> 扩散模型采样过程及训练动态分析
-                            </span></div>
-                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker3" aria-expanded="false" aria-controls="speaker3">
-                                <span>李帅 | 上海交通大学 </span><i class="fas fa-chevron-down expand-icon"></i>
-                            </div>
-                            <div class="collapse" id="speaker3">
-                                <div class="speaker-details">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/李帅.jpeg" alt="李帅" style="object-position: center 20%;" class="speaker-photo"></div>
-                                        <div class="col-md-9">
-                                            <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">近年来，扩散模型的采样速度与生成质量显著提升，在多个领域均表现出优异性能。然而，针对扩散模型的理论分析与设计空间仍有待深入探索。本报告从扩散模型的两大核心部分采样过程与训练动态入手，重点分析如何提升模型的采样与训练效率。在采样复杂度方面，本报告系统梳理了不同模型的特性，明确阐释了基于流的模型为何相较以往方法具有更优表现；在训练动态方面，本报告结合实际数据特征进行建模，以降低估计误差并改善优化景观。
-                                                </div>
-                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">李帅是上海交通大学人工智能学院长聘副教授、约翰·霍普克罗夫特计算机科学中心副主任、上海创智学院全时导师，研究强化学习理论与方法、扩散模型与大模型分析，迄今发表论文90+篇，包含上海交通大学首篇机器学习理论顶会COLT等，其中第一/通讯作者发表CCF-A类论文40+篇。担任ICML、NeurIPS、ACL等会议领域主席与高级程序委员会委员，多次受邀于AAMAS和IJCAI给出关于在线学习的教程。主持国自然重大培育项目、面上基金、青年基金。曾获得AAAI-IAAI Deployed Application Award（2025）、上海市扬帆人才计划、上海徐汇光启人才、华为火花奖、香港政府外展合作奖、谷歌博士奖学金、国际SAT竞赛并行求解赛道铜牌、腾讯优秀导师奖等。
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
-
-                        <div class="session-item">
-                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker4" aria-expanded="false" aria-controls="speaker4">
-                                <span class="session-time">11:40 - 12:00</span><span>极小极大优化问题的高阶加速
-                            </span></div>
-                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker4" aria-expanded="false" aria-controls="speaker4">
-                                <span>陈乐偲 | 清华大学</span><i class="fas fa-chevron-down expand-icon"></i>
-                            </div>
-                            <div class="collapse" id="speaker4">
-                                <div class="speaker-details">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/陈乐偲.jpg" alt="陈乐偲" style="object-position: center 90%;" class="speaker-photo"></div>
-                                        <div class="col-md-9">
-                                            <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">极小极大优化问题（又称鞍点计算或Nash均衡点计算）是数值优化、博弈论等领域的基础问题之一。该问题的最优一阶复杂度早已被研究透彻：1976年Korpelevich提出了外梯度算法并证明其具有 O(1/T) 的收敛率，20004年Nemirovski进一步推广了外梯度法并且证明匹配的下界。然而，高阶算法（牛顿法以及张量法）求解该问题的复杂度仍然是未知的。
-
-此前，最好已知的二阶算法是由Monteiro和Svaiter在2012年提出的牛顿外梯度法，具有 O(1/T^{3/2}) 的收敛率。近五年内，大量工作使用不同的算法得到了相同的结果，并且将算法推广到p阶张量形式，具有 O(1/T^{(p-1)/2}) 收敛率。 很多研究者认为这已经是该问题的最优复杂度，并且给出了看似匹配的下界。
-
-在本次报告，我会讨论已知的下界为什么可以被打破。并且介绍我们近期的工作，提出一个p阶算法打破普遍推测的下界，首次达到O(1/T^{(3p+1)/4}) 的收敛率。我们结果取p=2，可以得到一个快速牛顿法，具有O(1/T^{7/4})的收敛率，该结果已经发表于COLT'25，并且获得最佳学生论文奖。
-                                                </div>
-                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">陈乐偲是清华大学交叉信息研究院在读三年级博士生，研究方向为优化理论以及在机器学习中的实际应用，导师为张景昭助理教授。本科就读于复旦大学。多篇文章发表在机器学习国际期刊JMLR以及会议COLT、ICLR、ICML、NeurIPS、AISTATS上。
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
                     </div>
                 </div>
             </div>
 
-            <div class="info-card schedule-card" id="session-02-pm">
+            <!-- 4月18日下午 -->
+            <div class="info-card schedule-card" id="day1-afternoon">
                 <div class="card-header">
-                    12月13日下午 | Session 02
-                    <button class="btn btn-expand-all" onclick="toggleAllSpeakers('session-02-pm')">展开全部</button>
+                    4月18日下午
+                    <button class="btn btn-expand-all" onclick="toggleAllSpeakers('day1-afternoon')">展开全部</button>
                 </div>
                 <div class="card-body">
                     <div class="session-list">
+                        <!-- 14:30-15:30 三个并行Talk会场，每个会场3个talk -->
                         <div class="session-item">
-                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker5" aria-expanded="false" aria-controls="speaker5">
-                                <span class="session-time">14:00 - 15:00</span><span> 神经网络Hessian阵的特性及其对大模型算法设计的启示
-                            </span></div>
-                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker5" aria-expanded="false" aria-controls="speaker5">
-                                <span>孙若愚 | 香港中文大学（深圳）</span><i class="fas fa-chevron-down expand-icon"></i>
-                            </div>
-                            <div class="collapse" id="speaker5">
-                                <div class="speaker-details">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/孙若愚.png" alt="孙若愚" style="object-position: center 35%;" class="speaker-photo"></div>
-                                        <div class="col-md-9">
-                                            <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">本次报告将介绍对大型语言模型(LLMs) Hessian阵的分析及其对算法设计的影响。
-  首先，我们基于神经网络的Hessian的近似分块对角阵的观察，解释了 SGD 在 Transformer 上不如Adam的原因: (i) Transformer 是“异质性的”:不同参数块之间的 Hessian 谱差异显著; (ii) 异质性阻碍了 SGD: SGD 在存在块异质性的问题上表现不佳。受此发现启发，我们引入了 Adam-mini，它为每个块中的所有权重分配一个单一的二次动量项，相比 Adam 节省了 35-50%的优化器内存，在 8B 规模的语言模型表现出色。其次，我们初步分析了神经网络Hessian 阵为何具有分块对角的特性。由于分块对角是K-FAC,Shampoo,muon等优化器设计的出发点之一，对该性质的分析可帮助更好的理解这些优化器和设计更好的优化器。我们研究了两层神经网络MSE和cross-entropy两种损失函数下的Hessian阵，利用随机矩阵理论证明随机初始神经网络的 Hessian为近似块对角阵。一个意外的发现是，这个结论成立的一个条件是输出类别数需趋于无穷大。
-                                                </div><h5>演讲嘉宾简介</h5><div class="speaker-bio">
-                                                    <p>孙若愚现为香港中文大学（深圳）数据科学学院长聘副教授、博士生导师。此前他曾任伊利诺伊大学香槟分校（UIUC）助理教授、脸书人工智能研究所访问科学家、斯坦福大学博士后研究员。他在美国明尼苏达大学获得博士学位，北京大学数学科学学院获得本科学位。研究方向包括神经网络理论和算法、大规模优化算法、学习优化等。他曾获得INFORMS(国际运筹与管理协会) George Nicolson学生论文竞赛第二名，以及INFORMS优化协会学生论文竞争荣誉奖。</p>                                      
+                            <div class="session-title"><span class="session-time">14:30 - 15:30</span><span> Talk Session </span></div>
+                            <div class="session-details mt-3">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="venue-card">
+                                            <div class="talk-item">
+                                                <div class="session-speaker">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                                <div class="session-speaker">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                                <div class="session-speaker">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="venue-card">
+                                            <div class="talk-item">
+                                                <div class="session-speaker">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                                <div class="session-speaker">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                                <div class="session-speaker">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="venue-card">
+                                            <div class="talk-item">
+                                                <div class="session-speaker">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                                <div class="session-speaker">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                                <div class="session-speaker">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
 
+                        <!-- 15:30-17:00 海报展 -->
                         <div class="session-item">
-                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker6" aria-expanded="false" aria-controls="speaker6">
-                                <span class="session-time">15:00 - 15:40</span><span>基于拓扑斯理论的大规模软件辅助生成框架
-                                </span></div>
-                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker6" aria-expanded="false" aria-controls="speaker6">
-                                <span>袁洋 | 清华大学</span><i class="fas fa-chevron-down expand-icon"></i>
-                            </div>
-                            <div class="collapse" id="speaker6">
-                                <div class="speaker-details">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/袁洋.jpg" alt="袁洋" class="speaker-photo"></div>
-                                        <div class="col-md-9">
-                                            <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">随着大语言模型编程能力的持续提升，面向编程辅助的智能体系统迅速发展，并在实际开发中展现出显著成效。Cursor、Claude Code、Base44 等代表性工具已吸引大量开发者用户。然而，当前系统仍面临两大关键挑战：其一，难以高效生成具备完整架构与高一致性的超大规模软件系统；其二，交互模式多依赖“黑盒式”对话，用户在生成过程的细节控制上缺乏透明性与干预能力，代码的调整与优化往往依赖模型的迭代重生成，而非结构化引导。本报告尝试从范畴论与拓扑斯理论的角度出发，探索如何将这些数学基础应用于辅助编程系统的架构与交互设计，以突破现有瓶颈。我们提出的框架在类型编译器的帮助下，能够支持一次性并行生成数万行、并以较高概率一次编译通过的软件系统。更重要的是，该框架为用户（包括非专业编程背景者）提供了可解释、可干预的生成路径，实现前后端代码的协同构建与细粒度控制，从而在提升生成效率的同时增强系统的透明性与可控性。
-                                                </div>
-                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">清华大学交叉信息研究院、人工智能学院副教授。2012年毕业于北京大学计算机系，2018年获得美国康奈尔大学计算机博士学位，师从Robert Kleinberg教授。他于2018-2019年前往麻省理工学院大数据科学学院（MIFODS）做博士后。袁洋的主要研究方向是智能医疗、AI基础理论、应用范畴论，在NeurIPS，ICLR，ICML等计算机和人工智能领域顶级会议上发表论文三十余篇。曾获得福布斯中国2019年30 Under 30、2019年北京智源青年科学家等荣誉。
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="session-title"><span class="session-time">15:30 - 17:00</span><span> 海报展 </span></div>
+                            <div class="session-details mt-3">
+                                <p>所有参会者展示研究成果，进行学术交流</p>
                             </div>
                         </div>
-
-                        <div class="session-item">
-                            <div class="session-title"><span class="session-time">15:40 - 16:00</span><span> Coffee Break </span></div>
-                                </div>
-
-
-                        <div class="session-item">
-                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker7" aria-expanded="false" aria-controls="speaker7">
-                                <span class="session-time">16:00 - 16:40</span><span> On the Mechanism Interpretability of LLM for Fine-tuning and Reasoning
-                            </span></div>
-                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker7" aria-expanded="false" aria-controls="speaker7">
-                                <span>邹荻凡 | 香港大学 </span><i class="fas fa-chevron-down expand-icon"></i>
-                            </div>
-                            <div class="collapse" id="speaker7">
-                                <div class="speaker-details">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/邹荻凡.jpg" alt="邹荻凡" style="object-position: center 20%;" class="speaker-photo"></div>
-                                        <div class="col-md-9">
-                                            <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">While Reinforcement Learning (RL) and Fine-Tuning demonstrably enhance Large Language Model (LLM) capabilities, particularly in reasoning and task adaptation, the underlying mechanisms remain poorly understood. This talk integrates insights from two complementary studies to advance mechanistic interpretability. First, we dissect Reinforcement Learning with Verifiable Rewards (RLVR), revealing its core benefit lies in optimizing the selection of existing high-success-rate reasoning patterns, with theoretical convergence analyses showing distinct dynamics for strong versus weak initial models (mitigated by prior supervised fine-tuning). Second, we employ circuit analysis to interpret fine-tuning mechanisms, uncovering that circuits undergo significant edge changes rather than merely adding components, contrasting prior findings. Leveraging this, we develop a circuit-aware LoRA method, improving performance over standard LoRA by 2.46%. Furthermore, we explore combining circuits for compositional tasks. Together, these studies provide novel theoretical and empirical insights: RL enhances reasoning primarily through pattern selection, while fine-tuning fundamentally rewires circuit connections. This deeper understanding informs the design of more effective and interpretable adaptation strategies for LLMs.
-                                                </div>
-                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">Dr.Difan Zou is an assistant professor in computer science department and institute of data science at HKU. He has received his PhD degree in Department of Computer Science, University of California, Los Angeles (UCLA).  His research interests are broadly in machine learning, deep learning theory, graph learning, mechanism interpretation, and interdisciplinary research between AI and other subjects. His research is published in top-tier machine learning conferences (ICML, NeurIPS, COLT, ICLR) and journal papers (IEEE Trans., JMLR, Nature Comm., PNAS, etc.). He serves as an area chair/senior PC member for NeurIPS, ICML and AAAI, and PC members for ICLR, COLT, etc.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
-
-                        <div class="session-item">
-                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker8" aria-expanded="false" aria-controls="speaker8">
-                                <span class="session-time">16:40 - 17:00</span><span> Principled Reinforcement Learning and its Role in Large Language Models
-                            </span></div>
-                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker8" aria-expanded="false" aria-controls="speaker8">
-                                <span>钟涵 | 北京大学 </span><i class="fas fa-chevron-down expand-icon"></i>
-                            </div>
-                            <div class="collapse" id="speaker8">
-                                <div class="speaker-details">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/钟涵.png" alt="钟涵" style="object-position: center 20%;" class="speaker-photo"></div>
-                                        <div class="col-md-9">
-                                            <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">In this talk, I will present our theoretical and practical advances in reinforcement learning (RL) and Reinforcement Learning from Human Feedback (RLHF). We introduce the Generalized Eluder Coefficient (GEC), a novel complexity measure that characterizes the fundamental statistical complexity in general decision-making problems. Our research demonstrates that GEC effectively captures the essential learning difficulty in various RL settings and enables the development of sample-efficient algorithmic frameworks. We extend our analysis to RLHF by introducing a preference-based variant of GEC, which addresses the sample complexity challenges in learning from human feedback. This theoretical advancement provides insights into the fundamental limits of RLHF algorithms. Building on these findings, we propose iterative Direct Preference Optimization (DPO) and its optimistic variant, which have demonstrated practical success in real-world applications. Our works establish a unified theoretical framework encompassing both RL and RLHF, offering a comprehensive understanding of their fundamental principles. This unified perspective not only advances theoretical understanding but also provides practical insights for developing more efficient learning algorithms.
-                                                </div>
-                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">Han Zhong is a Ph.D. student at Peking University. His research focuses on reinforcement learning and its connections to operations research, statistics, and optimization. He has published papers in leading journals and conferences, including Mathematics of Operations Research, Journal of the American Statistical Association, Journal of Machine Learning Research, ICML, NeurIPS, and ICLR.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
 
 
-            <div class="info-card schedule-card" id="session-03-am">
+            <!-- 4月19日上午 -->
+            <div class="info-card schedule-card" id="day2-morning">
                 <div class="card-header">
-                    12月14日上午 | Session 03
-                    <button class="btn btn-expand-all" onclick="toggleAllSpeakers('session-03-am')">展开全部</button>
+                    4月19日上午
+                    <button class="btn btn-expand-all" onclick="toggleAllSpeakers('day2-morning')">展开全部</button>
                 </div>
                 <div class="card-body">
                     <div class="session-list">
+                        <!-- 9:30-10:30 三个并行Talk会场，每个会场3个talk -->
                         <div class="session-item">
-                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker9" aria-expanded="false" aria-controls="speaker9">
-                                <span class="session-time">09:00 - 10:00</span><span> 基于大规模合作博弈的数据要素估值方法
-                            </span></div>
-                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker9" aria-expanded="false" aria-controls="speaker9">
-                                <span>常象宇 | 西安交通大学</span><i class="fas fa-chevron-down expand-icon"></i>
-                            </div>
-                            <div class="collapse" id="speaker9">
-                                <div class="speaker-details">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/常象宇.png" alt="常象宇" style="object-position: center -10%;" class="speaker-photo"></div>
-                                        <div class="col-md-9">
-                                            <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">模型即服务（MaaS）是模型决策时代重要的商业模式之一。MaaS分为三步：（1）模型消费者向模型供应商业提出需求；（2）模型供应商从相关的数据供应商中获取相关数据；（3）模型供应商使用数据供应商的数据构建人工智能模型，并用于数据消费者提供的商业场景中进行商业决策。在MaaS的场景下解决如何数据要素估值并公平的分配给数据供应商是重要的科学问题。基于合作博弈理论，把数据供应商作为合作博弈的玩家，把合作中获取的商业价值使用经典的Shapley值进行分配是公平合理的数据要素估值与分配的解决途径之一。但是，面对复杂的数据要素交易场景，基于经典的合作博弈进行数据要素估值与分配仍然无法应用于实际的数据要素交易市场。具体挑战为：（i）应用场景的不确定性；（ii）交易场景的高复杂性；（iii）计算成本的高耗费性。本研究将试图针对上述挑战寻找一定的解决途径。
-                                                </div><h5>演讲嘉宾简介</h5><div class="speaker-bio">
-                                                    <p>常象宇，现为西安交通大学管理学院，信息系统与智能商务系教授;研究方向为统计机器学习。现致力于研究人工智能模型与算法应用于数据驱动决策场景中的社会化问题:特别关注机器学习中的数据要素定价，公平性机器学习与隐私保护机器学习等方向。 担任中国商业统计协会人工智能分会副理事长;中国现场统计研究会机器学习分会秘书长;数据科学与统计公益社区“统计之都”主席。 </p>                                      
+                            <div class="session-title"><span class="session-time">09:30 - 10:30</span><span> Talk Session </span></div>
+                            <div class="session-details mt-3">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="venue-card">
+                                            <div class="talk-item">
+                                                <div class="session-speaker speaker-clickable">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                                <div class="session-speaker speaker-clickable">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                                <div class="session-speaker speaker-clickable">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="venue-card">
+                                            <div class="talk-item">
+                                                <div class="session-speaker speaker-clickable">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                                <div class="session-speaker">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                                <div class="session-speaker">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="venue-card">
+                                            <div class="talk-item">
+                                                <div class="session-speaker">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                                <div class="session-speaker">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                                <div class="session-speaker">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
 
+                        <!-- 10:30-12:00 海报展 -->
                         <div class="session-item">
-                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker10" aria-expanded="false" aria-controls="speaker10">
-                                <span class="session-time">10:00 - 10:40</span><span>AdamS: Momentum Itself Can Be A Normalizer for LLM Pretraining and Post-training
-                                </span></div>
-                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker10" aria-expanded="false" aria-controls="speaker10">
-                                <span>张辉帅 | 北京大学</span><i class="fas fa-chevron-down expand-icon"></i>
-                            </div>
-                            <div class="collapse" id="speaker10">
-                                <div class="speaker-details">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/张辉帅.jpg" alt="张辉帅" style="object-position: center 20%;" class="speaker-photo"></div>
-                                        <div class="col-md-9">
-                                            <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">We introduce AdamS, a simple yet effective alternative to Adam for large language model (LLM) pretraining and post-training. By leveraging a novel denominator, i.e., the root of weighted sum of squares of the momentum and the current gradient, AdamS eliminates the need for second-moment estimates. Hence, AdamS is efficient, matching the memory and compute footprint of SGD with momentum while delivering superior optimization performance. 
-                                                    Moreover, AdamS is easy to adopt: it can directly inherit hyperparameters of AdamW, and is entirely model-agnostic, integrating seamlessly into existing pipelines without modifications to optimizer APIs or architectures. The motivation behind AdamS stems from the observed $(L_0, L_1)$ smoothness properties in transformer objectives, where local smoothness is governed by gradient magnitudes that can  be further approximated by momentum magnitudes. We establish rigorous theoretical convergence guarantees and provide practical guidelines for hyperparameter selection. 
-                                                    Empirically, AdamS demonstrates strong performance in various tasks, including pre-training runs on GPT-2 and Llama2 (up to 13B parameters) and  reinforcement learning in post-training regimes. With its efficiency, simplicity, and theoretical grounding, AdamS stands as a compelling alternative to existing optimizers.                                                    
-                                                </div>
-                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">张辉帅，北京大学王选计算机研究所助理教授，此前曾在微软亚洲研究院担任首席研究员。他的研究领域包括自然语言处理、大型模型的隐私保护，及大模型优化算法。已在机器学习和人工智能的顶级会议与期刊上发表了50余篇论文。他与合作者的一系列创新性工作首次成功将差分隐私技术应用于大型语言模型的训练中，推动了相关技术在商业产品中的应用。
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="session-title"><span class="session-time">10:30 - 12:00</span><span> 海报展 </span></div>
+                            <div class="session-details mt-3">
+                                <p>所有参会者展示研究成果，进行学术交流</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
 
+            <!-- 4月19日下午 -->
+            <div class="info-card schedule-card" id="day2-afternoon">
+                <div class="card-header">
+                    4月19日下午
+                    <button class="btn btn-expand-all" onclick="toggleAllSpeakers('day2-afternoon')">展开全部</button>
+                </div>
+                <div class="card-body">
+                    <div class="session-list">
+                        <!-- 14:30-15:30 三个并行Talk会场，每个会场3个talk -->
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">10:40 - 11:00</span><span> Coffee Break </span></div>
-                                </div>
-
-
-                        <div class="session-item">
-                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker11" aria-expanded="false" aria-controls="speaker11">
-                                <span class="session-time">11:00 - 11:40</span><span> 基于扩散大语言模型的推理加速
-                            </span></div>
-                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker11" aria-expanded="false" aria-controls="speaker11">
-                                <span>张林峰 | 上海交通大学 </span><i class="fas fa-chevron-down expand-icon"></i>
-                            </div>
-                            <div class="collapse" id="speaker11">
-                                <div class="speaker-details">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/张林峰.jpg" alt="张林峰" style="object-position: center 20%;" class="speaker-photo"></div>
-                                        <div class="col-md-9">
-                                            <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">自回归模型串行生成的特点限制了其推理速度。近期，扩散大语言模型（Diffusion LLM）通过多步去噪的方式展现出了并行生成的潜力，并在精度上展现了媲美乃至超越自回归模型的效果。本报告主要讨论扩散大语言模型的推理加速方法，包括其缓存策略、解码策略、投机解码策略、以及变长生成方法等。同时，介绍扩散语言模型的一些潜在应用场景。
+                            <div class="session-title"><span class="session-time">14:30 - 15:30</span><span> Talk Session </span></div>
+                            <div class="session-details mt-3">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="venue-card">
+                                            <div class="talk-item">
+                                                <div class="session-speaker">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
                                                 </div>
-                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">张林峰，上海交通大学人工智能学院助理教授，研究方向为高效人工智能，大模型预训练与后训练，曾获世界人工智能大会云帆奖明日之星、微软学者奖学，北京市优秀毕业生，清华大学优秀博士论文，担任ICLR、NeurIPS、ACL、EMNLP等会议的领域主席。他以（共同）第一作者、通讯作者发表在高水平会议期刊上发表论文40篇，被引用超3000次。他的研究成果和工作经历被人民日报、中国青年报相关新闻全网浏览超过一亿次。
+                                                <div class="session-speaker">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                                <div class="session-speaker">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="venue-card">
+                                            <div class="talk-item">
+                                                <div class="session-speaker">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                                <div class="session-speaker">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                                <div class="session-speaker">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="venue-card">
+                                            <div class="talk-item">
+                                                <div class="session-speaker">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                                <div class="session-speaker">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
+                                                </div>
+                                                <div class="session-speaker">
+                                                    <span>预留演讲</span>
+                                                    <span>TBD</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div> 
 
+                        </div>
+
+                        <!-- 15:30-17:00 海报展 -->
                         <div class="session-item">
-                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker12" aria-expanded="false" aria-controls="speaker12">
-                                <span class="session-time">11:40 - 12:00</span><span> Unveiling the Basin-Like Loss Landscape in Large Language Models
-                            </span></div>
-                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker12" aria-expanded="false" aria-controls="speaker12">
-                                <span>陈焕然 | 清华大学</span><i class="fas fa-chevron-down expand-icon"></i>
-                            </div>
-                            <div class="collapse" id="speaker12">
-                                <div class="speaker-details">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/陈焕然.jpg" alt="陈焕然" style="object-position: center 20%;" class="speaker-photo"></div>
-                                        <div class="col-md-9">
-                                            <div class="speaker-info">
-                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">We discover the emergence of basins in the loss landscape of large language models. As model scale increases, LLMs become progressively more resilient to random perturbations in the parameter space, giving rise to expansive stability regions where models exhibit nearly identical performance, but outside of which their capabilities collapse. We observe that pre-training creates a basic capability basin, and subsequent alignment fine-tuning forms specific capability basins (e.g., safety, math, coding) within this basin. Thus, we argue that benign fine-tuning confined to the basin should preserve prior capabilities. Besides, we also analyze the loss landscape for worst-case directions, which is consistently sharp and detrimental. We find that adversarial fine-tuning moves along the nearly worst-case directions, thus rapidly degrading model capabilities. Finally, we provide a theoretical analysis demonstrating that the basin size bounds the performance degradation of any fine-tuning, including the adversarial ones, while also guaranteeing the model robustness w.r.t. input perturbations, suggesting the benefit of enlarging basins.
-                                                </div>
-                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">陈焕然，清华大学2025级直博生，导师为朱军教授。他热爱深度学习理论研究，特别关注优化理论、深度学习的优化动态、神经网络可验证性。主页：huanranchen.github.io。
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="session-title"><span class="session-time">15:30 - 17:00</span><span> 海报展 </span></div>
+                            <div class="session-details mt-3">
+                                <p>所有参会者展示研究成果，进行学术交流</p>
                             </div>
                         </div>
                     </div>
