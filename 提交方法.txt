@@ -1,5 +1,5 @@
 git add .
 git commit -m "更新说明"
 git pull origin main 
-# 如果没冲突就没事
+# 如果没冲突就没事，有时自动合并出现vi就Esc -> :wq -> Enter
 git push origin main
