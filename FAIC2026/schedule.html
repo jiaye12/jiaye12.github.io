@@ -5,7 +5,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>2026 FAIC</title>
+        <title>2025 FAIC</title>
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- Favicon -->
@@ -24,82 +24,20 @@
             body.home-light .navbar .nav-link { color: #111; }
             body.home-light .navbar .nav-link.active::after { background-color: #1B2B86; }
             body.home-light .navbar-toggler .hamburger .line { background-color: #333; }
-
+    
             /* 首页 Hero 信息改为深色 */
             body.home-light .info-text { color: #222; }
             body.home-light .info-icon { filter: brightness(0) saturate(100%); opacity: 0.75; } /* 将白色图标压成黑色 */
             body.home-light .hero-vertical .hero-date { color: #222; }
-
+    
             /* ICP 信息变深色以适配白底 */
             body.home-light .icp-info { color: rgba(0,0,0,0.45); }
             body.home-light .icp-info a { color: rgba(0,0,0,0.7); }
             body.home-light .icp-info a:hover { color: #1B2B86; }
-
+    
             /* 添加以下样式，给 main 元素设置上内边距，避免内容与导航栏重合 */
             main.main-content {
                 padding-top: 100px; /* 可根据导航栏实际高度调整此值 */
-            }
-
-            /* 会场卡片样式 */
-            .venue-card {
-                border: 1px solid #e0e0e0;
-                border-radius: 8px;
-                padding: 15px;
-                margin-bottom: 15px;
-                background-color: #f9f9f9;
-            }
-
-            .venue-card h6 {
-                margin-bottom: 10px;
-                color: #1B2B86;
-                font-weight: bold;
-            }
-
-            .venue-card .session-speaker {
-                display: flex;
-                flex-direction: column;
-                gap: 5px;
-            }
-
-            .venue-card .session-speaker span:first-child {
-                font-weight: 500;
-                color: #333;
-            }
-
-            .venue-card .session-speaker span:last-child {
-                font-size: 0.9rem;
-                color: #666;
-            }
-
-            /* 演讲详情样式 */
-            .session-details {
-                margin-top: 15px;
-            }
-
-            .session-details p {
-                margin-bottom: 0;
-                color: #666;
-            }
-
-            /* Talk项目样式 */
-            .talk-item {
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .talk-item .session-speaker {
-                padding: 8px;
-                border-bottom: 1px solid #e0e0e0;
-                transition: background-color 0.2s;
-            }
-
-            .talk-item .session-speaker:last-child {
-                border-bottom: none;
-            }
-
-            .talk-item .session-speaker:hover {
-                background-color: #f0f0f0;
             }
         </style>
     </head>
@@ -143,333 +81,679 @@
             <!-- Schedule Tabs -->
 
 
-            <!-- 4月18日上午 -->
-            <div class="info-card schedule-card" id="day1-morning">
+            <div class="info-card schedule-card" id="session-18-pm">
                 <div class="card-header">
-                    4月18日上午
-                    <button class="btn btn-expand-all" onclick="toggleAllSpeakers('day1-morning')">展开全部</button>
+                    4月18日上午 | Keynote Session
+                    <button class="btn btn-expand-all" onclick="toggleAllSpeakers('session-18-pm')">展开全部</button>
                 </div>
                 <div class="card-body">
                     <div class="session-list">
-                        <!-- 9:00-10:00 自由交流环节 -->
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">09:00 - 10:00</span><span> 自由交流环节 </span></div>
-                            <div class="session-details mt-3">
-                                <p>参会者自由交流，促进学术互动</p>
+                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker1" aria-expanded="false" aria-controls="speaker1">
+                                <span class="session-time">09:00 - 09:40</span><span>title</span></div>
+                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker1" aria-expanded="false" aria-controls="speaker1">
+                                <span>Speaker</span><i class="fas fa-chevron-down expand-icon"></i>
                             </div>
-                        </div>
-
-                        <!-- 10:00-11:30 三个并行Talk会场，每个会场3个talk -->
-                        <div class="session-item">
-                            <div class="session-title"><span class="session-time">10:00 - 11:30</span><span> Talk Session </span></div>
-                            <div class="session-details mt-3">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="venue-card">
-                                            <div class="talk-item">
-                                                <div class="session-speaker speaker-clickable">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                                <div class="session-speaker speaker-clickable">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                                <div class="session-speaker speaker-clickable">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="venue-card">
-                                            <div class="talk-item">
-                                                <div class="session-speaker speaker-clickable">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                                <div class="session-speaker speaker-clickable">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                                <div class="session-speaker speaker-clickable">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="venue-card">
-                                            <div class="talk-item">
-                                                <div class="session-speaker speaker-clickable">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                                <div class="session-speaker speaker-clickable">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                                <div class="session-speaker">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
+                            <div class="collapse" id="speaker1">
+                                <div class="speaker-details">
+                                    <div class="row">
+                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/TBD.jpg" alt="TBD" style="object-position: center 40%;" class="speaker-photo"></div>
+                                        <div class="col-md-9">
+                                            <div class="speaker-info">
+                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD</div><h5>演讲嘉宾简介</h5><div class="speaker-bio">
+                                                    <p>TBD</p>                                      
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- 4月18日下午 -->
-            <div class="info-card schedule-card" id="day1-afternoon">
-                <div class="card-header">
-                    4月18日下午
-                    <button class="btn btn-expand-all" onclick="toggleAllSpeakers('day1-afternoon')">展开全部</button>
-                </div>
-                <div class="card-body">
-                    <div class="session-list">
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">14:00 - 15:30</span><span> Talk Session </span></div>
-                            <div class="session-details mt-3">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="venue-card">
-                                            <div class="talk-item">
-                                                <div class="session-speaker">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                                <div class="session-speaker">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                                <div class="session-speaker">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="venue-card">
-                                            <div class="talk-item">
-                                                <div class="session-speaker">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                                <div class="session-speaker">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                                <div class="session-speaker">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="venue-card">
-                                            <div class="talk-item">
-                                                <div class="session-speaker">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                                <div class="session-speaker">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                                <div class="session-speaker">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
+                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker2" aria-expanded="false" aria-controls="speaker2">
+                                <span class="session-time">10:00 - 10:40</span><span>title</span></div>
+                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker2" aria-expanded="false" aria-controls="speaker2">
+                                <span>Speaker</span><i class="fas fa-chevron-down expand-icon"></i>
+                            </div>
+                            <div class="collapse" id="speaker2">
+                                <div class="speaker-details">
+                                    <div class="row">
+                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/TBD.jpg" alt="TBD" style="object-position: center 0%;" class="speaker-photo"></div>
+                                        <div class="col-md-9">
+                                            <div class="speaker-info">
+                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD</div>
+                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">TBD
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
 
-                        <!-- 15:30-17:00 海报展 -->
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">15:30 - 17:00</span><span> 海报展 </span></div>
-                            <div class="session-details mt-3">
-                                <p>所有参会者展示研究成果，进行学术交流</p>
+                            <div class="session-title"><span class="session-time">10:40 - 11:00</span><span> Coffee Break </span></div>
+                                </div>
+
+
+                        <div class="session-item">
+                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker3" aria-expanded="false" aria-controls="speaker3">
+                                <span class="session-time">11:00 - 11:40</span><span>title</span></div>
+                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker3" aria-expanded="false" aria-controls="speaker3">
+                                <span>Speaker </span><i class="fas fa-chevron-down expand-icon"></i>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- 4月19日上午 -->
-            <div class="info-card schedule-card" id="day2-morning">
-                <div class="card-header">
-                    4月19日上午
-                    <button class="btn btn-expand-all" onclick="toggleAllSpeakers('day2-morning')">展开全部</button>
-                </div>
-                <div class="card-body">
-                    <div class="session-list">
-                        <!-- 9:30-10:30 三个并行Talk会场，每个会场3个talk -->
-                        <div class="session-item">
-                            <div class="session-title"><span class="session-time">10:00 - 11:30</span><span> Talk Session </span></div>
-                            <div class="session-details mt-3">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="venue-card">
-                                            <div class="talk-item">
-                                                <div class="session-speaker speaker-clickable">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                                <div class="session-speaker speaker-clickable">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                                <div class="session-speaker speaker-clickable">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="venue-card">
-                                            <div class="talk-item">
-                                                <div class="session-speaker speaker-clickable">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                                <div class="session-speaker">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                                <div class="session-speaker">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="venue-card">
-                                            <div class="talk-item">
-                                                <div class="session-speaker">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                                <div class="session-speaker">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                                <div class="session-speaker">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
+                            <div class="collapse" id="speaker3">
+                                <div class="speaker-details">
+                                    <div class="row">
+                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/TBD.jpeg" alt="TBD" style="object-position: center 20%;" class="speaker-photo"></div>
+                                        <div class="col-md-9">
+                                            <div class="speaker-info">
+                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD</div>
+                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">TBD
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div> 
 
+                        <div class="session-item">
+                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker4" aria-expanded="false" aria-controls="speaker4">
+                                <span class="session-time">11:40 - 12:00</span><span>title</span></div>
+                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker4" aria-expanded="false" aria-controls="speaker4">
+                                <span>Speaker</span><i class="fas fa-chevron-down expand-icon"></i>
+                            </div>
+                            <div class="collapse" id="speaker4">
+                                <div class="speaker-details">
+                                    <div class="row">
+                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/TBD.jpg" alt="TBD" style="object-position: center 90%;" class="speaker-photo"></div>
+                                        <div class="col-md-9">
+                                            <div class="speaker-info">
+                                                <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD</div>
+                                                <h5>演讲嘉宾简介</h5><div class="speaker-bio">TBD
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
-
+                        
+                        
                     </div>
                 </div>
             </div>
 
-            <!-- 4月19日下午 -->
-            <div class="info-card schedule-card" id="day2-afternoon">
+            <div class="info-card schedule-card" id="session-02-pm">
+                <div class="card-header">
+                    4月18日下午 
+                    <button class="btn btn-expand-all" onclick="toggleAllSpeakers('session-02-pm')">展开全部</button>
+                </div>
+                <div class="card-body">
+                    <div class="session-list">
+                        <div class="session-item">
+                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker5" aria-expanded="false" aria-controls="speaker5">
+                                <span class="session-time">14:00 - 15:30</span><span> Parallel Session 01: 
+                            </span></div>
+                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker5" aria-expanded="false" aria-controls="speaker5">
+                                <span>Session Chair: </span><i class="fas fa-chevron-down expand-icon"></i>
+                            </div>
+                            <div class="collapse" id="speaker5">
+                                <div class="speaker-details">
+                                    <div class="session-list">
+                                        <!-- Talk 1 -->
+                                        <div class="session-item">
+                                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk1" aria-expanded="false" aria-controls="talk1">
+                                                <span class="session-time">14:00 - 14:30</span><span>title</span>
+                                            </div>
+                                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk1" aria-expanded="false" aria-controls="talk1">
+                                                <span>Speaker</span><i class="fas fa-chevron-down expand-icon"></i>
+                                            </div>
+                                            <div class="collapse" id="talk1">
+                                                <div class="speaker-details">
+                                                    <div class="row">
+                                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/TBD.png" alt="TBD" style="object-position: center 35%;" class="speaker-photo"></div>
+                                                        <div class="col-md-9">
+                                                            <div class="speaker-info">
+                                                                <h5>演讲内容摘要</h5>
+                                                                <div class="speaker-abstract">TBD</div>
+                                                                <h5>演讲嘉宾简介</h5>
+                                                                <div class="speaker-bio">TBD</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Talk 2 -->
+                                        <div class="session-item">
+                                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk2" aria-expanded="false" aria-controls="talk2">
+                                                <span class="session-time">14:30 - 15:00</span><span>title</span>
+                                            </div>
+                                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk2" aria-expanded="false" aria-controls="talk2">
+                                                <span>Speaker</span><i class="fas fa-chevron-down expand-icon"></i>
+                                            </div>
+                                            <div class="collapse" id="talk2">
+                                                <div class="speaker-details">
+                                                    <div class="row">
+                                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/TBD.jpg" alt="TBD" class="speaker-photo"></div>
+                                                        <div class="col-md-9">
+                                                            <div class="speaker-info">
+                                                                <h5>演讲内容摘要</h5>
+                                                                <div class="speaker-abstract">TBD</div>
+                                                                <h5>演讲嘉宾简介</h5>
+                                                                <div class="speaker-bio">TBD</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Talk 3 -->
+                                        <div class="session-item">
+                                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk3" aria-expanded="false" aria-controls="talk3">
+                                                <span class="session-time">15:00 - 15:30</span><span> title </span>
+                                            </div>
+                                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk3" aria-expanded="false" aria-controls="talk3">
+                                                <span>Speaker</span><i class="fas fa-chevron-down expand-icon"></i>
+                                            </div>
+                                            <div class="collapse" id="talk3">
+                                                <div class="speaker-details">
+                                                    <div class="row">
+                                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/TBD.png" alt="TBD" class="speaker-photo"></div>
+                                                        <div class="col-md-9">
+                                                            <div class="speaker-info">
+                                                                <h5>演讲内容摘要</h5>
+                                                                <div class="speaker-abstract">TBD</div>
+                                                                <h5>演讲嘉宾简介</h5>
+                                                                <div class="speaker-bio">TBD</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="session-item">
+                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker7" aria-expanded="false" aria-controls="speaker7">
+                                <span class="session-time">14:00 - 15:30</span><span> Parallel Session 02:
+                            </span></div>
+                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker7" aria-expanded="false" aria-controls="speaker7">
+                                <span>Session Chair: </span><i class="fas fa-chevron-down expand-icon"></i>
+                            </div>
+                            <div class="collapse" id="speaker7">
+                                <div class="speaker-details">
+                                    <div class="session-list">
+                                        <!-- Talk 1 -->
+                                        <div class="session-item">
+                                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk4" aria-expanded="false" aria-controls="talk4">
+                                                <span class="session-time">14:00 - 14:30</span><span>title</span>
+                                            </div>
+                                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk4" aria-expanded="false" aria-controls="talk4">
+                                                <span>Speaker</span><i class="fas fa-chevron-down expand-icon"></i>
+                                            </div>
+                                            <div class="collapse" id="talk4">
+                                                <div class="speaker-details">
+                                                    <div class="row">
+                                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/TBD.png" alt="TBD" style="object-position: center 35%;" class="speaker-photo"></div>
+                                                        <div class="col-md-9">
+                                                            <div class="speaker-info">
+                                                                <h5>演讲内容摘要</h5>
+                                                                <div class="speaker-abstract">TBD</div>
+                                                                <h5>演讲嘉宾简介</h5>
+                                                                <div class="speaker-bio">TBD</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Talk 2 -->
+                                        <div class="session-item">
+                                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk5" aria-expanded="false" aria-controls="talk5">
+                                                <span class="session-time">14:30 - 15:00</span><span>title</span>
+                                            </div>
+                                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk5" aria-expanded="false" aria-controls="talk5">
+                                                <span>Speaker</span><i class="fas fa-chevron-down expand-icon"></i>
+                                            </div>
+                                            <div class="collapse" id="talk5">
+                                                <div class="speaker-details">
+                                                    <div class="row">
+                                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/TBD.jpg" alt="TBD" class="speaker-photo"></div>
+                                                        <div class="col-md-9">
+                                                            <div class="speaker-info">
+                                                                <h5>演讲内容摘要</h5>
+                                                                <div class="speaker-abstract">TBD</div>
+                                                                <h5>演讲嘉宾简介</h5>
+                                                                <div class="speaker-bio">TBD</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Talk 3 -->
+                                        <div class="session-item">
+                                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk6" aria-expanded="false" aria-controls="talk6">
+                                                <span class="session-time">15:00 - 15:30</span><span> title </span>
+                                            </div>
+                                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk6" aria-expanded="false" aria-controls="talk6">
+                                                <span>Speaker</span><i class="fas fa-chevron-down expand-icon"></i>
+                                            </div>
+                                            <div class="collapse" id="talk6">
+                                                <div class="speaker-details">
+                                                    <div class="row">
+                                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/TBD.png" alt="TBD" class="speaker-photo"></div>
+                                                        <div class="col-md-9">
+                                                            <div class="speaker-info">
+                                                                <h5>演讲内容摘要</h5>
+                                                                <div class="speaker-abstract">TBD</div>
+                                                                <h5>演讲嘉宾简介</h5>
+                                                                <div class="speaker-bio">TBD</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="session-item">
+                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker6" aria-expanded="false" aria-controls="speaker6">
+                                <span class="session-time">15:30 - 17:00</span><span> Poster Session
+                                </span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <div class="info-card schedule-card" id="session-19-am">
+    <div class="card-header">
+        4月19日上午
+        <button class="btn btn-expand-all" onclick="toggleAllSpeakers('session-19-am')">展开全部</button>
+    </div>
+    <div class="card-body">
+        <div class="session-list">
+            <div class="session-item">
+                <div class="session-title">
+                    <span class="session-time">09:00 - 10:00</span><span> 自由讨论时间 </span>
+                </div>
+            </div>
+            <div class="session-item">
+                <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker9" aria-expanded="false" aria-controls="speaker9">
+                    <span class="session-time">10:00 - 11:30</span><span> Parallel Session 01: </span>
+                </div>
+                <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker9" aria-expanded="false" aria-controls="speaker9">
+                    <span>Session Chair: </span><i class="fas fa-chevron-down expand-icon"></i>
+                </div>
+                <div class="collapse" id="speaker9">
+                    <div class="speaker-details">
+                        <div class="session-list">
+                            <!-- Talk 1 -->
+                            <div class="session-item">
+                                <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk9-1" aria-expanded="false" aria-controls="talk9-1">
+                                    <span class="session-time">10:00 - 10:30</span><span>title</span>
+                                </div>
+                                <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk9-1" aria-expanded="false" aria-controls="talk9-1">
+                                    <span>Speaker</span><i class="fas fa-chevron-down expand-icon"></i>
+                                </div>
+                                <div class="collapse" id="talk9-1">
+                                    <div class="speaker-details">
+                                        <div class="row">
+                                            <div class="col-md-3 text-center"><img src="assets/speaker_photo/TBD.jpg" alt="TBD" class="speaker-photo"></div>
+                                            <div class="col-md-9">
+                                                <div class="speaker-info">
+                                                    <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD</div><h5>演讲嘉宾简介</h5><div class="speaker-bio">TBD</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Talk 2 -->
+                            <div class="session-item">
+                                <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk9-2" aria-expanded="false" aria-controls="talk9-2">
+                                    <span class="session-time">10:30 - 11:00</span><span>title</span>
+                                </div>
+                                <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk9-2" aria-expanded="false" aria-controls="talk9-2">
+                                    <span>Speaker</span><i class="fas fa-chevron-down expand-icon"></i>
+                                </div>
+                                <div class="collapse" id="talk9-2">
+                                    <div class="speaker-details">
+                                        <div class="row">
+                                            <div class="col-md-3 text-center"><img src="assets/speaker_photo/TBD.jpg" alt="TBD" class="speaker-photo"></div>
+                                            <div class="col-md-9">
+                                                <div class="speaker-info">
+                                                    <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD</div><h5>演讲嘉宾简介</h5><div class="speaker-bio">TBD</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Talk 3 -->
+                            <div class="session-item">
+                                <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk9-3" aria-expanded="false" aria-controls="talk9-3">
+                                    <span class="session-time">11:00 - 11:30</span><span>title</span>
+                                </div>
+                                <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk9-3" aria-expanded="false" aria-controls="talk9-3">
+                                    <span>Speaker</span><i class="fas fa-chevron-down expand-icon"></i>
+                                </div>
+                                <div class="collapse" id="talk9-3">
+                                    <div class="speaker-details">
+                                        <div class="row">
+                                            <div class="col-md-3 text-center"><img src="assets/speaker_photo/TBD.jpg" alt="TBD" class="speaker-photo"></div>
+                                            <div class="col-md-9">
+                                                <div class="speaker-info">
+                                                    <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD</div><h5>演讲嘉宾简介</h5><div class="speaker-bio">TBD</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="session-item">
+                <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker10" aria-expanded="false" aria-controls="speaker10">
+                    <span class="session-time">10:00 - 11:30</span><span> Parallel Session 02: </span>
+                </div>
+                <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker10" aria-expanded="false" aria-controls="speaker10">
+                    <span>Session Chair: </span><i class="fas fa-chevron-down expand-icon"></i>
+                </div>
+                <div class="collapse" id="speaker10">
+                    <div class="speaker-details">
+                        <div class="session-list">
+                            <!-- Talk 1 -->
+                            <div class="session-item">
+                                <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk10-1" aria-expanded="false" aria-controls="talk10-1">
+                                    <span class="session-time">10:00 - 10:30</span><span>title</span>
+                                </div>
+                                <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk10-1" aria-expanded="false" aria-controls="talk10-1">
+                                    <span>Speaker</span><i class="fas fa-chevron-down expand-icon"></i>
+                                </div>
+                                <div class="collapse" id="talk10-1">
+                                    <div class="speaker-details">
+                                        <div class="row">
+                                            <div class="col-md-3 text-center"><img src="assets/speaker_photo/TBD.jpg" alt="TBD" class="speaker-photo"></div>
+                                            <div class="col-md-9">
+                                                <div class="speaker-info">
+                                                    <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD</div><h5>演讲嘉宾简介</h5><div class="speaker-bio">TBD</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Talk 2 -->
+                            <div class="session-item">
+                                <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk10-2" aria-expanded="false" aria-controls="talk10-2">
+                                    <span class="session-time">10:30 - 11:00</span><span>title</span>
+                                </div>
+                                <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk10-2" aria-expanded="false" aria-controls="talk10-2">
+                                    <span>Speaker</span><i class="fas fa-chevron-down expand-icon"></i>
+                                </div>
+                                <div class="collapse" id="talk10-2">
+                                    <div class="speaker-details">
+                                        <div class="row">
+                                            <div class="col-md-3 text-center"><img src="assets/speaker_photo/TBD.jpg" alt="TBD" class="speaker-photo"></div>
+                                            <div class="col-md-9">
+                                                <div class="speaker-info">
+                                                    <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD</div><h5>演讲嘉宾简介</h5><div class="speaker-bio">TBD</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Talk 3 -->
+                            <div class="session-item">
+                                <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk10-3" aria-expanded="false" aria-controls="talk10-3">
+                                    <span class="session-time">11:00 - 11:30</span><span>title</span>
+                                </div>
+                                <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk10-3" aria-expanded="false" aria-controls="talk10-3">
+                                    <span>Speaker</span><i class="fas fa-chevron-down expand-icon"></i>
+                                </div>
+                                <div class="collapse" id="talk10-3">
+                                    <div class="speaker-details">
+                                        <div class="row">
+                                            <div class="col-md-3 text-center"><img src="assets/speaker_photo/TBD.jpg" alt="TBD" class="speaker-photo"></div>
+                                            <div class="col-md-9">
+                                                <div class="speaker-info">
+                                                    <h5>演讲内容摘要</h5><div class="speaker-abstract">TBD</div><h5>演讲嘉宾简介</h5><div class="speaker-bio">TBD</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                        <!-- 4月19日下午日程 -->
+            <div class="info-card schedule-card" id="session-19-pm">
                 <div class="card-header">
                     4月19日下午
-                    <button class="btn btn-expand-all" onclick="toggleAllSpeakers('day2-afternoon')">展开全部</button>
+                    <button class="btn btn-expand-all" onclick="toggleAllSpeakers('session-19-pm')">展开全部</button>
                 </div>
                 <div class="card-body">
                     <div class="session-list">
+                        <!-- Parallel Session 01 -->
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">14:00 - 15:30</span><span> Talk Session </span></div>
-                            <div class="session-details mt-3">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="venue-card">
-                                            <div class="talk-item">
-                                                <div class="session-speaker">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                                <div class="session-speaker">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                                <div class="session-speaker">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
+                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker8" aria-expanded="false" aria-controls="speaker8">
+                                <span class="session-time">14:00 - 15:30</span><span> Parallel Session 01: </span>
+                            </div>
+                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker8" aria-expanded="false" aria-controls="speaker8">
+                                <span>Session Chair: </span><i class="fas fa-chevron-down expand-icon"></i>
+                            </div>
+                            <div class="collapse" id="speaker8">
+                                <div class="speaker-details">
+                                    <div class="session-list">
+                                        <!-- Talk 1 -->
+                                        <div class="session-item">
+                                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk4" aria-expanded="false" aria-controls="talk4">
+                                                <span class="session-time">14:00 - 14:30</span><span>title</span>
+                                            </div>
+                                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk4" aria-expanded="false" aria-controls="talk4">
+                                                <span>Speaker</span><i class="fas fa-chevron-down expand-icon"></i>
+                                            </div>
+                                            <div class="collapse" id="talk4">
+                                                <div class="speaker-details">
+                                                    <div class="row">
+                                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/TBD.png" alt="TBD" class="speaker-photo"></div>
+                                                        <div class="col-md-9">
+                                                            <div class="speaker-info">
+                                                                <h5>演讲内容摘要</h5>
+                                                                <div class="speaker-abstract">TBD</div>
+                                                                <h5>演讲嘉宾简介</h5>
+                                                                <div class="speaker-bio">TBD</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="venue-card">
-                                            <div class="talk-item">
-                                                <div class="session-speaker">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                                <div class="session-speaker">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                                <div class="session-speaker">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
+
+                                        <!-- Talk 2 -->
+                                        <div class="session-item">
+                                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk5" aria-expanded="false" aria-controls="talk5">
+                                                <span class="session-time">14:30 - 15:00</span><span>title</span>
+                                            </div>
+                                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk5" aria-expanded="false" aria-controls="talk5">
+                                                <span>Speaker</span><i class="fas fa-chevron-down expand-icon"></i>
+                                            </div>
+                                            <div class="collapse" id="talk5">
+                                                <div class="speaker-details">
+                                                    <div class="row">
+                                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/TBD.jpg" alt="TBD" class="speaker-photo"></div>
+                                                        <div class="col-md-9">
+                                                            <div class="speaker-info">
+                                                                <h5>演讲内容摘要</h5>
+                                                                <div class="speaker-abstract">TBD</div>
+                                                                <h5>演讲嘉宾简介</h5>
+                                                                <div class="speaker-bio">TBD</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="venue-card">
-                                            <div class="talk-item">
-                                                <div class="session-speaker">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                                <div class="session-speaker">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
-                                                </div>
-                                                <div class="session-speaker">
-                                                    <span>预留演讲</span>
-                                                    <span>TBD</span>
+
+                                        <!-- Talk 3 -->
+                                        <div class="session-item">
+                                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk6" aria-expanded="false" aria-controls="talk6">
+                                                <span class="session-time">15:00 - 15:30</span><span>title</span>
+                                            </div>
+                                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk6" aria-expanded="false" aria-controls="talk6">
+                                                <span>Speaker</span><i class="fas fa-chevron-down expand-icon"></i>
+                                            </div>
+                                            <div class="collapse" id="talk6">
+                                                <div class="speaker-details">
+                                                    <div class="row">
+                                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/TBD.png" alt="TBD" class="speaker-photo"></div>
+                                                        <div class="col-md-9">
+                                                            <div class="speaker-info">
+                                                                <h5>演讲内容摘要</h5>
+                                                                <div class="speaker-abstract">TBD</div>
+                                                                <h5>演讲嘉宾简介</h5>
+                                                                <div class="speaker-bio">TBD</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
 
-                        <!-- 15:30-17:00 海报展 -->
+                        <!-- Parallel Session 02 -->
                         <div class="session-item">
-                            <div class="session-title"><span class="session-time">15:30 - 17:00</span><span> 海报展 </span></div>
-                            <div class="session-details mt-3">
-                                <p>所有参会者展示研究成果，进行学术交流</p>
+                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker9" aria-expanded="false" aria-controls="speaker9">
+                                <span class="session-time">14:00 - 15:30</span><span> Parallel Session 02: </span>
+                            </div>
+                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#speaker9" aria-expanded="false" aria-controls="speaker9">
+                                <span>Session Chair: </span><i class="fas fa-chevron-down expand-icon"></i>
+                            </div>
+                            <div class="collapse" id="speaker9">
+                                <div class="speaker-details">
+                                    <div class="session-list">
+                                        <!-- Talk 1 -->
+                                        <div class="session-item">
+                                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk7" aria-expanded="false" aria-controls="talk7">
+                                                <span class="session-time">14:00 - 14:30</span><span>title</span>
+                                            </div>
+                                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk7" aria-expanded="false" aria-controls="talk7">
+                                                <span>Speaker</span><i class="fas fa-chevron-down expand-icon"></i>
+                                            </div>
+                                            <div class="collapse" id="talk7">
+                                                <div class="speaker-details">
+                                                    <div class="row">
+                                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/TBD.jpg" alt="TBD" class="speaker-photo"></div>
+                                                        <div class="col-md-9">
+                                                            <div class="speaker-info">
+                                                                <h5>演讲内容摘要</h5>
+                                                                <div class="speaker-abstract">TBD</div>
+                                                                <h5>演讲嘉宾简介</h5>
+                                                                <div class="speaker-bio">TBD</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Talk 2 -->
+                                        <div class="session-item">
+                                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk8" aria-expanded="false" aria-controls="talk8">
+                                                <span class="session-time">14:30 - 15:00</span><span>title</span>
+                                            </div>
+                                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk8" aria-expanded="false" aria-controls="talk8">
+                                                <span>Speaker</span><i class="fas fa-chevron-down expand-icon"></i>
+                                            </div>
+                                            <div class="collapse" id="talk8">
+                                                <div class="speaker-details">
+                                                    <div class="row">
+                                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/TBD.png" alt="TBD" class="speaker-photo"></div>
+                                                        <div class="col-md-9">
+                                                            <div class="speaker-info">
+                                                                <h5>演讲内容摘要</h5>
+                                                                <div class="speaker-abstract">TBD</div>
+                                                                <h5>演讲嘉宾简介</h5>
+                                                                <div class="speaker-bio">TBD</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Talk 3 -->
+                                        <div class="session-item">
+                                            <div class="session-title speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk9" aria-expanded="false" aria-controls="talk9">
+                                                <span class="session-time">15:00 - 15:30</span><span>title</span>
+                                            </div>
+                                            <div class="session-speaker speaker-clickable" data-bs-toggle="collapse" data-bs-target="#talk9" aria-expanded="false" aria-controls="talk9">
+                                                <span>Speaker</span><i class="fas fa-chevron-down expand-icon"></i>
+                                            </div>
+                                            <div class="collapse" id="talk9">
+                                                <div class="speaker-details">
+                                                    <div class="row">
+                                                        <div class="col-md-3 text-center"><img src="assets/speaker_photo/TBD.jpeg" alt="TBD" class="speaker-photo"></div>
+                                                        <div class="col-md-9">
+                                                            <div class="speaker-info">
+                                                                <h5>演讲内容摘要</h5>
+                                                                <div class="speaker-abstract">TBD</div>
+                                                                <h5>演讲嘉宾简介</h5>
+                                                                <div class="speaker-bio">TBD</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Poster Session -->
+                        <div class="session-item">
+                            <div class="session-title">
+                                <span class="session-time">15:30 - 17:00</span><span> Poster Session </span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-        </div>
-        </div>
+
+
+</div>
+</div>
     </main>
 
 
@@ -477,7 +761,7 @@
     
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="container custom-container"><p>版权所有 2025 FAIC 人工智能基础大会</p><p>联系方式: 2025@faic.cc</p></div>
+        <div class="container custom-container"><p>版权所有 2025 FAIC 人工智能大会</p><p>联系方式: 2025@faic.cc</p></div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
