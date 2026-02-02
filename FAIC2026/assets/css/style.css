@@ -155,7 +155,7 @@ body.nav-open .navbar {
     transform: translateY(-8px) rotate(-45deg);
 }
 .btn-register {
-    width: 96px; height: 40px; background-color: #215cff7c; color: #fff;
+    width: 96px; height: 40px; background-color: #002FA799; color: #fff;
     font-size: 16px; font-weight: 500; border-radius: 4px;
     display: flex; align-items: center; justify-content: center; text-decoration: none;
     margin-left: 20px;
@@ -163,7 +163,7 @@ body.nav-open .navbar {
     box-shadow: 0 2px 6px rgba(33, 93, 255, 0.06);
 }
 .btn-register:hover { 
-    background-color: #658eff88; 
+    background-color: #00206699; 
     color: #fff; 
     opacity: .96;
     transform: translateY(-1px);
