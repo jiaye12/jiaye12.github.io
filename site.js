@@ -253,10 +253,20 @@
       '雷云文': { homepage: 'https://leiyw.github.io/', institution: '(香港大学)' },
       'Peter Chen': { homepage: 'https://peterlaulukchen.github.io/', institution: '(Columbia)' },
       '游凯超': { homepage: 'https://youkaichao.github.io/about' },
-      '席浩诚': { homepage: 'https://haochengxi.github.io/' },
+      '席浩诚': { homepage: 'https://haochengxi.github.io/', institution: '(UC Berkeley)' },
+      '刘冰彬': {
+        homepage: 'https://clarabing.github.io/',
+        image: './pic/bingbin.jpg',
+        institution: '(Harvard)'
+      },
+      '孙卓': {
+        homepage: 'https://jz-fun.github.io/',
+        image: './pic/zhuo-sun.webp',
+        institution: '(上海财经大学)'
+      },
       '陈焕然': {
         homepage: 'https://huanranchen.github.io/',
-        image: './pic/chen-huanran.webp',
+        image: './pic/chen-huanran.webp?v=20260828-2',
         institution: '(清华大学)'
       }
     };
