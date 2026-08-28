@@ -226,9 +226,13 @@
     if (!organizerSection || !contributorSection) return;
 
     var overrides = {
+      '滕佳烨': { homepage: 'http://www.tengjiaye.com/' },
+      '温凯越': { homepage: 'https://whenwen.github.io/' },
+      '吕凯风': { homepage: 'https://kaifeng.ac/' },
+      '马梓业': { homepage: 'https://gavenma.github.io/' },
       '张华清': {
         homepage: 'https://huggingface.co/zhqwqwq',
-        image: './pic/zhang-huaqing.webp',
+        image: './pic/zhang-huaqing.webp?v=20260828',
         institution: '(清华大学)'
       },
       '刘方辉': {
@@ -354,7 +358,7 @@
       section.appendChild(list);
     }
 
-    var organizerNames = ['滕佳烨', '温凯越', '吕凯风', '马梓业', '陈焕然', '张华清'];
+    var organizerNames = ['陈焕然', '张华清', '温凯越', '马梓业', '吕凯风', '滕佳烨'];
     var collator = new Intl.Collator('zh-CN-u-co-pinyin', { sensitivity: 'base' });
     var surnameInitials = {
       '蔡': 'C', '陈': 'C', '戴': 'D', '翟': 'Z', '范': 'F', '付': 'F',
