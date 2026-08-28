@@ -138,17 +138,76 @@
 
   function prepareHomeSchedule() {
     var heading = document.getElementById('schedule');
-    var table = content.querySelector('table.responsive-table');
-    if (!heading || !table || !table.tBodies.length) return;
-    heading.textContent = '最近讲座 / Recent Talks';
+    var currentTable = heading ? heading.nextElementSibling : null;
+    while (currentTable && currentTable.tagName !== 'TABLE') currentTable = currentTable.nextElementSibling;
+    if (!heading || !currentTable || !currentTable.tBodies.length) return;
+    heading.textContent = '讲座 / Talks';
 
-    var bodyRows = Array.prototype.slice.call(table.tBodies[0].rows, 1);
-    bodyRows.reverse().forEach(function (row) { table.tBodies[0].appendChild(row); });
-    if (bodyRows.length) {
-      var latest = bodyRows[0];
+    var currentLabel = '';
+    var cursor = heading.nextSibling;
+    var labelNodes = [];
+    while (cursor && cursor !== currentTable) {
+      var next = cursor.nextSibling;
+      currentLabel += cursor.textContent || '';
+      labelNodes.push(cursor);
+      cursor = next;
+    }
+    var currentYearMatch = currentLabel.match(/(20\d{2})/);
+    var currentYear = currentYearMatch ? currentYearMatch[1] : String(new Date().getFullYear());
+
+    var currentContainer = document.createElement('div');
+    currentContainer.className = 'collapsible-container';
+    var currentTrigger = document.createElement('div');
+    currentTrigger.className = 'collapsible-trigger';
+    currentTrigger.textContent = currentYear;
+    currentTrigger.setAttribute('data-default-open', 'true');
+    var currentPanel = document.createElement('div');
+    currentPanel.className = 'collapsible-content';
+    currentTable.parentNode.insertBefore(currentContainer, currentTable);
+    currentContainer.appendChild(currentTrigger);
+    currentContainer.appendChild(currentPanel);
+    currentPanel.appendChild(currentTable);
+    labelNodes.forEach(function (node) { node.remove(); });
+
+    var yearGroups = {};
+    content.querySelectorAll('.collapsible-container').forEach(function (container) {
+      var trigger = container.querySelector(':scope > .collapsible-trigger');
+      var table = container.querySelector('table');
+      var yearMatch = trigger ? trigger.textContent.match(/(20\d{2})/) : null;
+      if (!trigger || !table || !yearMatch) return;
+      var year = yearMatch[1];
+      trigger.textContent = year;
+
+      if (!yearGroups[year]) {
+        yearGroups[year] = { container: container, table: table, trigger: trigger };
+        return;
+      }
+
+      var targetBody = yearGroups[year].table.tBodies[0];
+      Array.prototype.slice.call(table.rows, 1).forEach(function (row) {
+        targetBody.appendChild(row);
+      });
+      container.remove();
+    });
+
+    Object.keys(yearGroups).forEach(function (year) {
+      var table = yearGroups[year].table;
+      var rows = Array.prototype.slice.call(table.rows, 1);
+      rows.sort(function (left, right) {
+        function dateKey(row) {
+          var match = row.cells[0] && row.cells[0].textContent.match(/(\d{1,2})\s*\/\s*(\d{1,2})/);
+          return match ? Number(match[1]) * 100 + Number(match[2]) : -1;
+        }
+        return dateKey(right) - dateKey(left);
+      });
+      rows.forEach(function (row) { table.tBodies[0].appendChild(row); });
+    });
+
+    var latest = currentTable.rows[1];
+    if (latest) {
       latest.classList.add('latest-row');
-      var timeValue = latest.querySelector('td:first-child .cell-value');
-      if (timeValue) timeValue.insertAdjacentHTML('afterbegin', '<span class="latest-badge">最新</span>');
+      var timeCell = latest.cells[0];
+      if (timeCell) timeCell.insertAdjacentHTML('afterbegin', '<span class="latest-badge">最新</span>');
     }
   }
 
@@ -434,20 +493,21 @@
       var panel = trigger.nextElementSibling;
       if (!panel) return;
       var panelId = 'historical-talks-' + (index + 1);
+      var defaultOpen = trigger.getAttribute('data-default-open') === 'true';
       panel.id = panelId;
-      panel.classList.remove('expanded');
-      panel.hidden = true;
+      panel.classList.toggle('expanded', defaultOpen);
+      panel.hidden = !defaultOpen;
       trigger.setAttribute('role', 'button');
       trigger.setAttribute('tabindex', '0');
       trigger.setAttribute('aria-controls', panelId);
-      trigger.setAttribute('aria-expanded', 'false');
-      trigger.setAttribute('aria-label', '展开 ' + trigger.textContent.trim() + ' 历史讲座');
+      trigger.setAttribute('aria-expanded', String(defaultOpen));
+      trigger.setAttribute('aria-label', (defaultOpen ? '收起 ' : '展开 ') + trigger.textContent.trim() + ' 讲座');
 
       function setExpanded(expanded) {
         panel.classList.toggle('expanded', expanded);
         panel.hidden = !expanded;
         trigger.setAttribute('aria-expanded', String(expanded));
-        trigger.setAttribute('aria-label', (expanded ? '收起 ' : '展开 ') + trigger.textContent.trim() + ' 历史讲座');
+        trigger.setAttribute('aria-label', (expanded ? '收起 ' : '展开 ') + trigger.textContent.trim() + ' 讲座');
       }
 
       trigger.addEventListener('click', function () {
@@ -515,8 +575,8 @@
     if (isHome) buildHomeHero();
     normalizeInstitutions();
     refreshPeople();
-    enhanceTables();
     if (isHome) prepareHomeSchedule();
+    enhanceTables();
     enhanceCollapsibles();
     refreshFooter();
   }
