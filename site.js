@@ -107,12 +107,12 @@
     hero.innerHTML =
       '<span class="hero-kicker">International Seminar on Foundational Artificial Intelligence</span>' +
       '<h1>FAI Seminar <span>线上中文研讨班</span></h1>' +
-      '<p class="hero-summary">每期邀请一位研究者分享近期工作，聚焦机器学习理论与人工智能基础。</p>' +
+      '<p class="hero-summary">严谨研究，轻松交流。</p>' +
       '<div class="hero-essential" aria-label="研讨班关键信息">' +
         '<div class="hero-fact"><span>时间</span><strong>通常每周五 10:00–11:00</strong><small>北京时间 · 线上进行 · 中文分享</small></div>' +
         '<div class="hero-fact"><span>如何参与</span><strong>公众号「人工智能基础研究」</strong><small>回复「FAI」加入微信群，获取腾讯会议链接</small></div>' +
         '<div class="hero-cta">' +
-          '<a class="hero-join" href="FAI/audience.html">查看参与方式 <span>→</span></a>' +
+          '<a class="hero-join" href="FAI/audience.html">查看更多参与方式 <span>→</span></a>' +
           '<a class="hero-schedule" href="#schedule">最近讲座 ↓</a>' +
         '</div>' +
       '</div>';
@@ -121,7 +121,7 @@
     channels.className = 'home-channels';
     channels.setAttribute('aria-label', 'FAI Seminar 官方入口');
     channels.innerHTML =
-      '<div class="channel-intro"><span>官方入口</span><strong>扫码参与与观看</strong></div>' +
+      '<div class="channel-intro"><strong>官方账号</strong></div>' +
       '<div class="channel-card">' +
         '<img src="./pic/gzhQRcode.jpg" width="96" height="96" alt="微信公众号人工智能基础研究二维码">' +
         '<div><span>微信公众号</span><strong>人工智能基础研究</strong><small>发送「FAI」加入微信群</small></div>' +
@@ -131,8 +131,18 @@
         '<div><span>B 站</span><strong>FAI-Seminar</strong><small>观看最新及往期讲座录播</small></div>' +
       '</a>';
 
+    var stats = document.createElement('section');
+    stats.className = 'community-stats';
+    stats.setAttribute('aria-label', 'FAI Seminar 社区规模');
+    stats.innerHTML =
+      '<div class="community-stat"><strong>3,500+</strong><span>微信群成员</span></div>' +
+      '<div class="community-stat"><strong>2万+</strong><span>B站粉丝</span></div>' +
+      '<div class="community-stat"><strong>1万+</strong><span>公众号关注</span></div>' +
+      '<div class="community-stat" aria-label="B站录播总播放，截至2026年8月29日超过43万次"><strong>43万+</strong><span>B站录播总播放</span></div>';
+
     content.insertBefore(hero, content.firstChild);
     hero.insertAdjacentElement('afterend', channels);
+    channels.insertAdjacentElement('afterend', stats);
     if (scheduleHeading) scheduleHeading.id = 'schedule';
   }
 
@@ -201,6 +211,9 @@
         return dateKey(right) - dateKey(left);
       });
       rows.forEach(function (row) { table.tBodies[0].appendChild(row); });
+      var trigger = yearGroups[year].trigger;
+      trigger.setAttribute('data-year', year);
+      trigger.innerHTML = '<span class="year-label">' + year + '</span><span class="year-count">' + rows.length + ' TALKS</span>';
     });
 
     var latest = currentTable.rows[1];
@@ -209,6 +222,87 @@
       var timeCell = latest.cells[0];
       if (timeCell) timeCell.insertAdjacentHTML('afterbegin', '<span class="latest-badge">最新</span>');
     }
+  }
+
+  function prepareArchiveSchedule() {
+    var title = content.querySelector('#toptitle');
+    var footer = content.querySelector('#footer');
+    if (!title || !footer) return;
+
+    var rawTables = Array.prototype.filter.call(content.querySelectorAll('table:not(#tlayout)'), function (table) {
+      return !table.closest('.collapsible-container');
+    });
+
+    rawTables.forEach(function (table) {
+      var labelNodes = [];
+      var cursor = table.previousSibling;
+      var year = '';
+      while (cursor && cursor !== title) {
+        if (cursor.nodeType === 1 && (cursor.tagName === 'TABLE' || cursor.classList.contains('collapsible-container'))) break;
+        labelNodes.unshift(cursor);
+        var match = (cursor.textContent || '').match(/(20\d{2})/);
+        if (match) {
+          year = match[1];
+          break;
+        }
+        cursor = cursor.previousSibling;
+      }
+      if (!year) return;
+
+      var container = document.createElement('div');
+      container.className = 'collapsible-container';
+      var trigger = document.createElement('div');
+      trigger.className = 'collapsible-trigger';
+      trigger.textContent = year;
+      var panel = document.createElement('div');
+      panel.className = 'collapsible-content';
+      table.parentNode.insertBefore(container, table);
+      container.appendChild(trigger);
+      container.appendChild(panel);
+      panel.appendChild(table);
+      labelNodes.forEach(function (node) {
+        if (node.parentNode === content) node.remove();
+      });
+    });
+
+    var yearGroups = {};
+    Array.prototype.slice.call(content.querySelectorAll(':scope > .collapsible-container')).forEach(function (container) {
+      var trigger = container.querySelector(':scope > .collapsible-trigger');
+      var table = container.querySelector('table');
+      var yearMatch = trigger ? trigger.textContent.match(/(20\d{2})/) : null;
+      if (!trigger || !table || !yearMatch) return;
+      var year = yearMatch[1];
+
+      if (!yearGroups[year]) {
+        yearGroups[year] = { container: container, table: table, trigger: trigger };
+        return;
+      }
+
+      var targetBody = yearGroups[year].table.tBodies[0];
+      Array.prototype.slice.call(table.rows, 1).forEach(function (row) {
+        targetBody.appendChild(row);
+      });
+      container.remove();
+    });
+
+    var years = Object.keys(yearGroups).sort(function (left, right) { return Number(right) - Number(left); });
+    years.forEach(function (year) {
+      var group = yearGroups[year];
+      var rows = Array.prototype.slice.call(group.table.rows, 1);
+      rows.sort(function (left, right) {
+        function dateKey(row) {
+          var match = row.cells[0] && row.cells[0].textContent.match(/(\d{1,2})\s*\/\s*(\d{1,2})/);
+          return match ? Number(match[1]) * 100 + Number(match[2]) : -1;
+        }
+        return dateKey(right) - dateKey(left);
+      });
+      rows.forEach(function (row) { group.table.tBodies[0].appendChild(row); });
+
+      group.trigger.setAttribute('data-year', year);
+      group.trigger.setAttribute('data-default-open', 'true');
+      group.trigger.innerHTML = '<span class="year-label">' + year + '</span><span class="year-count">' + rows.length + ' TALKS</span>';
+      content.insertBefore(group.container, footer);
+    });
   }
 
   function enhanceTables() {
@@ -494,6 +588,11 @@
       if (!panel) return;
       var panelId = 'historical-talks-' + (index + 1);
       var defaultOpen = trigger.getAttribute('data-default-open') === 'true';
+      var triggerLabel = trigger.getAttribute('data-year') || trigger.textContent.trim();
+      if (!trigger.querySelector('.year-label')) {
+        var talkCount = Math.max(0, panel.querySelectorAll('table tr').length - 1);
+        trigger.innerHTML = '<span class="year-label">' + triggerLabel + '</span><span class="year-count">' + talkCount + ' TALKS</span>';
+      }
       panel.id = panelId;
       panel.classList.toggle('expanded', defaultOpen);
       panel.hidden = !defaultOpen;
@@ -501,13 +600,13 @@
       trigger.setAttribute('tabindex', '0');
       trigger.setAttribute('aria-controls', panelId);
       trigger.setAttribute('aria-expanded', String(defaultOpen));
-      trigger.setAttribute('aria-label', (defaultOpen ? '收起 ' : '展开 ') + trigger.textContent.trim() + ' 讲座');
+      trigger.setAttribute('aria-label', (defaultOpen ? '收起 ' : '展开 ') + triggerLabel + ' 讲座');
 
       function setExpanded(expanded) {
         panel.classList.toggle('expanded', expanded);
         panel.hidden = !expanded;
         trigger.setAttribute('aria-expanded', String(expanded));
-        trigger.setAttribute('aria-label', (expanded ? '收起 ' : '展开 ') + trigger.textContent.trim() + ' 讲座');
+        trigger.setAttribute('aria-label', (expanded ? '收起 ' : '展开 ') + triggerLabel + ' 讲座');
       }
 
       trigger.addEventListener('click', function () {
@@ -537,10 +636,31 @@
     title.insertAdjacentElement('afterend', tools);
     var input = tools.querySelector('input');
     var count = tools.querySelector('.archive-count');
+    var savedExpandedStates = new Map();
+    var wasSearching = false;
+
+    function setGroupExpanded(table, expanded) {
+      var container = table.closest('.collapsible-container');
+      if (!container) return;
+      var trigger = container.querySelector(':scope > .collapsible-trigger');
+      var panel = container.querySelector(':scope > .collapsible-content');
+      if (!trigger || !panel) return;
+      panel.classList.toggle('expanded', expanded);
+      panel.hidden = !expanded;
+      trigger.setAttribute('aria-expanded', String(expanded));
+      trigger.setAttribute('aria-label', (expanded ? '收起 ' : '展开 ') + (trigger.getAttribute('data-year') || trigger.textContent.trim()) + ' 讲座');
+    }
 
     function update() {
       var query = input.value.trim().toLowerCase();
+      var searching = Boolean(query);
       var visible = 0;
+      if (searching && !wasSearching) {
+        tables.forEach(function (table) {
+          var trigger = table.closest('.collapsible-container') && table.closest('.collapsible-container').querySelector(':scope > .collapsible-trigger');
+          if (trigger) savedExpandedStates.set(table, trigger.getAttribute('aria-expanded') === 'true');
+        });
+      }
       rows.forEach(function (row) {
         var match = !query || row.textContent.toLowerCase().indexOf(query) !== -1;
         row.hidden = !match;
@@ -551,7 +671,15 @@
         var shell = table.closest('.table-shell');
         var hasVisible = Array.prototype.slice.call(table.rows, 1).some(function (row) { return !row.hidden; });
         if (shell) shell.hidden = !hasVisible;
+        if (searching) setGroupExpanded(table, hasVisible);
       });
+      if (!searching && wasSearching) {
+        tables.forEach(function (table) {
+          if (savedExpandedStates.has(table)) setGroupExpanded(table, savedExpandedStates.get(table));
+        });
+        savedExpandedStates.clear();
+      }
+      wasSearching = searching;
     }
     input.addEventListener('input', update);
     update();
@@ -566,6 +694,7 @@
   if (isArchive) {
     loadCompleteArchive().then(function () {
       normalizeInstitutions();
+      prepareArchiveSchedule();
       enhanceTables();
       enhanceCollapsibles();
       addArchiveSearch();
