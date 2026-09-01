@@ -17,7 +17,7 @@
 <link rel="icon" href="pic/fai-favicon.png" type="image/png" sizes="128x128" />
 <link rel="stylesheet" href="jemdoc.css" type="text/css" />
 <link rel="stylesheet" href="fai-ui.css?v=20260901-1" type="text/css" />
-<script defer src="site.js?v=20260901-1"></script>
+<script defer src="site.js?v=20260901-2"></script>
 <title>FAI-Seminar</title>
 </head>
 <body>
@@ -64,12 +64,33 @@ FAI-Seminar (International Seminar on Foundational Artificial Intelligence) 是�
     </div>
 
 
-<section class="upcoming-talks" id="upcoming-talks" aria-labelledby="upcoming-talks-title" hidden>
+<section class="upcoming-talks" id="upcoming-talks" aria-labelledby="upcoming-talks-title">
   <div class="upcoming-talks-heading">
     <h2 id="upcoming-talks-title">本周讲座</h2>
   </div>
-  <div class="upcoming-talks-grid" id="upcoming-talks-grid"></div>
-  <p class="upcoming-talks-status" id="upcoming-talks-status" role="status"></p>
+  <div class="upcoming-talks-grid" id="upcoming-talks-grid">
+    <article class="upcoming-talk-card has-photo">
+      <time class="upcoming-calendar" datetime="2026-09-04T10:00:00+08:00">
+        <span>9月</span><strong>04</strong><small>周五</small>
+      </time>
+      <div class="upcoming-talk-copy">
+        <p class="upcoming-talk-time">10:00–11:00 · 北京时间 · 线上 · 腾讯会议</p>
+        <h3>步长加速梯度下降的收敛下界</h3>
+        <p class="upcoming-title-en">A Lower Bound for Stepsize-Based Acceleration of Gradient Descent</p>
+        <p class="upcoming-speaker"><a href="https://jianhaoma.github.io/" target="_blank" rel="noopener noreferrer">马鉴昊</a> · 清华大学</p>
+        <p class="upcoming-abstract">梯度下降是优化与机器学习中最基础的算法之一。对于光滑凸优化问题，经典理论给出的收敛速度为 O(T^{-1})。近年来的一系列工作发现，无须引入动量或改变算法结构，仅通过精心设计步长序列，就可以将普通梯度下降加速至约 O(T^{-1.2716})。这自然引出了一个基本问题：仅依靠步长选择，梯度下降能否达到 Nesterov 加速方法所具有的最优 O(T^{-2}) 收敛速度？
+
+本报告将介绍我们在这一问题上的最新结果。针对使用预先设定的非负步长序列的梯度下降，我们证明了一个 \Omega(T^{-1.9319}) 的末次迭代收敛下界。这表明，无论如何设计此类步长序列，仅依靠步长调度都无法使普通梯度下降达到 O(T^{-2}) 的最优加速速度。
+
+本工作的证明由 GPT-5.6 Sol Pro 在作者指导下完成，报告也将简要分享大语言模型参与数学研究与证明发现的过程。</p>
+        <div class="upcoming-links">
+          <a href="https://arxiv.org/abs/2608.10418" target="_blank" rel="noopener noreferrer">论文：A lower bound for stepsize-based acceleration of gradient descent ↗</a>
+        </div>
+      </div>
+      <img class="upcoming-speaker-photo" src="pic/jianhao-20260904.jpg" alt="马鉴昊的讲者照片" loading="lazy" referrerpolicy="no-referrer">
+    </article>
+  </div>
+  <p class="upcoming-talks-status" id="upcoming-talks-status" role="status">本周共 1 场讲座。</p>
 </section>
 
 
@@ -220,6 +241,14 @@ FAI-Seminar (International Seminar on Foundational Artificial Intelligence) 是�
   <td>Same Pretraining Loss, Better Downstream Generalization via Common Minima</td>
   <td><a href="https://mp.weixin.qq.com/s/xJXWtMLMDilK-JQJxpF0RA">Talk Info</a></td>
   <td>[<a href="https://arxiv.org/abs/2604.09258">1</a>]</td>
+  <td>—</td>
+</tr>
+<tr data-live-talk="true" data-admin-talk-id="a245b66e-bdb5-467b-8113-71b036cefe62">
+  <td>09/04</td>
+  <td><a href="https://jianhaoma.github.io/">马鉴昊</a><br>(清华大学)</td>
+  <td>步长加速梯度下降的收敛下界<br><span class="schedule-title-en">A Lower Bound for Stepsize-Based Acceleration of Gradient Descent</span></td>
+  <td>—</td>
+  <td>[<a href="https://arxiv.org/abs/2608.10418">1</a>]</td>
   <td>—</td>
 </tr>
 </table>

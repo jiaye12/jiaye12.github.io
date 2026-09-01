@@ -963,8 +963,8 @@
         status.textContent = talks.length ? '本周共 ' + talks.length + ' 场讲座。' : '';
       })
       .catch(function () {
-        /* GitHub Pages 没有上海站点 API；保持该区块隐藏。 */
-        section.hidden = true;
+        /* GitHub Pages 没有上海站点 API；保留仓库中已写入的公开讲座。 */
+        section.hidden = !grid.querySelector('.upcoming-talk-card');
       });
   }
 
