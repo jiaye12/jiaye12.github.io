@@ -584,6 +584,7 @@
 
   function enhanceCollapsibles() {
     content.querySelectorAll('.collapsible-trigger').forEach(function (trigger, index) {
+      if (trigger.getAttribute('data-collapsible-ready') === 'true') return;
       var panel = trigger.nextElementSibling;
       if (!panel) return;
       var panelId = 'historical-talks-' + (index + 1);
@@ -601,6 +602,7 @@
       trigger.setAttribute('aria-controls', panelId);
       trigger.setAttribute('aria-expanded', String(defaultOpen));
       trigger.setAttribute('aria-label', (defaultOpen ? '收起 ' : '展开 ') + triggerLabel + ' 讲座');
+      trigger.setAttribute('data-collapsible-ready', 'true');
 
       function setExpanded(expanded) {
         panel.classList.toggle('expanded', expanded);
@@ -685,6 +687,287 @@
     update();
   }
 
+  function loadUpcomingTalks() {
+    var section = document.getElementById('upcoming-talks');
+    var grid = document.getElementById('upcoming-talks-grid');
+    var status = document.getElementById('upcoming-talks-status');
+    if (!section || !grid || !status) return;
+    section.classList.remove('legacy-intro');
+
+    function localDateKey(date) {
+      var year = date.getFullYear();
+      var month = String(date.getMonth() + 1).padStart(2, '0');
+      var day = String(date.getDate()).padStart(2, '0');
+      return year + '-' + month + '-' + day;
+    }
+
+    function textNode(tag, className, value) {
+      var node = document.createElement(tag);
+      if (className) node.className = className;
+      node.textContent = value || '';
+      return node;
+    }
+
+    function renderTalk(talk) {
+      var article = document.createElement('article');
+      article.className = 'upcoming-talk-card';
+      if (talk.speaker_photo) article.classList.add('has-photo');
+
+      var dateValue = new Date(talk.date + 'T12:00:00+08:00');
+      var calendar = document.createElement('time');
+      calendar.className = 'upcoming-calendar';
+      calendar.dateTime = talk.date + 'T' + talk.start_time + ':00+08:00';
+      calendar.appendChild(textNode('span', '', (dateValue.getMonth() + 1) + '月'));
+      calendar.appendChild(textNode('strong', '', String(dateValue.getDate()).padStart(2, '0')));
+      calendar.appendChild(textNode('small', '', new Intl.DateTimeFormat('zh-CN', { weekday: 'short' }).format(dateValue)));
+
+      var copy = document.createElement('div');
+      copy.className = 'upcoming-talk-copy';
+      var timing = textNode('p', 'upcoming-talk-time', talk.start_time + '–' + talk.end_time + ' · 北京时间 · ' + talk.venue);
+      var heading = textNode('h3', '', talk.title_zh || talk.title_en || talk.title);
+      var englishTitle = talk.title_en && talk.title_en !== heading.textContent
+        ? textNode('p', 'upcoming-title-en', talk.title_en)
+        : null;
+      var speakerLine = document.createElement('p');
+      speakerLine.className = 'upcoming-speaker';
+      if (talk.speaker_homepage) {
+        var speakerLink = textNode('a', '', talk.speaker_name);
+        speakerLink.href = talk.speaker_homepage;
+        speakerLink.target = '_blank';
+        speakerLink.rel = 'noopener noreferrer';
+        speakerLine.appendChild(speakerLink);
+      } else {
+        speakerLine.appendChild(textNode('strong', '', talk.speaker_name));
+      }
+      speakerLine.appendChild(document.createTextNode(' · ' + talk.speaker_affiliation));
+      var abstract = textNode('p', 'upcoming-abstract', talk.abstract);
+      var links = document.createElement('div');
+      links.className = 'upcoming-links';
+      if (talk.wechat_url) {
+        var wechat = textNode('a', '', '公众号介绍 ↗');
+        wechat.href = talk.wechat_url;
+        wechat.target = '_blank';
+        wechat.rel = 'noopener noreferrer';
+        links.appendChild(wechat);
+      }
+      if (talk.video_url) {
+        var video = textNode('a', '', '观看录播 ↗');
+        video.href = talk.video_url;
+        video.target = '_blank';
+        video.rel = 'noopener noreferrer';
+        links.appendChild(video);
+      }
+      if (talk.paper_url) {
+        var paperLabel = talk.paper_title ? '论文：' + talk.paper_title + ' ↗' : '查看相关论文 ↗';
+        var paper = textNode('a', '', paperLabel);
+        paper.href = talk.paper_url;
+        paper.target = '_blank';
+        paper.rel = 'noopener noreferrer';
+        links.appendChild(paper);
+      }
+      copy.appendChild(timing);
+      copy.appendChild(heading);
+      if (englishTitle) copy.appendChild(englishTitle);
+      copy.appendChild(speakerLine);
+      copy.appendChild(abstract);
+      copy.appendChild(links);
+      article.appendChild(calendar);
+      article.appendChild(copy);
+      if (talk.speaker_photo) {
+        var portrait = document.createElement('img');
+        portrait.className = 'upcoming-speaker-photo';
+        portrait.src = talk.speaker_photo;
+        portrait.alt = talk.speaker_name + '的讲者照片';
+        portrait.loading = 'lazy';
+        portrait.referrerPolicy = 'no-referrer';
+        article.appendChild(portrait);
+      }
+      return article;
+    }
+
+    function scheduleTableForYear(year) {
+      var match = null;
+      content.querySelectorAll('.collapsible-trigger[data-year]').forEach(function (trigger) {
+        if (trigger.getAttribute('data-year') === year) {
+          var container = trigger.closest('.collapsible-container');
+          match = container && container.querySelector('table');
+        }
+      });
+      if (match) return match;
+
+      var templateTable = content.querySelector('.collapsible-container table');
+      var scheduleHeading = document.getElementById('schedule');
+      if (!templateTable || !templateTable.rows[0] || !scheduleHeading) return null;
+
+      var container = document.createElement('div');
+      container.className = 'collapsible-container';
+      var trigger = document.createElement('div');
+      trigger.className = 'collapsible-trigger';
+      trigger.setAttribute('data-year', year);
+      trigger.setAttribute('data-default-open', 'true');
+      trigger.innerHTML = '<span class="year-label">' + year + '</span><span class="year-count">0 TALKS</span>';
+      var panel = document.createElement('div');
+      panel.className = 'collapsible-content';
+      var table = document.createElement('table');
+      var body = document.createElement('tbody');
+      body.appendChild(templateTable.rows[0].cloneNode(true));
+      table.appendChild(body);
+      panel.appendChild(table);
+      container.appendChild(trigger);
+      container.appendChild(panel);
+
+      var inserted = false;
+      var groups = Array.prototype.slice.call(content.querySelectorAll('.collapsible-container'));
+      groups.forEach(function (group) {
+        if (inserted) return;
+        var groupTrigger = group.querySelector(':scope > .collapsible-trigger[data-year]');
+        if (groupTrigger && Number(groupTrigger.getAttribute('data-year')) < Number(year)) {
+          group.parentNode.insertBefore(container, group);
+          inserted = true;
+        }
+      });
+      if (!inserted && groups.length) groups[groups.length - 1].insertAdjacentElement('afterend', container);
+      else if (!inserted) scheduleHeading.insertAdjacentElement('afterend', container);
+
+      enhanceTables();
+      enhanceCollapsibles();
+      return table;
+    }
+
+    function scheduleCell(row, label) {
+      var cell = document.createElement('td');
+      cell.setAttribute('data-label', label);
+      var value = document.createElement('span');
+      value.className = 'cell-value';
+      cell.appendChild(value);
+      row.appendChild(cell);
+      return value;
+    }
+
+    function externalLink(label, url) {
+      var link = textNode('a', '', label);
+      link.href = url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      return link;
+    }
+
+    function renderScheduleRow(talk) {
+      var row = document.createElement('tr');
+      row.setAttribute('data-live-talk', 'true');
+      row.setAttribute('data-admin-talk-id', talk.id);
+      scheduleCell(row, '时间').textContent = talk.date.slice(5).replace('-', '/');
+
+      var speaker = scheduleCell(row, '讲者');
+      if (talk.speaker_homepage) speaker.appendChild(externalLink(talk.speaker_name, talk.speaker_homepage));
+      else speaker.appendChild(document.createTextNode(talk.speaker_name));
+      speaker.appendChild(document.createElement('br'));
+      speaker.appendChild(document.createTextNode('(' + talk.speaker_affiliation + ')'));
+
+      var title = scheduleCell(row, '主题');
+      title.appendChild(document.createTextNode(talk.title_zh || talk.title_en || talk.title));
+      if (talk.title_en && talk.title_en !== title.textContent) {
+        title.appendChild(document.createElement('br'));
+        var englishTitle = textNode('span', 'schedule-title-en', talk.title_en);
+        title.appendChild(englishTitle);
+      }
+
+      var talkInfo = scheduleCell(row, '讲座信息');
+      if (talk.wechat_url) talkInfo.appendChild(externalLink('Talk Info', talk.wechat_url));
+      var paper = scheduleCell(row, '论文');
+      if (talk.paper_url) paper.appendChild(externalLink('[1]', talk.paper_url));
+      var video = scheduleCell(row, '视频');
+      if (talk.video_url) video.appendChild(externalLink('B站', talk.video_url));
+      return row;
+    }
+
+    function scheduleDateKey(row) {
+      var match = row.cells[0] && row.cells[0].textContent.match(/(\d{1,2})\s*\/\s*(\d{1,2})/);
+      return match ? Number(match[1]) * 100 + Number(match[2]) : -1;
+    }
+
+    function updateScheduleTable(table) {
+      var rows = Array.prototype.slice.call(table.rows, 1);
+      rows.sort(function (left, right) { return scheduleDateKey(right) - scheduleDateKey(left); });
+      rows.forEach(function (row) { table.tBodies[0].appendChild(row); });
+      table.querySelectorAll('.latest-badge').forEach(function (badge) { badge.remove(); });
+      rows.forEach(function (row) { row.classList.remove('latest-row'); });
+      if (rows[0] && rows[0].cells[0]) {
+        rows[0].classList.add('latest-row');
+        var badge = textNode('span', 'latest-badge', '最新');
+        var timeValue = rows[0].cells[0].querySelector('.cell-value') || rows[0].cells[0];
+        timeValue.insertBefore(badge, timeValue.firstChild);
+      }
+      var container = table.closest('.collapsible-container');
+      var count = container && container.querySelector(':scope > .collapsible-trigger .year-count');
+      if (count) count.textContent = rows.length + ' TALKS';
+    }
+
+    function syncPublishedTalksToSchedule(talks) {
+      var touched = [];
+      content.querySelectorAll('tr[data-live-talk="true"]').forEach(function (row) {
+        var table = row.closest('table');
+        if (table && touched.indexOf(table) === -1) touched.push(table);
+        row.remove();
+      });
+      talks.filter(function (talk) { return talk.date; }).forEach(function (talk) {
+        var year = talk.date.slice(0, 4);
+        var table = scheduleTableForYear(year);
+        if (!table || !table.tBodies.length) return;
+        var dateLabel = talk.date.slice(5).replace('-', '/');
+        var duplicate = Array.prototype.some.call(table.rows, function (row, index) {
+          return index > 0 && row.getAttribute('data-live-talk') !== 'true' &&
+            row.cells[0] && row.cells[0].textContent.indexOf(dateLabel) !== -1 &&
+            row.cells[1] && row.cells[1].textContent.indexOf(talk.speaker_name) !== -1;
+        });
+        if (!duplicate) table.tBodies[0].appendChild(renderScheduleRow(talk));
+        if (touched.indexOf(table) === -1) touched.push(table);
+      });
+      touched.forEach(updateScheduleTable);
+    }
+
+    function shanghaiDateKey(date) {
+      try {
+        var parts = new Intl.DateTimeFormat('en-CA', {
+          timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit'
+        }).formatToParts(date);
+        var values = {};
+        parts.forEach(function (part) { values[part.type] = part.value; });
+        return values.year + '-' + values.month + '-' + values.day;
+      } catch (error) {
+        return localDateKey(date);
+      }
+    }
+
+    fetch('/api/public/talks', { cache: 'no-store', headers: { Accept: 'application/json' } })
+      .then(function (response) {
+        if (!response.ok) throw new Error('public talk feed unavailable');
+        return response.json();
+      })
+      .then(function (payload) {
+        var publishedTalks = payload.talks || [];
+        syncPublishedTalksToSchedule(publishedTalks);
+        var today = shanghaiDateKey(new Date());
+        var shanghaiNoon = new Date(today + 'T12:00:00+08:00');
+        var daysFromMonday = (shanghaiNoon.getUTCDay() + 6) % 7;
+        var weekStart = new Date(shanghaiNoon.getTime() - daysFromMonday * 86400000).toISOString().slice(0, 10);
+        var weekEnd = new Date(shanghaiNoon.getTime() + (6 - daysFromMonday) * 86400000).toISOString().slice(0, 10);
+        var talks = publishedTalks.filter(function (talk) {
+          return talk.date && talk.date >= weekStart && talk.date <= weekEnd;
+        }).sort(function (left, right) {
+          return (left.date + left.start_time).localeCompare(right.date + right.start_time);
+        });
+        grid.textContent = '';
+        talks.forEach(function (talk) { grid.appendChild(renderTalk(talk)); });
+        section.hidden = talks.length === 0;
+        status.textContent = talks.length ? '本周共 ' + talks.length + ' 场讲座。' : '';
+      })
+      .catch(function () {
+        /* GitHub Pages 没有上海站点 API；保持该区块隐藏。 */
+        section.hidden = true;
+      });
+  }
+
   function refreshFooter() {
     var footer = content.querySelector('#footer-text');
     if (footer) footer.innerHTML = '© FAI Seminar · Foundational Artificial Intelligence · 保持好奇，开放交流。';
@@ -701,7 +984,10 @@
       refreshFooter();
     });
   } else {
-    if (isHome) buildHomeHero();
+    if (isHome) {
+      buildHomeHero();
+      loadUpcomingTalks();
+    }
     normalizeInstitutions();
     refreshPeople();
     if (isHome) prepareHomeSchedule();

@@ -1157,3 +1157,149 @@ a.channel-card:hover { background: var(--fai-blue-soft); text-decoration: none; 
   #layout-content { width: 100%; max-width: none; padding: 20px 0; }
   .home-hero { background: #fff; }
 }
+
+/* Live talks published by the Shanghai administration service. */
+.upcoming-talks {
+  margin: 44px 0 52px;
+  padding: 0;
+  border-top: 3px solid var(--fai-ink);
+}
+
+.upcoming-talks-heading {
+  padding: 25px 0 22px;
+  border-bottom: 1px solid var(--fai-line-dark);
+}
+
+.upcoming-talks-heading h2 {
+  margin: 0;
+  font-family: var(--fai-display);
+  font-size: clamp(31px, 5vw, 52px);
+  letter-spacing: -.035em;
+  line-height: 1;
+}
+
+.upcoming-talks-grid { display: grid; }
+
+.upcoming-talk-card {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 28px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--fai-line);
+}
+
+.upcoming-talk-card.has-photo {
+  grid-template-columns: 112px minmax(0, 1fr) 132px;
+}
+
+.upcoming-calendar {
+  display: grid;
+  align-content: center;
+  min-height: 122px;
+  padding: 12px;
+  border: 1px solid var(--fai-ink);
+  background: var(--fai-highlight);
+  color: var(--fai-ink);
+  text-align: center;
+}
+
+.upcoming-calendar span,
+.upcoming-calendar small {
+  font-family: var(--fai-mono);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.upcoming-calendar strong {
+  margin: 3px 0;
+  font-family: var(--fai-display);
+  font-size: 45px;
+  line-height: .92;
+}
+
+.upcoming-talk-copy { min-width: 0; }
+.upcoming-talk-time {
+  margin: 0 0 6px;
+  color: var(--fai-blue);
+  font-family: var(--fai-mono);
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .035em;
+}
+
+.upcoming-talk-copy h3 {
+  max-width: 900px;
+  margin: 0 0 8px;
+  color: var(--fai-ink);
+  font-family: var(--fai-display);
+  font-size: clamp(21px, 3vw, 31px);
+  letter-spacing: -.02em;
+  line-height: 1.2;
+}
+
+.upcoming-title-en {
+  max-width: 900px;
+  margin: -2px 0 9px;
+  color: var(--fai-graphite);
+  font-family: var(--fai-mono);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.upcoming-speaker { margin: 0; font-weight: 700; }
+.upcoming-abstract {
+  display: -webkit-box;
+  max-width: 920px;
+  margin: 13px 0 0;
+  overflow: hidden;
+  color: var(--fai-graphite);
+  font-size: 14px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.upcoming-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  margin-top: 15px;
+  font-size: 12px;
+}
+
+.upcoming-links a { font-weight: 800; }
+.upcoming-links span { color: var(--fai-graphite); }
+.upcoming-speaker-photo {
+  width: 132px;
+  aspect-ratio: 4 / 5;
+  align-self: start;
+  border: 1px solid var(--fai-line-dark);
+  background: #eef1f5;
+  object-fit: cover;
+}
+.upcoming-talks-status {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.schedule-title-en {
+  display: inline-block;
+  margin-top: 4px;
+  color: var(--fai-graphite);
+  font-size: .88em;
+}
+
+@media (max-width: 700px) {
+  .upcoming-talk-card { grid-template-columns: 76px minmax(0, 1fr); gap: 16px; }
+  .upcoming-talk-card.has-photo { grid-template-columns: 76px minmax(0, 1fr); }
+  .upcoming-speaker-photo { grid-column: 2; width: 96px; }
+  .upcoming-calendar { min-height: 94px; padding: 8px; }
+  .upcoming-calendar strong { font-size: 33px; }
+  .upcoming-abstract { -webkit-line-clamp: 4; }
+}
